@@ -13,27 +13,27 @@ window.ATLS = (window.ATLS||[]).concat([
    {
     "id": "c07-a",
     "t": "Fisiologia: Monro-Kellie e autorregulação",
-    "b": "\n<p>O crânio é uma caixa rígida com volume fixo: <b>cérebro + sangue + LCR</b>. Pela doutrina de <b>Monro-Kellie</b>, se surge uma massa (hematoma), algo precisa sair (LCR e sangue venoso). Quando a compensação acaba, a <b>PIC sobe rapidamente</b>.</p>\n<p><b>PPC = PAM − PIC</b>. A <b>autorregulação cerebral</b> mantém o fluxo constante dentro de uma faixa de pressão; no cérebro lesado ela falha, e o fluxo passa a depender diretamente da pressão arterial.</p>\n<div class=\"mais\">Novo no ATLS 11: TCE e trauma raquimedular foram combinados no capítulo de Disability, com nova figura da curva de autorregulação e figura de Monro-Kellie corrigida.</div>"
+    "b": "<p>O crânio do adulto é uma <b>caixa rígida</b>: não estica. Lá dentro há três conteúdos, <b>cérebro (~80%), sangue e LCR</b>. Entender como eles disputam espaço explica quase tudo o que fazemos no TCE.</p>\n<ul>\n<li><b>Doutrina de Monro-Kellie</b>: como o volume total é fixo, quando surge uma massa nova (hematoma, edema), algo precisa sair. Primeiro saem o <b>LCR</b> (para o canal espinhal) e o <b>sangue venoso</b>. Por isso, no início, a PIC quase não sobe.</li>\n<li>Essa compensação tem limite. Quando acaba, cada mililitro a mais faz a <b>PIC subir de forma explosiva</b>. É por isso que o paciente pode \"conversar e piorar\" de repente.</li>\n<li><b>PPC = PAM − PIC</b>: o cérebro é perfundido pela diferença entre a pressão que empurra o sangue (PAM) e a pressão que resiste (PIC). Se a PAM cai <i>ou</i> a PIC sobe, a perfusão cai.</li>\n<li><b>Autorregulação cerebral</b>: o cérebro saudável mantém o fluxo constante numa ampla faixa de pressão, contraindo ou dilatando arteríolas. No cérebro lesado ela <b>falha</b>, e o fluxo passa a seguir passivamente a pressão arterial. Uma queda de PA vira, na hora, isquemia cerebral.</li>\n</ul>\n<div class=\"caso\">Caso: motociclista com hematoma extradural fala normalmente na chegada. Uma hora depois fica sonolento e com pupila dilatada. É o fim da fase compensada de Monro-Kellie: o hematoma cresceu além do que LCR e sangue venoso conseguiam compensar.</div>\n<div class=\"mais\">Novo no ATLS 11: TCE e trauma raquimedular foram combinados no capítulo de Disability, com nova figura da curva de autorregulação e figura de Monro-Kellie corrigida.</div>"
    },
    {
     "id": "c07-b",
     "t": "Lesão secundária: hipotensão e hipóxia",
-    "b": "\n<p>O objetivo do atendimento é <b>evitar a lesão cerebral secundária</b>. Os grandes inimigos são <b>hipotensão</b> e <b>hipóxia</b>.</p>\n<p>Hipotensão + hipóxia juntas <b>dobram o risco de morte</b> no TCE.</p>\n<ul><li>Meta de PAS no TCE: <b>≥100–110 mmHg</b>.</li><li>Meta no trauma raquimedular: <b>PAM 85–90 mmHg</b>.</li><li>Manter SatO2 adequada e normocapnia.</li></ul>\n<div class=\"pega\">Pegadinha: hipotensão permissiva é CONTRAINDICADA no TCE e no TRM.</div>"
+    "b": "<p>A <b>lesão primária</b> acontece no impacto e não pode ser desfeita. Tudo o que a equipe faz no PS é para evitar a <b>lesão secundária</b>: neurônios que sobreviveram ao trauma, mas morrem depois por falta de oxigênio ou de fluxo.</p>\n<ul>\n<li><b>Hipóxia</b>: o cérebro não tem reserva de oxigênio. Poucos minutos de SatO2 baixa ampliam a área de lesão.</li>\n<li><b>Hipotensão</b>: como a autorregulação falhou, a queda de PA derruba direto a perfusão cerebral (PPC = PAM − PIC).</li>\n<li>As duas juntas <b>dobram o risco de morte</b> no TCE. Um único episódio já piora o prognóstico.</li>\n<li>Meta no TCE: <b>PAS ≥100–110 mmHg</b>. Meta no trauma raquimedular: <b>PAM 85–90 mmHg</b>, para perfundir a medula lesada.</li>\n<li>Manter <b>SatO2 adequada</b> e <b>normocapnia</b>: CO2 alto dilata vasos e aumenta a PIC; CO2 baixo demais contrai vasos e causa isquemia.</li>\n</ul>\n<div class=\"caso\">Caso: politraumatizado com TCE grave e baço sangrando. Mesmo com hemorragia abdominal, não se usa hipotensão permissiva: busca-se PAS ≥100–110 mmHg com hemoderivados enquanto o sangramento é controlado.</div>\n<div class=\"pega\">Pegadinha: hipotensão permissiva é CONTRAINDICADA no TCE e no TRM, porque o tecido nervoso lesado depende diretamente da pressão para ser perfundido.</div>"
    },
    {
     "id": "c07-c",
     "t": "Avaliação neurológica e piora crítica",
-    "b": "\n<p>No D do exame primário: <b>nível de consciência</b> (GCS), <b>pupilas</b> (tamanho e reação), sinais de lateralização e nível de lesão medular.</p>\n<p>GCS: TCE leve 13–15, moderado 9–12, grave ≤8. O <b>escore motor</b> é o componente mais prognóstico.</p>\n<p><b>Piora neurológica crítica</b> (critical neuroworsening):</p>\n<ul><li>Queda do escore motor do GCS</li><li>Nova alteração ou assimetria pupilar</li><li>Pupilas dilatadas e fixas bilateralmente</li><li>Novo déficit focal</li><li>Tríade de Cushing (hipertensão, bradicardia, alteração respiratória)</li></ul>\n<div class=\"mais\">Novo no ATLS 11: o termo \"piora neurológica crítica\" foi definido formalmente.</div>"
+    "b": "<p>No <b>D</b> do exame primário a pergunta é simples: <b>o cérebro está funcionando e está piorando?</b> A avaliação precisa ser rápida e, principalmente, <b>repetida</b>, porque a tendência ao longo do tempo vale mais que um número isolado.</p>\n<ul>\n<li><b>Nível de consciência (GCS)</b>: TCE leve 13–15, moderado 9–12, grave ≤8. GCS ≤8 sugere incapacidade de proteger a via aérea.</li>\n<li>O <b>escore motor</b> é o componente com maior valor prognóstico, porque sofre menos interferência de intubação, edema facial ou barreira de idioma.</li>\n<li><b>Pupilas</b>: tamanho, simetria e reação à luz. Uma pupila que dilata indica compressão do III nervo por herniação do uncus do mesmo lado.</li>\n<li><b>Sinais de lateralização</b> e <b>nível sensitivo/motor</b> sugerem lesão focal ou medular.</li>\n</ul>\n<p><b>Piora neurológica crítica</b> (critical neuroworsening) é o gatilho para agir já:</p>\n<ul><li>Queda do escore motor do GCS</li><li>Nova alteração ou assimetria pupilar</li><li>Pupilas dilatadas e fixas bilateralmente</li><li>Novo déficit focal</li><li>Tríade de Cushing (hipertensão, bradicardia, alteração respiratória), que indica herniação iminente</li></ul>\n<div class=\"mais\">Novo no ATLS 11: o termo \"piora neurológica crítica\" foi definido formalmente.</div>"
    },
    {
     "id": "c07-d",
     "t": "Manejo escalonado da piora neurológica",
-    "b": "\n<p>Diante de piora neurológica crítica, agir em degraus:</p>\n<ul><li><b>Intubação</b> e ventilação controlada</li><li><b>Cabeceira a 30–45°</b> com coluna neutra</li><li><b>Afrouxar o colar</b> se estiver apertado (prejudica retorno venoso)</li><li><b>Hiperventilação transitória</b> com PaCO2 30–35 mmHg</li><li>Otimizar <b>analgesia/sedação</b></li><li><b>Bolus hiperosmolar IV</b> (manitol ou salina hipertônica)</li><li>Manter <b>normotermia</b></li></ul>\n<p><b>Profilaxia anticonvulsivante</b> no TCE grave (GCS ≤8) ou penetrante. Ácido tranexâmico: bolus de 2 g é aceito no TCE (até 3 h). Contato precoce com neurocirurgia.</p>\n<div class=\"pega\">Pegadinha: hiperventilação é ponte TRANSITÓRIA. Hiperventilar demais causa vasoconstrição e isquemia.</div>"
+    "b": "<p>Diante de piora neurológica crítica, o raciocínio é baixar a PIC e proteger a perfusão em <b>degraus</b>, começando pelo que é simples e seguro. Contato precoce com a <b>neurocirurgia</b> corre em paralelo, porque o tratamento definitivo de um hematoma é drená-lo.</p>\n<ul>\n<li><b>Intubação e ventilação controlada</b>: garante oxigenação e permite controlar o CO2.</li>\n<li><b>Cabeceira a 30–45°</b> com coluna neutra: facilita a drenagem venosa e reduz a PIC.</li>\n<li><b>Afrouxar o colar</b> se estiver apertado: o colar comprime as jugulares e atrapalha o retorno venoso.</li>\n<li><b>Hiperventilação transitória</b> (PaCO2 30–35 mmHg): CO2 baixo contrai as arteríolas cerebrais e reduz o volume de sangue, ganhando tempo até a cirurgia.</li>\n<li><b>Analgesia e sedação</b>: dor, agitação e tosse elevam a PIC.</li>\n<li><b>Bolus hiperosmolar IV</b> (manitol ou salina hipertônica): puxa água do cérebro para o vaso.</li>\n<li><b>Normotermia</b>: febre aumenta o metabolismo e o fluxo cerebral.</li>\n</ul>\n<p><b>Profilaxia anticonvulsivante</b> no TCE grave (GCS ≤8) ou penetrante, porque convulsão aumenta o consumo de oxigênio e a PIC. <b>Ácido tranexâmico</b>: bolus de 2 g é aceito no TCE, dentro de 3 h.</p>\n<div class=\"pega\">Pegadinha: hiperventilação é ponte TRANSITÓRIA. Hiperventilar demais (PaCO2 muito baixa) contrai tanto os vasos que causa isquemia.</div>"
    },
    {
     "id": "c07-e",
     "t": "Trauma raquimedular e restrição de movimento",
-    "b": "\n<p><b>Restrição de movimento da coluna</b> (não \"imobilização\") é <b>seletiva e baseada em critérios</b> (NEXUS, Regra Canadense da Coluna Cervical). Há menos ênfase no colar rígido, sobretudo no <b>trauma penetrante</b>.</p>\n<p><b>Choque neurogênico</b>: perda do tônus simpático (lesão cervical/torácica alta) → <b>hipotensão com bradicardia</b> e pele quente. <b>Choque medular</b>: perda transitória de reflexos e flacidez abaixo da lesão.</p>\n<p>Descompressão medular <b>precoce</b> pode melhorar a recuperação nas lesões parciais. Rastreio ampliado de <b>lesão cerebrovascular contusa</b> (carótidas/vertebrais).</p>\n<div class=\"mais\">Novo no ATLS 11: nova tabela de restrição de movimento da coluna e rastreio ampliado de lesão cerebrovascular contusa.</div>\n<div class=\"pega\">Pegadinha: hipotensão no trauma é hemorrágica até prova em contrário, mesmo com lesão medular.</div>"
+    "b": "<p>A coluna precisa ser protegida, mas sem exageros: imobilização rígida desnecessária causa dor, úlcera, dificuldade de via aérea e atrasa exames. Por isso o ATLS fala em <b>restrição de movimento da coluna</b>, aplicada de forma <b>seletiva e baseada em critérios</b>.</p>\n<ul>\n<li>Regras clínicas como <b>NEXUS</b> e <b>Regra Canadense da Coluna Cervical</b> identificam quem pode dispensar imagem e restrição.</li>\n<li><b>Menos ênfase no colar rígido</b>, sobretudo no <b>trauma penetrante</b>: lesão instável é rara, e o colar atrapalha a visão e o controle do pescoço.</li>\n<li><b>Choque neurogênico</b>: lesão cervical ou torácica alta corta o tônus simpático. Resultado: vasodilatação (pele quente) e <b>bradicardia</b>, porque o vago fica sem oposição. Trata-se com volume criterioso e vasopressor.</li>\n<li><b>Choque medular</b>: não é um estado hemodinâmico. É a perda transitória de reflexos e a flacidez abaixo da lesão, que pode esconder a real extensão do dano.</li>\n<li>Descompressão <b>precoce</b> pode melhorar a recuperação nas lesões medulares parciais.</li>\n<li>Rastreio ampliado de <b>lesão cerebrovascular contusa</b> (carótidas e vertebrais), que pode causar AVC horas depois.</li>\n</ul>\n<div class=\"mais\">Novo no ATLS 11: nova tabela de restrição de movimento da coluna e rastreio ampliado de lesão cerebrovascular contusa.</div>\n<div class=\"pega\">Pegadinha: hipotensão no trauma é hemorrágica até prova em contrário, mesmo com lesão medular. Só se fecha choque neurogênico depois de excluir sangramento.</div>"
    }
   ],
   "recall": [
@@ -130,7 +130,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Hipotensão e hipóxia"
     ],
     "c": 3,
-    "e": "Hipotensão + hipóxia dobram o risco de morte no TCE: são as causas principais de lesão secundária."
+    "e": "<b>Certo:</b> hipotensão e hipóxia são as duas agressões que mais causam lesão cerebral secundária. Juntas dobram o risco de morte, porque o cérebro lesado perdeu a autorregulação e não tolera queda de oxigênio nem de pressão.<br><b>Por que não as outras:</b> hipertermia, hiperglicemia, anemia e hipocalemia podem piorar o quadro, mas o efeito delas na mortalidade é muito menor. Hipercapnia leve aumenta a PIC, mas não é o par mais letal."
    },
    {
     "q": "Em paciente com TCE grave e sangramento abdominal, qual estratégia pressórica é correta?",
@@ -141,7 +141,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Não há meta pressórica no TCE"
     ],
     "c": 0,
-    "e": "Hipotensão permissiva é contraindicada no TCE; a meta é PAS ≥100–110 mmHg."
+    "e": "<b>Certo:</b> no TCE a meta é PAS ≥100–110 mmHg, mesmo com sangramento abdominal associado, porque o cérebro precisa de pressão para ser perfundido (PPC = PAM − PIC).<br><b>Por que não as outras:</b> hipotensão permissiva (PAS 70) e PAM 50 são contraindicadas no TCE, porque reduzem a perfusão cerebral e causam lesão secundária. Dizer que não há meta está errado: há meta definida."
    },
    {
     "q": "Paciente com TCE intubado. Pupila direita fica dilatada e o escore motor cai de 5 para 3. Qual NÃO faz parte do manejo escalonado?",
@@ -152,7 +152,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Afrouxar o colar cervical apertado"
     ],
     "c": 1,
-    "e": "A hiperventilação é transitória e com alvo PaCO2 30–35; PaCO2 muito baixa causa isquemia cerebral."
+    "e": "<b>Certo:</b> hiperventilação prolongada com PaCO2 de 20 mmHg NÃO faz parte do manejo. A hiperventilação é transitória e tem alvo de PaCO2 30–35 mmHg; abaixo disso a vasoconstrição cerebral é tanta que causa isquemia.<br><b>Por que não as outras:</b> cabeceira a 30–45°, bolus hiperosmolar e afrouxar o colar apertado fazem parte dos degraus, porque melhoram a drenagem venosa ou retiram água do cérebro."
    },
    {
     "q": "Qual destes NÃO é critério de piora neurológica crítica?",
@@ -163,7 +163,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Novo déficit focal"
     ],
     "c": 2,
-    "e": "Melhora verbal não é piora. Critérios: queda motora, alteração pupilar, pupilas fixas bilaterais, déficit focal novo, Cushing."
+    "e": "<b>Certo:</b> o escore verbal subir de 3 para 4 é melhora, não piora, e por isso não é critério de piora neurológica crítica.<br><b>Por que não as outras:</b> queda do escore motor, nova assimetria pupilar e novo déficit focal são exatamente os critérios definidos de piora neurológica crítica, que exigem ação imediata."
    },
    {
     "q": "Motociclista com lesão cervical: PA 80/40, FC 52, pele quente e seca. Diagnóstico mais provável após excluir hemorragia:",
@@ -174,7 +174,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Choque neurogênico"
     ],
     "c": 3,
-    "e": "Perda do tônus simpático: hipotensão com bradicardia e pele quente. Choque medular é perda de reflexos, não um estado hemodinâmico."
+    "e": "<b>Certo:</b> hipotensão com bradicardia e pele quente e seca após lesão cervical é o quadro do choque neurogênico. A lesão corta o simpático, causando vasodilatação, e o vago sem oposição baixa a FC.<br><b>Por que não as outras:</b> o choque hipovolêmico teria taquicardia e pele fria, e o tamponamento também cursa com taquicardia. O choque medular não é estado hemodinâmico: é a perda transitória de reflexos e a flacidez abaixo da lesão."
    },
    {
     "q": "A profilaxia anticonvulsivante no TCE está indicada em:",
@@ -185,7 +185,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Apenas se houver convulsão no local"
     ],
     "c": 0,
-    "e": "ATLS 11: profilaxia após TCE grave (GCS ≤8) ou penetrante."
+    "e": "<b>Certo:</b> a profilaxia anticonvulsivante é indicada no TCE grave (GCS ≤8) ou penetrante, porque são os pacientes com maior risco de convulsão precoce, que aumenta a PIC e o consumo de oxigênio.<br><b>Por que não as outras:</b> não se restringe a crianças, nem a quem já convulsionou no local. O TCE leve com TC normal tem risco baixo e não precisa de profilaxia."
    },
    {
     "q": "Sobre a restrição de movimento da coluna no ATLS 11, é correto:",
@@ -196,7 +196,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Não se usa mais NEXUS nem Regra Canadense"
     ],
     "c": 1,
-    "e": "A restrição é seletiva, por critérios (NEXUS/Canadense), e o colar rígido perdeu ênfase, especialmente no penetrante."
+    "e": "<b>Certo:</b> pelo ATLS 11 a restrição de movimento é seletiva e baseada em critérios (NEXUS, Regra Canadense), com menos ênfase no colar rígido, especialmente no trauma penetrante.<br><b>Por que não as outras:</b> o colar rígido não é obrigatório no ferimento por arma branca no pescoço, pois atrapalha o exame e o controle de sangramento. A prancha por 24 h causa úlceras e dor sem benefício, e NEXUS e a Regra Canadense continuam em uso."
    },
    {
     "q": "Em lesão medular incompleta com compressão, a descompressão cirúrgica precoce:",
@@ -207,7 +207,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Substitui a meta de PAM"
     ],
     "c": 2,
-    "e": "O ATLS 11 aponta que a descompressão precoce pode melhorar a recuperação nas lesões parciais."
+    "e": "<b>Certo:</b> o ATLS 11 aponta que a descompressão cirúrgica precoce pode melhorar a recuperação neurológica nas lesões medulares parciais, porque reduz o tempo de compressão sobre a medula.<br><b>Por que não as outras:</b> não há contraindicação nas primeiras 72 h, e esperar a reabilitação perde a janela de benefício. A cirurgia também não substitui a meta de PAM 85–90 mmHg, que continua necessária."
    }
   ]
  },
@@ -225,22 +225,22 @@ window.ATLS = (window.ATLS||[]).concat([
    {
     "id": "c08-a",
     "t": "Os dois objetivos do E",
-    "b": "\n<p>O E do xABCDE tem <b>dois objetivos</b>:</p>\n<ul><li><b>Exposição completa e inspeção</b>: despir totalmente, rolar em bloco com restrição de movimento, examinar dorso, períneo, axilas, couro cabeludo.</li><li><b>Identificar e tratar ameaças ambientais com risco de vida</b>: hipotermia, queimaduras, intoxicação/contaminação, afogamento, eletricidade.</li></ul>\n<div class=\"mais\">Novo no ATLS 11: o E passou a incluir explicitamente as ameaças ambientais no exame primário.</div>"
+    "b": "<p>O <b>E</b> fecha o exame primário e tem <b>dois objetivos</b>. Os dois existem porque lesões e ameaças que não são vistas não são tratadas.</p>\n<ul>\n<li><b>Exposição completa e inspeção</b>: despir totalmente o paciente e rolar em bloco com restrição de movimento. Examinar dorso, períneo, axilas e couro cabeludo, onde ferimentos penetrantes e sangramentos costumam se esconder.</li>\n<li><b>Identificar e tratar ameaças ambientais com risco de vida</b>: hipotermia, queimaduras, intoxicação ou contaminação, afogamento e eletricidade. Elas matam tão rápido quanto uma lesão \"mecânica\" e precisam de ação já no primário.</li>\n</ul>\n<div class=\"caso\">Caso: vítima de esfaqueamento com FAST negativo e hipotensão persistente. Ao rolar o paciente, encontra-se ferida lombar sangrando, que ninguém tinha visto porque o paciente estava de costas na maca.</div>\n<div class=\"mais\">Novo no ATLS 11: o E passou a incluir explicitamente as ameaças ambientais no exame primário.</div>"
    },
    {
     "id": "c08-b",
     "t": "Hipotermia no trauma",
-    "b": "\n<p>A hipotermia é <b>comum no choque hemorrágico</b> e piora a coagulopatia. Faz parte da tríade letal: <b>hipotermia, acidose e coagulopatia</b>.</p>\n<ul><li>Cobrir o paciente logo após a exposição (cobertores, manta térmica)</li><li>Sala aquecida</li><li>Fluidos e hemoderivados <b>aquecidos</b> (aquecedor apropriado, nunca micro-ondas para sangue)</li><li>Medir temperatura central</li></ul>\n<div class=\"pega\">Pegadinha: expor sem cobrir de volta é erro clássico. Expor → examinar → cobrir.</div>"
+    "b": "<p>A <b>hipotermia</b> é comum no traumatizado: exposição, sala fria, fluidos frios e choque (que reduz a produção de calor). Ela não é um detalhe de conforto, é uma ameaça à vida.</p>\n<ul>\n<li>As enzimas da coagulação funcionam mal no frio. Por isso a hipotermia <b>piora a coagulopatia</b> e o paciente sangra mais.</li>\n<li>Faz parte da <b>tríade letal</b>: <b>hipotermia, acidose e coagulopatia</b>. Cada uma alimenta as outras num ciclo vicioso.</li>\n<li>Prevenção: <b>cobrir</b> logo após o exame (cobertores, manta térmica), <b>sala aquecida</b>, fluidos e hemoderivados <b>aquecidos</b> em aquecedor apropriado (nunca micro-ondas para sangue, que causa hemólise), e medir <b>temperatura central</b>.</li>\n</ul>\n<div class=\"caso\">Caso: paciente chega a 36 °C e, após 40 min exposto recebendo cristaloide frio, está a 34 °C e sangrando difusamente dos acessos. A coagulopatia foi agravada pelo próprio atendimento.</div>\n<div class=\"pega\">Pegadinha: expor sem cobrir de volta é erro clássico. A sequência certa é expor, examinar e cobrir.</div>"
    },
    {
     "id": "c08-c",
     "t": "Grande queimado no exame primário",
-    "b": "\n<p>No paciente com <b>provável queimadura ≥20% da SCQ</b>, iniciar <b>Ringer lactato</b> já no exame primário, <b>antes</b> do cálculo final da SCQ:</p>\n<ul><li><b>≥13 anos: 500 mL/h</b></li><li><b>6–12 anos: 250 mL/h</b></li><li><b>≤5 anos: 125 mL/h</b></li></ul>\n<p>Depois, recalcular pela fórmula com peso e SCQ e ajustar pela diurese.</p>\n<p>Parar o processo de queimadura: remover roupas e adornos; em química, escovar pó seco e irrigar abundantemente.</p>\n<div class=\"mais\">Novo no ATLS 11: taxas iniciais fixas por idade antes do cálculo da SCQ.</div>"
+    "b": "<p>O grande queimado perde líquido rapidamente pelo aumento da permeabilidade capilar. Esperar o cálculo exato da superfície queimada para começar a hidratar atrasa a reposição. Por isso o ATLS 11 manda <b>iniciar já no exame primário</b>.</p>\n<p>No paciente com <b>provável queimadura ≥20% da SCQ</b>, iniciar <b>Ringer lactato</b> em taxa fixa por idade, <b>antes</b> do cálculo final:</p>\n<ul><li><b>≥13 anos: 500 mL/h</b></li><li><b>6–12 anos: 250 mL/h</b></li><li><b>≤5 anos: 125 mL/h</b></li></ul>\n<p>Depois do exame secundário, com peso e SCQ estimados, recalcula-se pela fórmula e ajusta-se <b>pela diurese</b>.</p>\n<p><b>Parar o processo de queimadura</b> também é parte do E: remover roupas e adornos (anéis viram torniquete com o edema). Na queimadura química, <b>escovar o pó seco</b> antes de irrigar abundantemente.</p>\n<div class=\"mais\">Novo no ATLS 11: taxas iniciais fixas por idade antes do cálculo da SCQ.</div>"
    },
    {
     "id": "c08-d",
     "t": "Outras ameaças: inalação, intoxicação, eletricidade",
-    "b": "\n<ul><li><b>Inalação</b>: queimadura facial, vibrissas chamuscadas, escarro carbonáceo, rouquidão, estridor → avaliar via aérea precoce.</li><li><b>Monóxido de carbono</b>: oxímetro de pulso pode ser falsamente normal; O2 a 100%; dosar carboxi-hemoglobina.</li><li><b>Cianeto</b>: incêndio em espaço fechado, acidose lática inexplicada → hidroxocobalamina.</li><li><b>Elétrica</b>: lesão interna maior que a pele; arritmias, rabdomiólise, síndrome compartimental.</li><li><b>Contaminação química/radiológica</b>: descontaminação e proteção da equipe.</li></ul>\n<div class=\"pega\">Pegadinha: SatO2 normal não exclui intoxicação por CO.</div>"
+    "b": "<p>Algumas ameaças ambientais enganam porque o paciente parece bem na superfície. O segredo é <b>pensar no mecanismo</b>: incêndio em local fechado, alta voltagem, produto químico.</p>\n<ul>\n<li><b>Inalação</b>: queimadura facial, vibrissas chamuscadas, escarro carbonáceo, rouquidão e estridor indicam calor na via aérea. O edema piora nas horas seguintes, então avalia-se a via aérea cedo.</li>\n<li><b>Monóxido de carbono</b>: liga-se à hemoglobina com afinidade muito maior que o O2. O oxímetro de pulso <b>não diferencia carboxi-hemoglobina</b> e mostra saturação falsamente normal. Trata-se com <b>O2 a 100%</b>, que acelera a eliminação do CO, e dosa-se a carboxi-hemoglobina.</li>\n<li><b>Cianeto</b>: incêndio em espaço fechado (plásticos queimados) com <b>acidose lática inexplicada</b>. Bloqueia a respiração celular. Antídoto: hidroxocobalamina.</li>\n<li><b>Elétrica</b>: a corrente percorre os tecidos profundos. A lesão interna é <b>muito maior que a da pele</b>, com risco de arritmias, rabdomiólise e síndrome compartimental.</li>\n<li><b>Contaminação química ou radiológica</b>: descontaminar o paciente e <b>proteger a equipe</b> antes de tudo.</li>\n</ul>\n<div class=\"pega\">Pegadinha: SatO2 normal não exclui intoxicação por CO. Cefaleia e confusão após incêndio pedem O2 a 100% e dosagem de COHb.</div>"
    }
   ],
   "recall": [
@@ -337,7 +337,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Aguardar o cálculo exato para não errar"
     ],
     "c": 0,
-    "e": "ATLS 11: ≥13 anos com provável ≥20% SCQ → RL 500 mL/h antes do cálculo final."
+    "e": "<b>Certo:</b> com provável queimadura ≥20% em paciente ≥13 anos, o ATLS 11 manda iniciar Ringer lactato a 500 mL/h já no primário, antes do cálculo final, para não atrasar a reposição.<br><b>Por que não as outras:</b> 125 mL/h é a taxa para ≤5 anos. Bolus de 2 L de soro fisiológico causa excesso de volume e acidose hiperclorêmica. Esperar o cálculo exato atrasa a hidratação de um paciente que perde líquido rapidamente."
    },
    {
     "q": "Criança de 8 anos com queimadura extensa (provável >20%). Taxa inicial de RL:",
@@ -348,7 +348,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "20 mL/kg em bolus"
     ],
     "c": 1,
-    "e": "6–12 anos: 250 mL/h."
+    "e": "<b>Certo:</b> crianças de 6 a 12 anos recebem 250 mL/h de Ringer lactato como taxa inicial.<br><b>Por que não as outras:</b> 125 mL/h vale para ≤5 anos e 500 mL/h para ≥13 anos. Bolus de 20 mL/kg não é o esquema do queimado e favorece edema."
    },
    {
     "q": "Qual afirmação sobre o E do exame primário no ATLS 11 é correta?",
@@ -359,7 +359,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "É só despir o paciente"
     ],
     "c": 2,
-    "e": "O E tem dois objetivos: exposição/inspeção completas e tratar ameaças ambientais."
+    "e": "<b>Certo:</b> o E no ATLS 11 tem dois objetivos: exposição e inspeção completas, e identificação e tratamento de ameaças ambientais com risco de vida, como hipotermia, queimadura e intoxicação.<br><b>Por que não as outras:</b> o dorso precisa ser examinado, porque esconde ferimentos. O E faz parte do exame primário, não é adiado para o secundário, e não se resume a despir o paciente."
    },
    {
     "q": "Vítima de incêndio em casa, SatO2 99%, cefaleia e confusão. Próximo passo:",
@@ -370,7 +370,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "O2 a 100% e dosar carboxi-hemoglobina"
     ],
     "c": 3,
-    "e": "O oxímetro não detecta COHb; tratar com O2 100% e dosar."
+    "e": "<b>Certo:</b> cefaleia e confusão após incêndio sugerem intoxicação por CO, mesmo com SatO2 de 99%, porque o oxímetro lê carboxi-hemoglobina como se fosse oxi-hemoglobina. Faz-se O2 a 100%, que acelera a eliminação do CO, e dosa-se a COHb.<br><b>Por que não as outras:</b> dar alta, deixar em ar ambiente ou só dar analgesia confia num oxímetro que engana e deixa a intoxicação progredir."
    },
    {
     "q": "Por que aquecer fluidos e hemoderivados no paciente em choque hemorrágico?",
@@ -381,7 +381,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Não há necessidade"
     ],
     "c": 0,
-    "e": "Hipotermia é comum no choque hemorrágico e alimenta a tríade letal."
+    "e": "<b>Certo:</b> aquecemos fluidos e hemoderivados porque a hipotermia piora a coagulopatia: as enzimas da coagulação funcionam mal no frio. Ela integra a tríade letal com acidose e coagulopatia.<br><b>Por que não as outras:</b> aquecer não acelera a infusão nem reduz alergia. Dizer que não há necessidade ignora que fluidos frios esfriam rapidamente o paciente em choque."
    },
    {
     "q": "Qual sinal NÃO sugere lesão inalatória?",
@@ -392,7 +392,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Vibrissas chamuscadas"
     ],
     "c": 1,
-    "e": "Queimadura de pé não indica inalação; os demais sim."
+    "e": "<b>Certo:</b> queimadura isolada no pé não indica que calor ou fumaça chegaram à via aérea, por isso não sugere lesão inalatória.<br><b>Por que não as outras:</b> rouquidão, escarro carbonáceo e vibrissas chamuscadas são sinais de exposição da via aérea ao calor e à fuligem, e alertam para edema progressivo."
    },
    {
     "q": "Vítima de choque elétrico de alta voltagem com pequenas queimaduras de entrada e saída. Preocupação principal:",
@@ -403,7 +403,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Lesão superficial apenas"
     ],
     "c": 2,
-    "e": "Na lesão elétrica, a pele subestima a destruição profunda."
+    "e": "<b>Certo:</b> na lesão elétrica de alta voltagem a corrente percorre os tecidos profundos. A destruição interna é muito maior que as pequenas marcas na pele, com risco de arritmia, rabdomiólise e síndrome compartimental.<br><b>Por que não as outras:</b> achar que a lesão é superficial ou só dolorosa subestima o dano profundo. Hipotermia isolada não é a preocupação típica desse mecanismo."
    },
    {
     "q": "Paciente exposto a pó químico seco na pele. Conduta inicial correta:",
@@ -414,7 +414,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Escovar o pó seco e depois irrigar abundantemente"
     ],
     "c": 3,
-    "e": "Retirar pó seco antes da irrigação abundante; nunca neutralizar."
+    "e": "<b>Certo:</b> o pó químico seco deve ser escovado antes da irrigação, porque a água pode ativá-lo e espalhá-lo. Depois, irriga-se abundantemente.<br><b>Por que não as outras:</b> pomada e curativo mantêm o agente em contato com a pele. Neutralizar com ácido gera reação que produz calor e piora a lesão. Irrigar sem retirar o pó pode ativar o produto."
    }
   ]
  },
@@ -432,27 +432,27 @@ window.ATLS = (window.ATLS||[]).concat([
    {
     "id": "c09-a",
     "t": "Avaliação: profundidade e extensão",
-    "b": "\n<p><b>Profundidade</b>: superficial (1º grau, não entra no cálculo), espessura parcial superficial/profunda (2º grau, bolhas, dor) e espessura total (3º grau, couro, indolor).</p>\n<p><b>Extensão (SCQ)</b>: <b>regra dos 9</b> no adulto (cabeça 9, cada MS 9, tronco anterior 18, posterior 18, cada MI 18, períneo 1). Criança tem cabeça proporcionalmente maior. Palma do paciente (com dedos) ≈ <b>1%</b>.</p>\n<div class=\"pega\">Pegadinha: queimadura de 1º grau (eritema) NÃO entra no cálculo da SCQ.</div>"
+    "b": "<p>Para tratar uma queimadura é preciso responder duas perguntas: <b>quão funda</b> e <b>quão extensa</b>. A profundidade define o prognóstico local e a extensão define a reposição volêmica.</p>\n<ul>\n<li><b>Superficial (1º grau)</b>: só eritema e dor, sem bolha. A barreira da pele está intacta, por isso <b>não entra no cálculo</b> da SCQ.</li>\n<li><b>Espessura parcial (2º grau)</b>, superficial ou profunda: bolhas e dor intensa, porque as terminações nervosas estão expostas.</li>\n<li><b>Espessura total (3º grau)</b>: aspecto de couro, branco ou carbonizado, <b>indolor</b>, porque os nervos foram destruídos.</li>\n<li><b>Extensão (SCQ)</b>, pela <b>regra dos 9</b> no adulto: cabeça 9, cada membro superior 9, tronco anterior 18, posterior 18, cada membro inferior 18, períneo 1.</li>\n<li>A criança tem a <b>cabeça proporcionalmente maior</b> e as pernas menores, então a regra dos 9 adulta subestima a cabeça.</li>\n<li>Para áreas irregulares, a <b>palma do paciente</b> (com os dedos) vale cerca de <b>1%</b>.</li>\n</ul>\n<div class=\"pega\">Pegadinha: queimadura de 1º grau (eritema) NÃO entra no cálculo da SCQ. Incluir eritema superestima a SCQ e leva a excesso de volume.</div>"
    },
    {
     "id": "c09-b",
     "t": "Ressuscitação volêmica (ABA)",
-    "b": "\n<p>Fórmula por idade da <b>American Burn Association</b>:</p>\n<ul><li>Adulto: <b>2 mL × kg × %SCQ</b> de Ringer lactato</li><li>Elétrica: <b>4 mL × kg × %SCQ</b></li></ul>\n<p>O volume é distribuído ao longo de <b>16 horas</b> (taxa horária), <b>sem ajuste</b> pela hora da lesão nem pelo volume já recebido.</p>\n<p>Ajuste <b>hora a hora pela diurese</b>: adulto <b>0,5 mL/kg/h</b>; criança <b>1 mL/kg/h</b>; elétrica <b>1–1,5 mL/kg/h</b> até a urina clarear.</p>\n<div class=\"mais\">Novo no ATLS 11: cálculo em 16 h (não mais \"metade nas primeiras 8 h\"), sem compensar o tempo desde a lesão.</div>\n<div class=\"pega\">Pegadinha: evitar bolus. Se hipotensão, bolus breve e procurar causa não relacionada à queimadura (hemorragia!).</div>"
+    "b": "<p>A queimadura extensa desencadeia inflamação sistêmica e <b>vazamento capilar</b>: o plasma sai do vaso para o interstício. Sem reposição o paciente entra em choque. Com reposição <b>excessiva</b>, surgem edema maciço, síndrome compartimental abdominal e dos membros, e piora respiratória. O objetivo é repor <b>o suficiente, guiado pela diurese</b>.</p>\n<p>Fórmula por idade da <b>American Burn Association</b> (Ringer lactato):</p>\n<ul><li>Adulto: <b>2 mL × kg × %SCQ</b></li><li>Lesão elétrica: <b>4 mL × kg × %SCQ</b>, porque a destruição profunda é maior que a vista na pele</li></ul>\n<p>O volume é distribuído ao longo de <b>16 horas</b> como taxa horária, <b>sem ajuste</b> pela hora da lesão nem pelo volume já recebido. A fórmula é só o ponto de partida.</p>\n<p>O ajuste é <b>hora a hora pela diurese</b>, o melhor marcador de perfusão renal: adulto <b>0,5 mL/kg/h</b>; criança <b>1 mL/kg/h</b>; elétrica <b>1–1,5 mL/kg/h</b> até a urina clarear, para eliminar a mioglobina.</p>\n<div class=\"caso\">Caso: adulto de 70 kg com 40% de SCQ. Volume inicial 2 × 70 × 40 = 5.600 mL em 16 h, cerca de 350 mL/h. Se a diurese cair para 20 mL/h, aumenta-se a taxa. Se passar de 60 mL/h, reduz-se.</div>\n<div class=\"mais\">Novo no ATLS 11: cálculo em 16 h (não mais \"metade nas primeiras 8 h\"), sem compensar o tempo desde a lesão.</div>\n<div class=\"pega\">Pegadinha: evitar bolus. Se houver hipotensão, faz-se um bolus breve e procura-se causa não relacionada à queimadura (hemorragia!). Queimadura isolada raramente causa choque na primeira hora.</div>"
    },
    {
     "id": "c09-c",
     "t": "Via aérea e lesão inalatória",
-    "b": "\n<p>Edema de via aérea progride nas primeiras horas. Intubar <b>precocemente</b> se: estridor, rouquidão progressiva, queimadura facial profunda ou circunferencial do pescoço, lesão inalatória com dificuldade respiratória, necessidade de transporte longo.</p>\n<p>Usar tubo de calibre adequado (grande, se possível). Considerar CO e cianeto.</p>"
+    "b": "<p>O calor e os gases tóxicos lesam a via aérea, e o <b>edema progride nas primeiras horas</b>. Uma via aérea que hoje parece pérvia pode fechar durante o transporte. Intubar tarde, com laringe edemaciada, é muito mais difícil e perigoso.</p>\n<p>Intubar <b>precocemente</b> se houver:</p>\n<ul><li>Estridor ou rouquidão progressiva</li><li>Queimadura facial profunda ou circunferencial do pescoço</li><li>Lesão inalatória com dificuldade respiratória</li><li>Necessidade de transporte longo com sinais de risco</li></ul>\n<p>Usar <b>tubo de calibre adequado</b> (grande, se possível), para permitir broncoscopia e aspiração de secreções. Lembrar sempre de <b>CO e cianeto</b> no paciente de incêndio em local fechado.</p>\n<div class=\"caso\">Caso: queimado com vibrissas chamuscadas e voz rouca, que será transferido por 3 h. Intuba-se antes de sair, porque no meio do caminho não haverá como resgatar uma via aérea edemaciada.</div>"
    },
    {
     "id": "c09-d",
     "t": "Escarotomia, cuidados e transferência",
-    "b": "\n<ul><li><b>Queimaduras circunferenciais</b> de tórax (restringem ventilação) ou membros (isquemia) podem exigir <b>escarotomia</b>.</li><li>Cobrir com curativo limpo e seco; evitar resfriamento excessivo.</li><li>Profilaxia antitetânica; analgesia IV.</li><li>Critérios de transferência para centro de queimados: queimaduras de espessura parcial extensas, espessura total, face/mãos/pés/genitália/articulações, elétrica, química, inalatória, comorbidades, crianças em hospital sem estrutura.</li></ul>"
+    "b": "<p>Depois da reanimação inicial, os cuidados focam em <b>preservar perfusão, evitar infecção e levar o paciente ao lugar certo</b>.</p>\n<ul>\n<li><b>Escarotomia</b>: a queimadura de espessura total forma uma escara rígida. Se for <b>circunferencial no tórax</b>, restringe a expansão e a ventilação; nos <b>membros</b>, comprime vasos e causa isquemia com o edema.</li>\n<li>Cobrir com <b>curativo limpo e seco</b>; evitar resfriamento excessivo, porque o queimado perde calor facilmente.</li>\n<li><b>Profilaxia antitetânica</b> e <b>analgesia IV</b>: a absorção intramuscular é errática no choque.</li>\n<li>Transferir para <b>centro de queimados</b>: espessura parcial extensa, espessura total, queimaduras de face, mãos, pés, genitália ou articulações, elétrica, química, inalatória, pacientes com comorbidades e crianças em hospital sem estrutura.</li>\n</ul>\n<div class=\"pega\">Pegadinha: transferir não justifica atrasar via aérea nem reposição. Estabilize o que ameaça a vida antes de transportar.</div>"
    },
    {
     "id": "c09-e",
     "t": "Lesões por frio",
-    "b": "\n<p><b>Congelamento</b>: reaquecimento rápido em água morna (~37–40 °C) quando não houver risco de recongelar. Analgesia potente.</p>\n<p>Discutir <b>trombolítico</b> no congelamento agudo com o <b>centro de referência</b>.</p>\n<p>A <b>demarcação</b> do tecido inviável pode levar <b>semanas a meses</b>: evitar desbridamento/amputação precoce.</p>\n<div class=\"mais\">Novo no ATLS 11: trombolítico para congelamento discutido com centro de referência.</div>"
+    "b": "<p>No <b>congelamento</b> há cristais de gelo nos tecidos e, depois, <b>trombose da microcirculação</b> no reaquecimento. Tecido que parece morto no início muitas vezes se recupera.</p>\n<ul>\n<li><b>Reaquecimento rápido</b> em água morna (cerca de 37–40 °C), mas só quando <b>não houver risco de recongelar</b>: congelar, descongelar e congelar de novo destrói mais tecido.</li>\n<li><b>Analgesia potente</b>: o reaquecimento é muito doloroso.</li>\n<li>Discutir <b>trombolítico</b> no congelamento agudo com o <b>centro de referência</b>, para desfazer a trombose microvascular e salvar dedos e membros.</li>\n<li>A <b>demarcação</b> entre tecido viável e inviável pode levar <b>semanas a meses</b>. Por isso <b>evita-se desbridamento ou amputação precoce</b>.</li>\n</ul>\n<div class=\"mais\">Novo no ATLS 11: trombolítico para congelamento discutido com centro de referência.</div>"
    }
   ],
   "recall": [
@@ -549,7 +549,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "4.800 mL, metade em 8 h"
     ],
     "c": 1,
-    "e": "2 × 80 × 30 = 4.800 mL, distribuídos em 16 h (≈300 mL/h)."
+    "e": "<b>Certo:</b> pela fórmula da ABA, 2 mL × 80 kg × 30% = 4.800 mL, distribuídos em 16 h, cerca de 300 mL/h, e ajustados pela diurese.<br><b>Por que não as outras:</b> 2.400 mL usa 1 mL/kg/%SCQ. 9.600 mL em 24 h usa o dobro da dose do adulto. 'Metade em 8 h' é a regra antiga, substituída no ATLS 11 pela distribuição em 16 h."
    },
    {
     "q": "Mesmo paciente, mas a lesão é elétrica. Fórmula:",
@@ -560,7 +560,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "3 mL/kg/%SCQ"
     ],
     "c": 2,
-    "e": "Lesão elétrica: 4 mL/kg/%SCQ e diurese 1–1,5 mL/kg/h."
+    "e": "<b>Certo:</b> na lesão elétrica usa-se 4 mL/kg/%SCQ, porque a destruição profunda é maior do que a área de pele queimada sugere, e a meta de diurese é 1–1,5 mL/kg/h.<br><b>Por que não as outras:</b> 2 mL/kg/%SCQ é a fórmula da queimadura térmica do adulto, e 3 mL/kg/%SCQ não é o padrão do ATLS 11. Também não é verdade que não se calcula."
    },
    {
     "q": "Paciente chegou 4 h após a queimadura e recebeu 1 L no pré-hospitalar. Pelo ATLS 11:",
@@ -571,7 +571,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Calcular a taxa em 16 h sem ajustar pelo tempo nem pelo volume prévio"
     ],
     "c": 3,
-    "e": "Nova regra: sem ajustes pela hora da lesão ou volume prévio; ajustar depois pela diurese."
+    "e": "<b>Certo:</b> pelo ATLS 11 a taxa é calculada para 16 h sem ajustar pelo tempo desde a lesão nem pelo volume recebido antes. Depois, o ajuste é feito pela diurese.<br><b>Por que não as outras:</b> suspender fluidos deixaria o paciente hipovolêmico. Tanto 'metade em 4 h' quanto 'descontar e acelerar' tentam compensar o atraso, que é exatamente o que a nova regra eliminou, porque gerava excesso de volume."
    },
    {
     "q": "Queimado adulto com diurese de 0,2 mL/kg/h após 3 h. Melhor conduta:",
@@ -582,7 +582,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Manter igual"
     ],
     "c": 0,
-    "e": "Ajuste horário pela diurese; evitar bolus."
+    "e": "<b>Certo:</b> diurese de 0,2 mL/kg/h está abaixo da meta de 0,5 mL/kg/h do adulto e indica hipoperfusão. A conduta é aumentar a taxa horária de infusão.<br><b>Por que não as outras:</b> furosemida aumenta a urina sem corrigir a hipovolemia e engana o marcador. Bolus de 2 L causa edema e síndrome compartimental. Manter a taxa ignora a hipoperfusão."
    },
    {
     "q": "Queimado que fica hipotenso (PA 70/40) na primeira hora. Pensar em:",
@@ -593,7 +593,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Reação ao RL"
     ],
     "c": 1,
-    "e": "Hipotensão precoce no queimado sugere outra causa: buscar trauma associado."
+    "e": "<b>Certo:</b> hipotensão precoce em queimado sugere causa não relacionada à queimadura, sobretudo hemorragia por trauma associado, porque a perda de plasma pela queimadura leva horas para causar choque.<br><b>Por que não as outras:</b> sepse não ocorre na primeira hora. Considerar a hipovolemia da queimadura como esperada atrasa o diagnóstico do sangramento. Reação ao Ringer lactato é extremamente improvável."
    },
    {
     "q": "Qual destes NÃO entra no cálculo da SCQ?",
@@ -604,7 +604,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Bolhas no antebraço"
     ],
     "c": 2,
-    "e": "Queimadura superficial (1º grau, só eritema) não entra."
+    "e": "<b>Certo:</b> eritema doloroso sem bolha é queimadura superficial (1º grau). A barreira da pele está preservada, por isso não entra no cálculo da SCQ.<br><b>Por que não as outras:</b> espessura parcial profunda, pele com aspecto de couro e indolor (espessura total) e bolhas (espessura parcial) entram no cálculo, porque perdem líquido."
    },
    {
     "q": "Paciente com congelamento grave de pés há 6 h. Conduta pelo ATLS 11:",
@@ -615,7 +615,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Reaquecimento e discutir trombolítico com centro de referência"
     ],
     "c": 3,
-    "e": "Reaquecer e discutir trombolítico; demarcação leva semanas a meses."
+    "e": "<b>Certo:</b> no congelamento grave e agudo, reaquece-se rapidamente e discute-se trombolítico com o centro de referência, para desfazer a trombose microvascular. Depois, espera-se a demarcação, que leva semanas a meses.<br><b>Por que não as outras:</b> amputação imediata ou desbridamento no 2º dia retiram tecido que poderia se recuperar. Massagear com neve causa mais lesão mecânica e mais frio."
    },
    {
     "q": "Queimado com rouquidão progressiva e vibrissas chamuscadas, vai ser transferido por 3 h:",
@@ -626,7 +626,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Transportar sem via aérea definitiva"
     ],
     "c": 0,
-    "e": "Edema progride; intubar precocemente, especialmente antes de transporte longo."
+    "e": "<b>Certo:</b> rouquidão progressiva e vibrissas chamuscadas indicam lesão inalatória com edema que vai piorar. Antes de um transporte de 3 h, intuba-se precocemente, enquanto a via aérea ainda é acessível.<br><b>Por que não as outras:</b> traqueostomia eletiva não é a conduta inicial. Cânula nasal ou transportar sem via aérea definitiva arriscam obstrução no caminho, quando o resgate é muito mais difícil."
    }
   ]
  },
@@ -644,27 +644,27 @@ window.ATLS = (window.ATLS||[]).concat([
    {
     "id": "c10-a",
     "t": "Lesões com risco de vida",
-    "b": "\n<ul><li><b>Hemorragia arterial grave</b> de extremidade → pressão direta, <b>torniquete</b>, curativo hemostático.</li><li><b>Fratura de pelve</b> com instabilidade → <b>binder pélvico</b> centrado nos <b>trocânteres maiores</b>.</li><li><b>Esmagamento</b> → rabdomiólise, hipercalemia, lesão renal: hidratação vigorosa, meta de diurese ~100 mL/h no adulto.</li><li><b>Fraturas bilaterais de fêmur</b> → grande perda sanguínea.</li></ul>\n<div class=\"pega\">Pegadinha: binder na crista ilíaca não fecha a pelve; o centro é o trocânter maior.</div>"
+    "b": "<p>Na maior parte das vezes a fratura de extremidade não mata. Mas algumas lesões musculoesqueléticas ameaçam a <b>vida</b> por <b>sangramento</b> ou por <b>efeito sistêmico</b> e precisam ser tratadas no exame primário.</p>\n<ul>\n<li><b>Hemorragia arterial grave</b> de extremidade: pressão direta, <b>torniquete</b> e curativo hemostático. É o <b>x</b> do xABCDE.</li>\n<li><b>Fratura de pelve instável</b>: o anel pélvico aberto aumenta o volume da pelve, que acomoda litros de sangue. O <b>binder pélvico</b> centrado nos <b>trocânteres maiores</b> fecha o anel, reduz o volume e estabiliza os fragmentos sangrantes.</li>\n<li><b>Esmagamento</b>: o músculo destruído libera potássio e mioglobina quando a compressão é aliviada. Daí <b>hipercalemia</b> (arritmias) e <b>lesão renal</b>. Faz-se hidratação vigorosa com meta de diurese ~100 mL/h no adulto.</li>\n<li><b>Fraturas bilaterais de fêmur</b>: cada fêmur pode perder 1–1,5 L, causando grande perda sanguínea.</li>\n</ul>\n<div class=\"pega\">Pegadinha: binder na crista ilíaca não fecha a pelve. O centro é o trocânter maior.</div>"
    },
    {
     "id": "c10-b",
     "t": "Lesões que ameaçam o membro",
-    "b": "\n<ul><li><b>Fratura exposta</b>: antibiótico precoce, profilaxia antitetânica, curativo estéril, alinhamento/imobilização.</li><li><b>Lesão vascular</b> e <b>amputação traumática</b>: preservar o segmento resfriado (envolto em gaze úmida, em saco plástico, sobre gelo, sem contato direto).</li><li><b>Luxações</b> com déficit: redução precoce.</li><li><b>Índice de lesão de extremidade</b> (injured extremity index) ajuda a detectar lesão arterial.</li></ul>\n<div class=\"mais\">Novo no ATLS 11: índice de lesão de extremidade adicionado.</div>"
+    "b": "<p>Depois de garantir a vida, a próxima prioridade é <b>salvar o membro</b>. Aqui o tempo também é tecido: músculo isquêmico tolera poucas horas.</p>\n<ul>\n<li><b>Fratura exposta</b>: a comunicação com o meio externo leva bactérias ao osso. O que mais reduz infecção é o <b>antibiótico precoce</b>, somado a profilaxia antitetânica, curativo estéril e alinhamento com imobilização.</li>\n<li><b>Lesão vascular</b>: membro frio, pálido, sem pulso ou com hematoma em expansão pede avaliação cirúrgica urgente.</li>\n<li><b>Amputação traumática</b>: preservar o segmento <b>resfriado sem congelar</b>, envolto em gaze úmida, em saco plástico, sobre gelo sem contato direto. Gelo direto queima o tecido e inviabiliza o reimplante.</li>\n<li><b>Luxações com déficit</b> neurovascular: redução precoce, porque a luxação comprime vasos e nervos.</li>\n<li><b>Índice de lesão de extremidade</b> (injured extremity index): compara a pressão no membro lesado com a do membro sadio e ajuda a detectar lesão arterial oculta.</li>\n</ul>\n<div class=\"mais\">Novo no ATLS 11: índice de lesão de extremidade adicionado.</div>"
    },
    {
     "id": "c10-c",
     "t": "Gustilo-Anderson e antibiótico",
-    "b": "\n<p>Classificação das fraturas expostas:</p>\n<ul><li><b>Tipo I</b>: ferida limpa, <b>&lt;1 cm</b></li><li><b>Tipo II</b>: 1–10 cm, lesão moderada de partes moles</li><li><b>Tipo III</b>: muito contaminada, <b>grande lesão de partes moles</b>, podendo ter <b>lesão vascular</b></li></ul>\n<p>O tipo orienta o <b>antibiótico</b>: cefalosporina de 1ª geração para todas; cobertura adicional para gram-negativos no tipo III.</p>\n<div class=\"mais\">Novo no ATLS 11: Gustilo-Anderson incorporado à orientação de antibiótico.</div>"
+    "b": "<p>A classificação de <b>Gustilo-Anderson</b> estima o grau de contaminação e de lesão de partes moles da fratura exposta. Quanto maior o tipo, maior o risco de infecção e de complicações, e mais ampla deve ser a cobertura antibiótica.</p>\n<ul><li><b>Tipo I</b>: ferida limpa, <b>&lt;1 cm</b></li><li><b>Tipo II</b>: 1–10 cm, lesão moderada de partes moles</li><li><b>Tipo III</b>: muito contaminada, <b>grande lesão de partes moles</b>, podendo ter <b>lesão vascular</b></li></ul>\n<p>O tipo orienta o <b>antibiótico</b>: cefalosporina de 1ª geração para todas, cobrindo germes da pele. No tipo III acrescenta-se cobertura para <b>gram-negativos</b>, que vêm de terra e de ambientes contaminados.</p>\n<div class=\"caso\">Caso: ciclista com fratura de tíbia, ferida de 15 cm cheia de terra e perda de partes moles. É Gustilo III: cefalosporina de 1ª geração mais cobertura para gram-negativos, o mais cedo possível.</div>\n<div class=\"mais\">Novo no ATLS 11: Gustilo-Anderson incorporado à orientação de antibiótico.</div>"
    },
    {
     "id": "c10-d",
     "t": "Síndrome compartimental",
-    "b": "\n<p>Aumento de pressão num compartimento fechado → isquemia. Comum em tíbia, antebraço, esmagamento, gesso apertado, reperfusão.</p>\n<p>Sinal <b>mais precoce</b>: <b>dor desproporcional</b>, piora com <b>estiramento passivo</b>. Parestesia, compartimento tenso. <b>Pulso presente não exclui.</b></p>\n<p>Conduta: abrir gessos e curativos, membro na altura do coração, avaliação cirúrgica para <b>fasciotomia</b>.</p>\n<div class=\"pega\">Pegadinha: ausência de pulso é sinal tardio.</div>"
+    "b": "<p>Os músculos ficam em <b>compartimentos fechados</b> por fáscias que não esticam. Se o conteúdo aumenta (sangue, edema, reperfusão) ou o envoltório aperta (gesso, curativo), a <b>pressão sobe</b> até superar a pressão capilar. O músculo fica isquêmico mesmo com a artéria principal pérvia.</p>\n<ul>\n<li>Locais e causas comuns: <b>tíbia</b>, antebraço, esmagamento, gesso apertado e reperfusão após isquemia.</li>\n<li>Sinal <b>mais precoce</b>: <b>dor desproporcional</b> à lesão, que piora com o <b>estiramento passivo</b> do músculo, porque esticar o músculo isquêmico aumenta ainda mais a pressão.</li>\n<li>Outros sinais: parestesia e compartimento tenso à palpação.</li>\n<li><b>Pulso presente não exclui</b>: a pressão capilar (onde ocorre a troca) é muito menor que a arterial.</li>\n<li>Conduta: abrir gessos e curativos, manter o membro <b>na altura do coração</b> (elevar demais reduz a perfusão) e avaliação cirúrgica para <b>fasciotomia</b>.</li>\n</ul>\n<div class=\"pega\">Pegadinha: ausência de pulso é sinal tardio. Esperar perder o pulso significa músculo já necrosado.</div>"
    },
    {
     "id": "c10-e",
     "t": "Imagem e imobilização",
-    "b": "\n<p>Radiografar o <b>osso inteiro</b> no local da lesão, incluindo as <b>articulações acima e abaixo</b>.</p>\n<p>Imobilizar incluindo articulação acima e abaixo; checar pulso, perfusão e sensibilidade <b>antes e depois</b> da tala. Tração para fratura de diáfise de fêmur.</p>"
+    "b": "<p>Imagem e imobilização bem feitas evitam lesões perdidas e danos novos.</p>\n<ul>\n<li>Radiografar o <b>osso inteiro</b> no local da lesão, incluindo as <b>articulações acima e abaixo</b>. A energia do trauma se propaga, e uma fratura de diáfise pode vir com luxação na articulação vizinha.</li>\n<li>Imobilizar incluindo a articulação acima e a abaixo, para que o fragmento não se mova.</li>\n<li>Checar pulso, perfusão e sensibilidade <b>antes e depois</b> da tala: a manipulação pode comprimir ou liberar estruturas neurovasculares.</li>\n<li><b>Tração</b> na fratura de diáfise de fêmur: realinha o osso, reduz a dor e diminui o sangramento para a coxa.</li>\n</ul>\n<div class=\"caso\">Caso: fratura de diáfise de rádio com dor no cotovelo. O RX do antebraço inteiro mostra luxação da cabeça do rádio associada, que passaria despercebida se só o foco fosse radiografado.</div>"
    }
   ],
   "recall": [
@@ -761,7 +761,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Cristas ilíacas"
     ],
     "c": 2,
-    "e": "O binder deve ficar centrado nos trocânteres maiores."
+    "e": "<b>Certo:</b> o binder deve ser centrado nos trocânteres maiores, porque é nesse nível que ele fecha o anel pélvico e reduz o volume onde o sangue se acumula.<br><b>Por que não as outras:</b> nas coxas proximais ou no abdome inferior ele não comprime o anel pélvico. Nas cristas ilíacas fica alto demais e pode até abrir mais a pelve."
    },
    {
     "q": "Fratura exposta de tíbia com ferida de 0,8 cm limpa. Classificação de Gustilo:",
@@ -772,7 +772,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Tipo I"
     ],
     "c": 3,
-    "e": "Tipo I: limpa e <1 cm."
+    "e": "<b>Certo:</b> ferida limpa e menor que 1 cm define Gustilo-Anderson tipo I.<br><b>Por que não as outras:</b> o tipo II tem ferida de 1–10 cm com lesão moderada de partes moles. Os tipos IIIA e IIIC exigem contaminação intensa ou grande lesão de partes moles, e o IIIC tem lesão vascular."
    },
    {
     "q": "Fratura exposta com grande perda de partes moles, contaminação com terra e lesão arterial. Gustilo:",
@@ -783,7 +783,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Não se classifica"
     ],
     "c": 0,
-    "e": "Tipo III: muito contaminada, grande lesão de partes moles e possível lesão vascular."
+    "e": "<b>Certo:</b> contaminação com terra, grande perda de partes moles e lesão arterial caracterizam o Gustilo tipo III, que pede cobertura antibiótica ampliada para gram-negativos.<br><b>Por que não as outras:</b> os tipos I e II têm ferida menor e menos contaminada. Toda fratura exposta pode e deve ser classificada."
    },
    {
     "q": "Paciente com gesso na perna refere dor intensa que piora ao estender os dedos; pulso pedioso palpável. Conduta:",
@@ -794,7 +794,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Elevar o membro bem acima do coração"
     ],
     "c": 1,
-    "e": "Pulso presente não exclui; abrir gesso, membro na altura do coração, fasciotomia se confirmada."
+    "e": "<b>Certo:</b> dor desproporcional que piora com o estiramento passivo é o sinal mais precoce de síndrome compartimental. Abre-se o gesso e pede-se avaliação cirúrgica para fasciotomia; o pulso palpável não exclui o diagnóstico.<br><b>Por que não as outras:</b> esperar a perda de pulso significa aceitar músculo necrosado. Analgesia e alta perdem o diagnóstico. Elevar muito acima do coração reduz a pressão de perfusão do membro."
    },
    {
     "q": "Vítima soterrada por 6 h, urina escura, K+ 6,8. Principal risco imediato:",
@@ -805,7 +805,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Embolia gordurosa"
     ],
     "c": 2,
-    "e": "Esmagamento → rabdomiólise e hipercalemia com risco de arritmia."
+    "e": "<b>Certo:</b> após esmagamento prolongado, o músculo destruído libera potássio. K+ de 6,8 com urina escura (mioglobinúria) indica rabdomiólise com risco imediato de arritmia por hipercalemia.<br><b>Por que não as outras:</b> hipoglicemia e hipertermia não são o risco típico do esmagamento. A embolia gordurosa está ligada a fraturas de ossos longos, não a este quadro."
    },
    {
     "q": "Sobre radiografia de fratura de antebraço no ATLS 11:",
@@ -816,7 +816,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Osso inteiro com articulações acima e abaixo"
     ],
     "c": 3,
-    "e": "ATLS 11 reforça RX do osso inteiro incluindo articulações acima e abaixo."
+    "e": "<b>Certo:</b> o ATLS 11 reforça radiografar o osso inteiro com as articulações acima e abaixo, porque a energia do trauma pode luxar a articulação vizinha.<br><b>Por que não as outras:</b> radiografar só o foco ou só a articulação mais próxima perde lesões associadas. Adiar o RX até a cirurgia atrasa o diagnóstico e o planejamento."
    },
    {
     "q": "Dedo amputado deve ser transportado:",
@@ -827,7 +827,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Em álcool"
     ],
     "c": 0,
-    "e": "Resfriar sem congelar: gaze úmida, saco, gelo sem contato direto."
+    "e": "<b>Certo:</b> o segmento amputado deve ser resfriado sem congelar: envolto em gaze úmida, dentro de saco plástico, sobre gelo, sem contato direto. Isso aumenta o tempo de viabilidade para reimplante.<br><b>Por que não as outras:</b> gelo direto congela e destrói o tecido. Seco em temperatura ambiente acelera a isquemia. Álcool desidrata e lesa as células."
    },
    {
     "q": "Ferramenta adicionada no ATLS 11 para suspeitar de lesão arterial em membro:",
@@ -838,7 +838,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Índice de choque"
     ],
     "c": 1,
-    "e": "O injured extremity index foi incorporado ao capítulo."
+    "e": "<b>Certo:</b> o índice de lesão de extremidade (injured extremity index) foi incorporado ao ATLS 11. Ele compara pressões entre membro lesado e sadio para suspeitar de lesão arterial.<br><b>Por que não as outras:</b> o escore de Glasgow avalia consciência, o escore ABC prevê necessidade de transfusão maciça e o índice de choque relaciona FC e PAS. Nenhum avalia artéria de membro."
    }
   ]
  },
@@ -856,27 +856,27 @@ window.ATLS = (window.ATLS||[]).concat([
    {
     "id": "c11-a",
     "t": "Diferenças anatômicas e fisiológicas",
-    "b": "\n<ul><li><b>Cabeça grande</b> e occipício proeminente → flexão do pescoço em decúbito; coxim sob o tronco.</li><li><b>Língua grande</b>, laringe mais alta e anterior, traqueia curta (risco de intubação seletiva).</li><li>Esqueleto mais complacente: <b>lesão interna sem fratura</b> (ex.: contusão pulmonar sem fratura de costela).</li><li>Grande superfície corporal → <b>hipotermia</b> rápida.</li><li><b>Reserva fisiológica</b>: taquicardia e vasoconstrição mantêm a PA até perda grande; a <b>hipotensão é sinal tardio</b>.</li></ul>\n<div class=\"pega\">Pegadinha: criança com PA normal pode estar em choque. Olhe FC, perfusão e consciência.</div>"
+    "b": "<p>A criança <b>não é um adulto pequeno</b>. Anatomia e fisiologia diferentes mudam o padrão de lesão e, principalmente, a forma como o choque se apresenta.</p>\n<ul>\n<li><b>Cabeça grande</b> e occipício proeminente: em decúbito o pescoço flete e pode obstruir a via aérea. Um <b>coxim sob o tronco</b> alinha a via aérea.</li>\n<li><b>Língua grande</b>, laringe mais alta e anterior, traqueia curta. A visualização é mais difícil e o tubo vai facilmente para um brônquio (intubação seletiva).</li>\n<li>Esqueleto mais <b>complacente</b>: os ossos dobram em vez de quebrar e transmitem a energia aos órgãos. Por isso há <b>lesão interna sem fratura</b>, como contusão pulmonar sem fratura de costela.</li>\n<li>Grande superfície corporal para o peso: a criança perde calor e entra em <b>hipotermia</b> rapidamente.</li>\n<li><b>Reserva fisiológica</b>: taquicardia e vasoconstrição intensas mantêm a PA até uma perda volêmica grande. A <b>hipotensão é sinal tardio</b>, e quando aparece o colapso está próximo.</li>\n</ul>\n<div class=\"pega\">Pegadinha: criança com PA normal pode estar em choque. Olhe FC, enchimento capilar, temperatura das extremidades e nível de consciência.</div>"
    },
    {
     "id": "c11-b",
     "t": "Via aérea pediátrica",
-    "b": "\n<ul><li>Equipamento por <b>idade/peso (fita de Broselow)</b>.</li><li><b>Atropina</b> como pré-tratamento na SRI do <b>lactente</b>.</li><li>Cricotireoidostomia <b>cirúrgica desencorajada</b> em lactentes e crianças pequenas.</li><li><b>Cricotireoidostomia por agulha</b>: dá apenas <b>oxigenação de curto prazo</b> (ventilação inadequada, retém CO2).</li></ul>"
+    "b": "<p>Como a via aérea pediátrica é diferente, o equipamento e as técnicas de resgate também mudam. Erros de tamanho de material são causa clássica de falha.</p>\n<ul>\n<li>Equipamento por <b>idade ou peso</b>, com fita de comprimento (ex.: <b>Broselow</b>), que indica tubos, lâminas e doses sem cálculo no estresse.</li>\n<li><b>Atropina</b> como pré-tratamento na SRI do <b>lactente</b>: o lactente tem tônus vagal alto e pode fazer bradicardia importante com a laringoscopia e alguns fármacos.</li>\n<li>Cricotireoidostomia <b>cirúrgica desencorajada</b> em lactentes e crianças pequenas: a membrana cricotireóidea é minúscula e a cartilagem cricoide, essencial para a sustentação da via aérea, é facilmente lesada.</li>\n<li><b>Cricotireoidostomia por agulha</b> é o resgate nessa idade, mas dá apenas <b>oxigenação de curto prazo</b>. A expiração pela agulha é inadequada e o CO2 se acumula; é ponte até uma via aérea definitiva.</li>\n</ul>"
    },
    {
     "id": "c11-c",
     "t": "Circulação e ressuscitação",
-    "b": "\n<p>Volume sanguíneo estimado ~80 mL/kg. Acesso: periférico; se falhar, <b>intraósseo</b>.</p>\n<p>No choque hemorrágico, priorizar <b>hemoderivados: 10 mL/kg</b> (concentrado de hemácias/sangue), minimizando cristaloide.</p>\n<p>Diurese alvo: lactente 2 mL/kg/h; criança 1 mL/kg/h.</p>\n<div class=\"mais\">Novo no ATLS 11: ressuscitação do choque hemorrágico pediátrico com hemoderivados em alíquotas de 10 mL/kg.</div>"
+    "b": "<p>O volume sanguíneo da criança é de cerca de <b>80 mL/kg</b>. Em números absolutos, uma perda pequena para um adulto pode ser enorme para uma criança.</p>\n<ul>\n<li>Acesso: periférico. Se falhar em poucos minutos, <b>intraósseo</b>, rápido e confiável em qualquer idade.</li>\n<li>No choque hemorrágico, priorizar <b>hemoderivados em alíquotas de 10 mL/kg</b> (concentrado de hemácias ou sangue), minimizando cristaloide. Cristaloide dilui fatores de coagulação e não transporta oxigênio.</li>\n<li>Reavaliar após cada alíquota: FC, perfusão e consciência mostram se a criança está respondendo.</li>\n<li>Diurese alvo como marcador de perfusão: <b>lactente 2 mL/kg/h</b>; <b>criança 1 mL/kg/h</b>.</li>\n</ul>\n<div class=\"caso\">Caso: criança de 20 kg com taquicardia e enchimento capilar lento após trauma abdominal. Recebe 200 mL de concentrado de hemácias (10 mL/kg) e é reavaliada. Se continuar instável, nova alíquota e acionar a cirurgia.</div>\n<div class=\"mais\">Novo no ATLS 11: ressuscitação do choque hemorrágico pediátrico com hemoderivados em alíquotas de 10 mL/kg.</div>"
    },
    {
     "id": "c11-d",
     "t": "TCE, imagem e manejo não operatório",
-    "b": "\n<ul><li>Lactente pode ficar hipotenso por sangramento intracraniano (fontanela aberta).</li><li>Usar regras (ex.: <b>PECARN</b>) para reduzir TC e radiação.</li><li>Lesões de baço e fígado: em geral <b>manejo não operatório</b> em centro com cirurgião pediátrico, se estável.</li><li>Ventilação: evitar hiperventilação desnecessária.</li></ul>"
+    "b": "<p>O TCE é a principal causa de morte por trauma na infância. Mas a radiação de exames desnecessários também traz risco, porque a criança é mais sensível e tem mais anos de vida para desenvolver câncer.</p>\n<ul>\n<li>O <b>lactente</b> pode ficar hipotenso por sangramento intracraniano isolado: com fontanela aberta e suturas não fundidas, a cabeça acomoda um volume grande de sangue em relação à volemia.</li>\n<li>Regras de decisão (ex.: <b>PECARN</b>) identificam crianças de baixo risco que podem dispensar TC, reduzindo radiação.</li>\n<li>Lesões de <b>baço e fígado</b> em criança <b>estável</b>: em geral <b>manejo não operatório</b>, em centro com cirurgião pediátrico, UTI e banco de sangue. Isso preserva o baço, importante contra infecções.</li>\n<li>Ventilação: evitar hiperventilação desnecessária, que reduz o fluxo cerebral.</li>\n</ul>"
    },
    {
     "id": "c11-e",
     "t": "Maus-tratos",
-    "b": "\n<p>Suspeitar quando: <b>história incompatível</b> com a lesão, atraso na procura, relatos discrepantes, lesões em diferentes estágios, fraturas de costelas posteriores, fraturas metafisárias, queimaduras em padrão (imersão, cigarro), hematoma subdural com hemorragia retiniana.</p>\n<p>Médico tem <b>obrigação de notificar</b> e proteger a criança.</p>"
+    "b": "<p>Uma parte das lesões em crianças é intencional. O médico de trauma pode ser a única chance de proteção, por isso precisa saber <b>suspeitar</b>.</p>\n<ul>\n<li><b>História incompatível</b> com a lesão ou com o desenvolvimento da criança (ex.: lactente que \"rolou\" e fraturou o fêmur).</li>\n<li><b>Atraso na procura</b> de atendimento e <b>relatos discrepantes</b> entre cuidadores.</li>\n<li>Lesões em <b>diferentes estágios</b> de cicatrização (hematomas de cores diferentes, calos ósseos).</li>\n<li>Fraturas de <b>costelas posteriores</b> (por compressão do tórax com as mãos) e fraturas <b>metafisárias</b> (por tração e torção).</li>\n<li>Queimaduras em <b>padrão</b>: imersão em \"luva/meia\" com borda nítida, marcas de cigarro.</li>\n<li><b>Hematoma subdural com hemorragia retiniana</b> em lactente, típico de trauma por sacudida.</li>\n</ul>\n<p>O médico tem <b>obrigação de notificar</b> e de proteger a criança, garantindo que ela não volte para um ambiente de risco antes da avaliação.</p>"
    }
   ],
   "recall": [
@@ -973,7 +973,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Choque compensado"
     ],
     "c": 3,
-    "e": "Na criança a hipotensão é tardia; taquicardia e má perfusão indicam choque."
+    "e": "<b>Certo:</b> a criança mantém a PA com taquicardia e vasoconstrição até perder muito sangue. FC de 150 e enchimento capilar de 4 s com PA normal indicam choque compensado.<br><b>Por que não as outras:</b> achar que está estável por causa da PA ignora que a hipotensão é sinal tardio na criança. Ansiedade não explica má perfusão. Choque neurogênico cursaria com bradicardia e pele quente."
    },
    {
     "q": "Criança em choque hemorrágico após trauma abdominal. Ressuscitação pelo ATLS 11:",
@@ -984,7 +984,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Vasopressor isolado"
     ],
     "c": 0,
-    "e": "Sangue/hemoderivados 10 mL/kg, minimizando cristaloide."
+    "e": "<b>Certo:</b> no choque hemorrágico pediátrico o ATLS 11 prioriza hemoderivados em alíquotas de 10 mL/kg, reavaliando após cada uma, e minimiza cristaloide.<br><b>Por que não as outras:</b> 60 mL/kg de cristaloide antes de sangue dilui a coagulação e não leva oxigênio. Albumina não repõe sangue perdido, e vasopressor isolado não trata hipovolemia."
    },
    {
     "q": "Lactente de 8 meses com obstrução de via aérea, não intuba nem oxigena. Melhor opção de resgate:",
@@ -995,7 +995,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Aguardar"
     ],
     "c": 1,
-    "e": "Cirúrgica é desencorajada em lactentes; agulha dá oxigenação temporária até definitiva."
+    "e": "<b>Certo:</b> no lactente a cricotireoidostomia cirúrgica é desencorajada. A cricotireoidostomia por agulha dá oxigenação temporária até uma via aérea definitiva.<br><b>Por que não as outras:</b> traqueostomia de emergência no PS é difícil e arriscada nessa idade, e a cricotireoidostomia cirúrgica pode lesar a cricoide. Aguardar com a criança sem oxigenar leva à parada."
    },
    {
     "q": "Qual afirmação sobre SRI no lactente é correta?",
@@ -1006,7 +1006,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Atropina foi abolida"
     ],
     "c": 2,
-    "e": "ATLS mantém atropina como pré-tratamento na SRI do lactente."
+    "e": "<b>Certo:</b> o ATLS mantém a atropina como pré-tratamento na SRI do lactente, porque o tônus vagal alto pode causar bradicardia importante durante a laringoscopia.<br><b>Por que não as outras:</b> é falso que não se faz SRI em lactente, e não existe regra de cetamina sem bloqueador. A atropina não foi abolida nessa faixa etária."
    },
    {
     "q": "Criança de 9 anos, estável, com laceração esplênica na TC. Conduta mais adequada:",
@@ -1017,7 +1017,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Manejo não operatório em centro com cirurgião pediátrico"
     ],
     "c": 3,
-    "e": "Lesões de órgão sólido em criança estável: não operatório com observação adequada."
+    "e": "<b>Certo:</b> criança estável com laceração esplênica é conduzida com manejo não operatório em centro com cirurgião pediátrico. A maioria cicatriza e o baço é preservado, importante contra infecções.<br><b>Por que não as outras:</b> laparoscopia obrigatória e esplenectomia imediata são invasivas sem necessidade num paciente estável. Alta com analgésico ignora o risco de sangramento tardio, que pede observação."
    },
    {
     "q": "Lactente com hematoma subdural, hemorragia retiniana e história de \"caiu do sofá\". Pensar em:",
@@ -1028,7 +1028,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Coagulopatia hereditária apenas"
     ],
     "c": 0,
-    "e": "Subdural + hemorragia retiniana com história incompatível sugere trauma abusivo."
+    "e": "<b>Certo:</b> hematoma subdural com hemorragia retiniana em lactente, com história incompatível ('caiu do sofá'), é muito sugestivo de trauma abusivo por sacudida. É preciso proteger a criança e notificar.<br><b>Por que não as outras:</b> queda do sofá raramente produz essa combinação. Meningite e coagulopatia não explicam bem o quadro traumático com hemorragia retiniana."
    },
    {
     "q": "Por que colocar coxim sob o tronco da criança pequena em decúbito?",
@@ -1039,7 +1039,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Para aquecer"
     ],
     "c": 1,
-    "e": "O occipício proeminente flexiona o pescoço; o coxim alinha a via aérea."
+    "e": "<b>Certo:</b> o occipício grande da criança pequena flete o pescoço em decúbito e pode obstruir a via aérea. O coxim sob o tronco alinha a via aérea.<br><b>Por que não as outras:</b> o objetivo não é melhorar o retorno venoso, facilitar o FAST nem aquecer. É uma medida anatômica de via aérea."
    },
    {
     "q": "Criança com contusão pulmonar grave sem fratura de costela. Explicação:",
@@ -1050,7 +1050,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Não ocorre"
     ],
     "c": 2,
-    "e": "Esqueleto complacente permite lesão interna sem fratura."
+    "e": "<b>Certo:</b> a parede torácica da criança é complacente: as costelas dobram sem quebrar e transmitem a energia ao pulmão. Por isso há contusão pulmonar grave sem fratura.<br><b>Por que não as outras:</b> não é erro de imagem nem precisa de doença prévia. Esse padrão de lesão é comum e esperado na criança."
    }
   ]
  },
@@ -1068,27 +1068,27 @@ window.ATLS = (window.ATLS||[]).concat([
    {
     "id": "c12-a",
     "t": "Fisiologia do envelhecimento",
-    "b": "\n<ul><li><b>Reserva fisiológica reduzida</b>: tolera mal choque, hipóxia e cirurgias.</li><li><b>Betabloqueador</b> pode <b>mascarar a taquicardia</b>; hipertenso crônico pode estar em choque com PA \"normal\".</li><li>Atrofia cerebral → veias em ponte estiradas → <b>hematoma subdural</b> com trauma mínimo.</li><li>Ossos osteoporóticos: fraturas com baixa energia (quedas da própria altura).</li><li>Comorbidades e polifarmácia.</li></ul>\n<div class=\"pega\">Pegadinha: PAS de 110 num hipertenso idoso pode ser choque.</div>"
+    "b": "<p>Envelhecer reduz a capacidade do organismo de responder ao estresse. O idoso pode parecer estável e estar muito pior do que aparenta, e uma lesão \"pequena\" pode ter consequências grandes.</p>\n<ul>\n<li><b>Reserva fisiológica reduzida</b>: coração, pulmão e rim compensam pouco. O idoso tolera mal choque, hipóxia e cirurgia.</li>\n<li><b>Betabloqueador</b> e menor resposta cronotrópica <b>mascaram a taquicardia</b>. No hipertenso crônico, uma PA \"normal\" pode ser hipotensão relativa.</li>\n<li><b>Atrofia cerebral</b>: o cérebro encolhe e estira as veias em ponte entre cérebro e dura. Elas rompem com trauma mínimo e causam <b>hematoma subdural</b>, que pode crescer devagar.</li>\n<li><b>Osteoporose</b>: fraturas com baixa energia, como queda da própria altura.</li>\n<li>Comorbidades e polifarmácia (anticoagulantes, antiagregantes, anti-hipertensivos) mudam a apresentação e o risco.</li>\n</ul>\n<div class=\"pega\">Pegadinha: PAS de 110 num hipertenso idoso pode ser choque. Lactato e déficit de bases ajudam a detectar hipoperfusão escondida.</div>"
    },
    {
     "id": "c12-b",
     "t": "Fragilidade",
-    "b": "\n<p><b>Fragilidade</b> é a redução da reserva para enfrentar estresse; prediz complicações e mortalidade melhor que a idade isolada.</p>\n<p>Usar um <b>índice de fragilidade</b> para estratificar risco e orientar decisões e conversas sobre objetivos de cuidado.</p>\n<div class=\"mais\">Novo no ATLS 11: capítulo renomeado de \"Trauma Geriátrico\" para \"Trauma no Adulto Mais Velho\", com índice de fragilidade adicionado.</div>"
+    "b": "<p><b>Fragilidade</b> é a redução da reserva para enfrentar estresse: perda de massa muscular, mobilidade e independência. Dois pacientes de 80 anos podem ter riscos completamente diferentes: um corre maratona, o outro já não sai da cama.</p>\n<ul>\n<li>A fragilidade <b>prediz complicações e mortalidade melhor que a idade</b> cronológica isolada.</li>\n<li>Usa-se um <b>índice de fragilidade</b> para estratificar risco, planejar monitorização e indicar UTI.</li>\n<li>Ajuda também a guiar <b>conversas sobre objetivos de cuidado</b> com paciente e família, de forma honesta e precoce.</li>\n</ul>\n<div class=\"mais\">Novo no ATLS 11: capítulo renomeado de \"Trauma Geriátrico\" para \"Trauma no Adulto Mais Velho\", com índice de fragilidade adicionado.</div>"
    },
    {
     "id": "c12-c",
     "t": "Anticoagulantes e antiagregantes",
-    "b": "\n<p>Perguntar sempre por <b>anticoagulantes e antiplaquetários</b>. Aumentam risco de sangramento intracraniano e de piora tardia.</p>\n<ul><li>Varfarina: complexo protrombínico + vitamina K.</li><li>Dabigatrana: idarucizumabe.</li><li>Inibidores do fator Xa: andexanet alfa ou complexo protrombínico.</li></ul>\n<p>Limiar baixo para <b>TC de crânio</b> no idoso anticoagulado, mesmo com trauma leve.</p>"
+    "b": "<p>Muitos idosos usam <b>anticoagulantes e antiplaquetários</b>. Eles transformam lesões pequenas em sangramentos graves, especialmente <b>intracranianos</b>, que podem surgir ou crescer horas depois (piora tardia). Por isso a pergunta sobre medicamentos é obrigatória na história.</p>\n<p>Reversão direcionada pelo agente:</p>\n<ul><li><b>Varfarina</b>: complexo protrombínico (age rápido) + vitamina K (efeito sustentado).</li><li><b>Dabigatrana</b>: idarucizumabe, anticorpo específico.</li><li><b>Inibidores do fator Xa</b> (apixabana, rivaroxabana): andexanet alfa ou complexo protrombínico.</li></ul>\n<p>Limiar baixo para <b>TC de crânio</b> no idoso anticoagulado, <b>mesmo com trauma leve e GCS 15</b>.</p>\n<div class=\"caso\">Caso: idosa em apixabana bate a cabeça ao cair da própria altura e está lúcida. A TC mostra pequeno subdural. Revertida a anticoagulação, ela é observada, porque o sangramento poderia crescer sem sinais iniciais.</div>"
    },
    {
     "id": "c12-d",
     "t": "Mecanismos e lesões típicas",
-    "b": "\n<ul><li><b>Queda</b> é o mecanismo mais comum.</li><li>Fratura de costelas: alta morbimortalidade (pneumonia, insuficiência respiratória) → <b>analgesia agressiva</b>, incluindo bloqueios.</li><li>Fratura de quadril, de odontoide (C2) após queda.</li><li>Lactato e déficit de bases ajudam a detectar hipoperfusão oculta.</li></ul>"
+    "b": "<p>Os mecanismos e as lesões do idoso têm padrão próprio. Conhecê-los evita subestimar traumas de \"baixa energia\".</p>\n<ul>\n<li><b>Queda</b> é o mecanismo mais comum, muitas vezes da própria altura. Investigar também a causa da queda (síncope, arritmia, AVC).</li>\n<li><b>Fratura de costelas</b>: a dor impede respirar fundo e tossir, o que leva a atelectasia, <b>pneumonia</b> e insuficiência respiratória. Cada costela a mais aumenta a mortalidade. Faz-se <b>analgesia agressiva</b>, incluindo bloqueios regionais.</li>\n<li>Fratura de <b>quadril</b> e de <b>odontoide (C2)</b> após queda, mesmo simples.</li>\n<li><b>Lactato e déficit de bases</b> detectam hipoperfusão oculta quando FC e PA enganam.</li>\n</ul>"
    },
    {
     "id": "c12-e",
     "t": "Maus-tratos e etarismo",
-    "b": "\n<p><b>Maus-tratos ao idoso</b>: físicos, negligência, abuso psicológico, financeiro e sexual. Sinais: lesões inexplicadas, desnutrição, úlceras de pressão, atraso na procura, cuidador que responde pelo paciente.</p>\n<p><b>Etarismo</b>: não limitar o tratamento pela idade cronológica. Decisões baseadas em fisiologia, fragilidade e desejos do paciente.</p>\n<div class=\"mais\">Novo no ATLS 11: discussão ampliada de maus-tratos ao idoso e etarismo.</div>"
+    "b": "<p>Cuidar bem do idoso envolve proteger contra quem o machuca e contra o próprio preconceito da equipe.</p>\n<ul>\n<li><b>Maus-tratos ao idoso</b>: físicos, negligência, abuso psicológico, financeiro e sexual.</li>\n<li>Sinais: lesões inexplicadas ou em diferentes estágios, <b>desnutrição</b>, <b>úlceras de pressão</b>, atraso na procura e <b>cuidador que responde pelo paciente</b> e não o deixa falar.</li>\n<li>Diante da suspeita: conversar com o paciente a sós, documentar e notificar conforme a legislação.</li>\n<li><b>Etarismo</b>: não limitar o tratamento pela idade cronológica. As decisões se baseiam em <b>fisiologia, fragilidade e desejos do paciente</b>.</li>\n</ul>\n<div class=\"mais\">Novo no ATLS 11: discussão ampliada de maus-tratos ao idoso e etarismo.</div>"
    }
   ],
   "recall": [
@@ -1185,7 +1185,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Sem necessidade de lactato"
     ],
     "c": 0,
-    "e": "Betabloqueador e HAS prévia escondem o choque; usar lactato/déficit de bases."
+    "e": "<b>Certo:</b> betabloqueador impede a taquicardia, e em hipertensa crônica uma PA de 112 pode ser hipotensão relativa. Ela pode estar em choque, e lactato ou déficit de bases ajudam a revelar a hipoperfusão.<br><b>Por que não as outras:</b> chamar de hemodinamicamente normal confia em sinais mascarados. Não há sinal de choque neurogênico. O lactato é justamente o exame útil aqui."
    },
    {
     "q": "Idoso em uso de apixabana bate a cabeça em queda da própria altura, GCS 15. Conduta:",
@@ -1196,7 +1196,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Alta sem exames"
     ],
     "c": 1,
-    "e": "Idoso anticoagulado tem alto risco de sangramento intracraniano: TC mesmo com trauma leve."
+    "e": "<b>Certo:</b> idoso anticoagulado tem alto risco de sangramento intracraniano, que pode estar presente mesmo com GCS 15. Por isso o limiar para TC de crânio é baixo, mesmo no trauma leve.<br><b>Por que não as outras:</b> suspender e liberar, observar só 1 h ou dar alta sem exames podem deixar passar um hematoma que cresce horas depois."
    },
    {
     "q": "Paciente em dabigatrana com hemorragia intracraniana. Agente reversor específico:",
@@ -1207,7 +1207,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Vitamina K"
     ],
     "c": 2,
-    "e": "Idarucizumabe reverte a dabigatrana."
+    "e": "<b>Certo:</b> idarucizumabe é o anticorpo específico que reverte a dabigatrana.<br><b>Por que não as outras:</b> plasma isolado não reverte bem a dabigatrana. Protamina reverte heparina e vitamina K reverte varfarina, não a dabigatrana."
    },
    {
     "q": "Novidade do ATLS 11 para estratificar risco no idoso:",
@@ -1218,7 +1218,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Índice de fragilidade"
     ],
     "c": 3,
-    "e": "O índice de fragilidade foi adicionado ao capítulo."
+    "e": "<b>Certo:</b> o ATLS 11 adicionou o índice de fragilidade para estratificar o risco no adulto mais velho, porque a fragilidade prediz desfechos melhor que a idade.<br><b>Por que não as outras:</b> o Apgar avalia recém-nascidos, a escala de Braden avalia risco de úlcera por pressão e o MELD avalia hepatopatia."
    },
    {
     "q": "Idoso com 4 fraturas de costelas, SatO2 93% e dor intensa. Prioridade para evitar complicações:",
@@ -1229,7 +1229,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Alta precoce"
     ],
     "c": 0,
-    "e": "Analgesia eficaz previne hipoventilação e pneumonia."
+    "e": "<b>Certo:</b> no idoso a dor de fraturas de costelas impede respirar fundo e tossir, o que leva a atelectasia e pneumonia. Analgesia agressiva, incluindo bloqueios regionais, previne essas complicações.<br><b>Por que não as outras:</b> restringir a analgesia piora a hipoventilação. Tala torácica rígida restringe ainda mais a respiração. Alta precoce ignora o alto risco de deterioração."
    },
    {
     "q": "Qual é o mecanismo de trauma mais comum no adulto mais velho?",
@@ -1240,7 +1240,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Queimadura"
     ],
     "c": 1,
-    "e": "Quedas, inclusive da própria altura."
+    "e": "<b>Certo:</b> a queda, muitas vezes da própria altura, é o mecanismo de trauma mais comum no adulto mais velho, por causa de osteoporose, fraqueza e medicamentos.<br><b>Por que não as outras:</b> acidente de moto, agressão e queimadura acontecem, mas são bem menos frequentes nessa faixa etária."
    },
    {
     "q": "Idosa desnutrida, com úlceras de pressão e hematomas em diferentes fases; o filho responde por ela. Pensar em:",
@@ -1251,7 +1251,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Doença de Parkinson"
     ],
     "c": 2,
-    "e": "Achados típicos de maus-tratos/negligência; avaliar e notificar."
+    "e": "<b>Certo:</b> desnutrição, úlceras de pressão, hematomas em diferentes fases e um cuidador que responde pela paciente são sinais clássicos de maus-tratos ou negligência ao idoso. É preciso avaliar a sós e notificar.<br><b>Por que não as outras:</b> coagulopatia não explica desnutrição e úlceras. Fragilidade e Parkinson não explicam lesões em diferentes fases nem o comportamento controlador do cuidador."
    },
    {
     "q": "Sobre decisões terapêuticas no idoso, o ATLS 11 enfatiza:",
@@ -1262,7 +1262,7 @@ window.ATLS = (window.ATLS||[]).concat([
      "Evitar etarismo e decidir por fisiologia, fragilidade e desejos do paciente"
     ],
     "c": 3,
-    "e": "Idade cronológica sozinha não define limite; considerar fragilidade e objetivos."
+    "e": "<b>Certo:</b> o ATLS 11 combate o etarismo: as decisões devem se basear em fisiologia, fragilidade e desejos do paciente, não na idade cronológica.<br><b>Por que não as outras:</b> idade isolada não é o melhor preditor, a fragilidade é. Tratar sempre de forma mais conservadora ou limitar aos 80 anos negaria tratamento eficaz a idosos com boa reserva."
    }
   ]
  }

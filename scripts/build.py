@@ -36,7 +36,7 @@ def build() -> Path:
     ensure_no_closing_script("conteúdo", content)
     ensure_no_closing_script("game.js", game)
 
-    css = read_text(SRC / "base.css") + read_text(SRC / "theme.css")
+    css = read_text(SRC / "style.css")
     html = (
         f"{read_text(SRC / 'head.html')}<style>{css}</style>\n</head>\n<body>\n"
         f"{read_text(SRC / 'body.html')}\n"
