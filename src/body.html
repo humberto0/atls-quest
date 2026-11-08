@@ -1,0 +1,146 @@
+<div id="app">
+
+<!-- TÍTULO -->
+<section id="s-title" class="screen">
+  <div class="stage">
+    <canvas id="cv-title" class="art" width="960" height="540" aria-label="Abertura: Teatro Amazonas e pronto-socorro à noite em Manaus"></canvas>
+    <div class="title-over">
+      <div class="logo"><span class="l1">ATLS QUEST</span><span class="l2">PLANTÃO DO TRAUMA · 11ª EDIÇÃO</span></div>
+      <div></div>
+      <div id="title-menu">
+        <button id="btn-press" class="btn-gold"><span id="press">Toque para começar</span></button>
+        <button id="btn-new" hidden>Novo jogo</button>
+        <button id="btn-cont" hidden>Continuar</button>
+        <button id="btn-set" hidden>Configurações</button>
+      </div>
+    </div>
+  </div>
+  <p class="tag" style="text-align:center">xABCDE · 24 capítulos · Active Recall · Flashcards · Chefões</p>
+</section>
+
+<!-- SELEÇÃO -->
+<section id="s-select" class="screen" hidden>
+  <div class="topbar"><h2>Quem assume o plantão?</h2><button id="sel-back">Voltar</button></div>
+  <div class="select-ui">
+    <div class="slots" id="slots"></div>
+    <div class="panel detail">
+      <div class="hero-show"><img id="d-sprite" alt=""></div>
+      <div style="display:grid;gap:8px;min-width:0;align-content:start">
+        <h3 id="d-name"></h3>
+        <p class="tag" id="d-origin"></p>
+        <p id="d-story"></p>
+        <div class="stat"><span>Memória</span><div class="bar"><i id="st0"></i></div></div>
+        <div class="stat"><span>Raciocínio</span><div class="bar"><i id="st1"></i></div></div>
+        <div class="stat"><span>Resiliência</span><div class="bar"><i id="st2"></i></div></div>
+        <p class="muted" id="d-perk" style="font-size:.88rem"></p>
+        <button id="btn-pick" class="btn-gold"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUTSCENE -->
+<section id="s-cut" class="screen" hidden>
+  <canvas id="cv-cut" class="art" width="960" height="400" aria-hidden="true"></canvas>
+  <div class="dialog" id="dialog" aria-live="polite"><img id="d-face2" class="dlg-face" alt="" hidden><div><span class="who" id="d-who"></span><span id="d-text"></span></div><span class="next" id="d-next" hidden>▼</span></div>
+  <div class="row" style="justify-content:space-between"><button id="cut-skip">Pular cena</button><button id="cut-next" class="btn-gold">Avançar</button></div>
+</section>
+
+<!-- MAPA -->
+<section id="s-map" class="screen" hidden>
+  <div class="topbar">
+    <h2>Mapa do Plantão</h2>
+    <div class="row"><button id="map-sim">Simulado</button><button id="map-title">Menu</button><button id="map-set">Configurações</button></div>
+  </div>
+  <div class="panel hud-top" id="map-hud"></div>
+  <div class="map-ui">
+    <div id="trail" class="trail"></div>
+    <aside class="dock panel" id="dock"></aside>
+  </div>
+</section>
+
+<!-- ACTIVE RECALL -->
+<section id="s-recall" class="screen" hidden>
+  <div class="topbar">
+    <div><span class="tag" id="rc-tag">Fase 1 · Active Recall</span><h2 id="rc-h"></h2></div>
+    <div class="row"><button id="rc-hide">Esconder texto</button><button id="rc-back">Voltar ao mapa</button></div>
+  </div>
+  <div class="panel" style="display:grid;gap:6px">
+    <p>Leia o balão. Depois responda <b>com suas palavras</b>, de preferência com o texto escondido. Confira o gabarito e marque se acertou. <b>Achar no texto</b> mostra o trecho.</p>
+    <div class="row"><span class="tag" id="rc-score"></span><div class="bar" style="flex:1;min-width:120px"><i id="rc-bar"></i></div></div>
+  </div>
+  <div class="recall-ui">
+    <div class="balloon" id="balloon" tabindex="0" aria-label="Texto de estudo do capítulo"></div>
+    <div class="qlist" id="qlist"></div>
+  </div>
+</section>
+
+<!-- FLASHCARDS -->
+<section id="s-cards" class="screen" hidden>
+  <div class="topbar">
+    <div><span class="tag" id="fc-tag">Fase 2 · Flashcards</span><h2 id="fc-h"></h2></div>
+    <button id="fc-back">Voltar ao mapa</button>
+  </div>
+  <div class="cards-ui">
+    <div class="panel" style="display:grid;gap:8px">
+      <p>Cada cartão precisa de <b>3 acertos seguidos</b>. Errou, volta para 0. Responda em voz alta antes de virar.</p>
+      <div class="row" style="justify-content:space-between"><span class="tag" id="fc-count"></span><button id="fc-reset" style="font-size:.78rem;padding:.25em .6em">Reiniciar baralho</button></div>
+      <div class="deck-grid" id="deck"></div>
+    </div>
+    <div class="flip"><div class="card" id="card" role="button" tabindex="0" aria-label="Cartão, toque para virar">
+      <div class="face front"><span class="corner dots" id="fc-dots"></span><span id="fc-front"></span></div>
+      <div class="face back"><span id="fc-backt"></span></div>
+    </div></div>
+    <div class="row" style="justify-content:center">
+      <button id="fc-wrong" class="btn-red" disabled>Errei <span>(←)</span></button>
+      <button id="fc-flip" class="btn-gold">Virar <span>(espaço)</span></button>
+      <button id="fc-right" class="btn-teal" disabled>Acertei <span>(→)</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- BATALHA -->
+<section id="s-battle" class="screen" hidden>
+  <div class="topbar">
+    <div><span class="tag" id="bt-tag">Fase 3 · Chefão</span><h2 id="bt-title"></h2></div>
+    <button id="bt-back">Fugir para o mapa</button>
+  </div>
+  <div class="arena" id="arena">
+    <canvas id="cv-arena" class="art" width="960" height="540" aria-hidden="true"></canvas>
+    <div class="hud">
+      <div class="hp boss"><div class="row" style="justify-content:space-between;gap:6px"><span id="bh-name"></span><span id="bh-num"></span></div><div class="bar"><i id="bh-bar" style="width:100%"></i></div></div>
+      <div class="hp hero"><div class="row" style="justify-content:space-between;gap:6px"><span id="hh-name"></span><span id="hh-combo"></span></div><span class="hearts" id="hh-hearts"></span></div>
+      <div id="floats"></div>
+    </div>
+  </div>
+  <div class="qz-prog" id="bt-prog" aria-hidden="true"></div>
+  <div class="panel qbox" id="qbox"></div>
+</section>
+
+<!-- SIMULADO -->
+<section id="s-quiz" class="screen" hidden>
+  <div class="topbar">
+    <div><span class="tag">Simulado</span><h2 id="qz-h">Simulado ATLS</h2></div>
+    <button id="qz-back">Sair para o mapa</button>
+  </div>
+  <div class="qz-prog" id="qz-prog" aria-hidden="true"></div>
+  <div class="panel qbox" id="qz-box"></div>
+</section>
+
+<p class="foot">Material de estudo baseado no ATLS® 11ª ed. (American College of Surgeons, 2025) e em resumos públicos das mudanças. Não substitui o manual oficial. ATLS® é marca registrada do American College of Surgeons.</p>
+</div>
+
+<div class="modal" id="modal" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="set-h">
+    <h3 id="set-h">Configurações</h3>
+    <div class="set-row"><label for="set-music">Música</label><input type="checkbox" id="set-music"></div>
+    <div class="set-row"><label for="set-sfx">Efeitos sonoros</label><input type="checkbox" id="set-sfx"></div>
+    <div class="set-row"><label for="set-vol">Volume</label><input type="range" id="set-vol" min="0" max="1" step="0.05"></div>
+    <div class="set-row"><label for="set-speed">Velocidade do texto</label>
+      <select id="set-speed"><option value="1">Lenta</option><option value="2">Normal</option><option value="4">Rápida</option><option value="99">Instantânea</option></select></div>
+    <div class="set-row"><label for="set-lock">Liberar capítulos em ordem<br><small class="muted">desligado = tudo liberado</small></label><input type="checkbox" id="set-lock"></div>
+    <div class="set-row"><span>Progresso salvo neste navegador</span><button id="set-reset" class="btn-red">Apagar progresso</button></div>
+    <button id="set-close" class="btn-gold">Fechar</button>
+  </div>
+</div>
+<div class="toast" id="toast" hidden></div>
