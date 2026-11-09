@@ -204,6 +204,15 @@ canvas.art{display:block;width:100%;height:auto;border-radius:var(--radius);back
 .result-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:6px;font-size:.88rem}
 .result-grid div{background:#0a2023;border:1px solid var(--line);border-radius:8px;padding:6px 10px;display:flex;justify-content:space-between;gap:8px}
 
+/* ---------- cronômetro ---------- */
+.timer{display:flex;align-items:center;gap:10px;font-family:var(--f-mono);font-weight:700}
+.timer .clock{min-width:3.2em;font-size:1.05rem;color:var(--mint)}
+.timer .bar{flex:1;height:8px}
+.timer .bar>i{transition:width .2s linear;background:var(--mint)}
+.timer.low .clock{color:var(--red);animation:blink .6s steps(2) infinite}
+.timer.low .bar>i{background:var(--red)}
+.timer.stopped{opacity:.45}.timer.stopped .clock{animation:none}
+
 /* ---------- armário (recompensas) ---------- */
 .locker{display:grid;gap:16px}
 .locker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}

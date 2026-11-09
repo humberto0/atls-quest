@@ -39,6 +39,11 @@ window.ATLS = (window.ATLS||[]).concat([
     "id": "c13-e",
     "t": "Isoimunização, cesárea de ressuscitação e violência",
     "b": "<p><b>Isoimunização</b>: pequenas quantidades de sangue fetal Rh-positivo (menos de 1 mL) que passam para a circulação materna podem sensibilizar a mãe Rh-negativa e causar doença hemolítica em gestações futuras. Por isso <b>toda gestante Rh-negativa com trauma recebe imunoglobulina anti-D em até 72 horas</b>, mesmo com trauma leve e sem sangramento aparente. O teste de Kleihauer-Betke estima o volume da hemorragia fetomaterna para ajustar a dose, mas não decide se a imunoglobulina será dada.</p>\n<p><b>Cesárea de ressuscitação</b> (termo que substitui \"perimortem\"): na parada cardíaca, o útero grande comprime a cava e torna as compressões torácicas ineficazes. Esvaziar o útero <b>melhora o retorno venoso e a eficácia da RCP materna</b>, além de dar chance ao feto. Considere quando:</p>\n<ul><li>o útero está <b>no nível da cicatriz umbilical ou acima</b> (≈ 20 semanas ou mais), e</li>\n<li><b>não há retorno da circulação após 5 minutos</b> de RCP de qualidade.</li></ul>\n<p><b>Violência por parceiro íntimo</b> aumenta na gestação. Suspeite diante de lesões incompatíveis com a história, demora em procurar atendimento, lesões repetidas e em abdome ou mamas. Pergunte em ambiente privado.</p>\n<div class=\"mais\">Novo no ATLS 11: \"cesárea de ressuscitação\" substitui \"cesárea perimortem\".</div>"
+   },
+   {
+    "id": "c13-prova",
+    "t": "O que mais cai em prova",
+    "b": "<p>No trauma na gestante, as questões quase sempre testam se você <b>prioriza a mãe</b>, se lembra da <b>compressão da veia cava</b> e se reconhece o <b>descolamento de placenta</b>. Domine estes pontos:</p>\n<ul>\n<li><b>Mãe primeiro:</b> a melhor ressuscitação fetal é a ressuscitação materna. Faça o xABCDE da mãe; o feto entra na avaliação depois. Alternativa que manda “avaliar o feto antes de estabilizar a mãe” está errada.</li>\n<li><b>Hipotensão em supino após ~18–20 semanas:</b> a primeira conduta é <b>deslocar o útero para a esquerda</b> (manual ou inclinando a prancha 15–30°, mantendo a restrição da coluna). Isso vem antes de vasopressor e de mais volume, porque o útero comprime a veia cava e derruba o retorno venoso.</li>\n<li><b>Choque mascarado:</b> a hipervolemia da gestação faz a mãe perder muito sangue (classicamente até ~1,5 L) antes de taquicardia e hipotensão. O <b>sofrimento fetal pode ser o primeiro sinal</b> de choque materno. Vasopressor é último recurso, porque reduz o fluxo uteroplacentário.</li>\n<li><b>Fisiologia que vira pegadinha:</b> PaCO2 normal da gestante fica perto de 30 mmHg; PaCO2 de 35–40 sugere falência ventilatória iminente. Hemoglobina mais baixa (hemodiluição), leucocitose e fibrinogênio elevado são esperados; <b>fibrinogênio “normal” pode ser sinal de coagulopatia</b> (descolamento).</li>\n<li><b>Descolamento prematuro de placenta:</b> diagnóstico <b>clínico</b> (dor, hipertonia ou contrações, sangramento vaginal, útero doloroso, alteração da frequência cardíaca fetal). Ultrassom normal <b>não exclui</b>. As contrações são o sinal mais sensível.</li>\n<li><b>Ruptura uterina:</b> palpação fácil de partes fetais, assimetria do útero, dor abdominal intensa e choque. Indica cirurgia.</li>\n<li><b>Monitorização fetal:</b> cardiotocografia contínua a partir da viabilidade, por no mínimo 6 horas, mesmo em trauma “leve”.</li>\n<li><b>Rh negativa:</b> imunoglobulina anti-D em até 72 h. Basta menos de 1 mL de sangue fetal para sensibilizar; o Kleihauer-Betke estima o volume de hemorragia feto-materna.</li>\n<li><b>Imagem:</b> não deixe de fazer RX, TC ou FAST indicados por medo da radiação. A mãe instável não pode esperar.</li>\n<li><b>Cesárea de ressuscitação:</b> considere quando o útero está na altura do umbigo ou acima e não há retorno da circulação após 5 min de RCP de boa qualidade.</li>\n<li><b>Violência por parceiro íntimo:</b> trauma na gestação exige rastreio ativo de violência doméstica.</li>\n</ul>\n<div class=\"mais\">Antes vs. agora: provas mais antigas falavam em “cesárea perimortem” e na regra de “iniciar em 4 minutos”. O ATLS 11 usa o termo <b>cesárea de ressuscitação</b> e o critério de útero no umbigo ou acima, sem circulação após 5 minutos de RCP.</div>\n<div class=\"pega\">Pegadinha clássica: gestante de 32 semanas hipotensa deitada na prancha. A resposta é deslocar o útero para a esquerda, não iniciar noradrenalina nem pedir ultrassom.</div>"
    }
   ],
   "recall": [
@@ -81,6 +86,16 @@ window.ATLS = (window.ATLS||[]).concat([
     "q": "Quando considerar a cesárea de ressuscitação?",
     "a": "Útero na cicatriz umbilical ou acima e sem circulação após 5 minutos de RCP.",
     "s": "c13-e"
+   },
+   {
+    "q": "Gestante de 30 semanas, hipotensa em supino na prancha rígida. Qual a primeira conduta e por quê?",
+    "a": "Deslocar o útero para a esquerda (manual ou inclinando a prancha), porque o útero comprime a veia cava e reduz o retorno venoso.",
+    "s": "c13-prova"
+   },
+   {
+    "q": "Por que um ultrassom normal não exclui descolamento prematuro de placenta?",
+    "a": "Porque o diagnóstico é clínico (dor, contrações ou hipertonia, sangramento, alteração fetal) e o ultrassom tem baixa sensibilidade para descolamento.",
+    "s": "c13-prova"
    }
   ],
   "cards": [
@@ -123,6 +138,14 @@ window.ATLS = (window.ATLS||[]).concat([
    [
     "Útero na cicatriz umbilical equivale a...",
     "~20 semanas de gestação."
+   ],
+   [
+    "Primeiro sinal de choque materno pode ser…",
+    "Sofrimento fetal (alteração da frequência cardíaca fetal), porque a hipervolemia mascara os sinais maternos."
+   ],
+   [
+    "PaCO2 de 40 mmHg na gestante traumatizada sugere…",
+    "Falência ventilatória iminente: o normal da gestante é perto de 30 mmHg."
    ]
   ],
   "battle": [
@@ -251,6 +274,11 @@ window.ATLS = (window.ATLS||[]).concat([
     "id": "c14-e",
     "t": "Síndrome compartimental, adjuntos e reavaliação",
     "b": "<p>Na <b>síndrome compartimental</b>, a pressão dentro de um compartimento muscular fechado por fáscia sobe (edema, sangramento, gesso apertado) até superar a pressão de perfusão capilar. O músculo e o nervo ficam isquêmicos <b>mesmo com a artéria principal aberta</b>.</p>\n<ul><li>Sinais precoces: <b>dor desproporcional</b> à lesão e <b>dor ao estiramento passivo</b> dos músculos do compartimento; compartimento tenso; parestesia.</li>\n<li><b>Pulso presente não exclui</b>: a ausência de pulso é sinal tardio, quando o dano já é grande.</li>\n<li>Tratamento: liberar curativos, talas e gessos apertados e fazer <b>fasciotomia</b> precoce.</li></ul>\n<p><b>Adjuntos</b> do secundário são exames mais demorados, feitos quando o paciente está estável: TC direcionada, radiografias de extremidades, exames contrastados e endoscopia.</p>\n<p><b>Reavaliação contínua</b>: lesões passam despercebidas na primeira avaliação; monitorizar e repetir o exame reduz esse risco. <b>Analgesia adequada</b> faz parte do cuidado e não \"mascara\" diagnósticos quando o exame é seriado.</p>\n<div class=\"caso\">Caso: fratura de tíbia imobilizada há 3 h; dor intensa ao estender passivamente os dedos, pulso pedioso presente. Abra a tala e chame o ortopedista para fasciotomia: o pulso não exclui o diagnóstico.</div>"
+   },
+   {
+    "id": "c14-prova",
+    "t": "O que mais cai em prova",
+    "b": "<p>As questões sobre o exame secundário testam <b>quando</b> ele começa, o que a <b>história</b> precisa conter e os <b>achados que mudam a conduta</b>:</p>\n<ul>\n<li><b>Momento:</b> só depois do exame primário completo, com a ressuscitação iniciada e sinais de normalização. Se o paciente piora, <b>volte ao xABCDE</b>. Alternativa que faz o secundário em paciente instável está errada.</li>\n<li><b>AMPLE:</b> Alergias, Medicamentos (procure <b>anticoagulantes</b>), Passado médico e Prenhez, <b>Última refeição</b> (Last meal) e Eventos e ambiente.</li>\n<li><b>Fratura de base de crânio:</b> olhos de guaxinim, sinal de Battle, rinorreia ou otorreia de líquor, hemotímpano. Conduta-chave: <b>sonda gástrica por via oral</b>, nunca nasal.</li>\n<li><b>Lesão de uretra:</b> sangue no meato, hematoma perineal ou escrotal. <b>Não passe sonda vesical</b> antes da uretrocistografia retrógrada.</li>\n<li><b>Toque retal:</b> deixou de ser rotina. É seletivo, por exemplo na suspeita de lesão de reto ou em fratura pélvica com sangue no reto.</li>\n<li><b>Dorso:</b> o rolamento em bloco serve para examinar a coluna e o dorso, onde ferimentos passam despercebidos.</li>\n<li><b>Síndrome compartimental:</b> dor desproporcional e dor ao estiramento passivo são os sinais precoces. <b>Pulso presente não exclui</b>. Pressão compartimental acima de 30 mmHg ou diferença entre a pressão diastólica e a compartimental menor que 30 mmHg indica fasciotomia.</li>\n<li><b>Mecanismo prevê lesões:</b> queda em pé de altura (calcâneo, platô tibial, coluna toracolombar); colisão lateral (tórax, pelve, baço ou fígado do lado do impacto); atropelamento de criança (tríade de Waddell: fêmur, tórax ou abdome, cabeça).</li>\n<li><b>Adjuntos:</b> TC, radiografias de extremidades e exames contrastados pertencem ao secundário, com o paciente estável. Paciente instável <b>não vai para a TC</b>.</li>\n<li><b>Torniquete:</b> o secundário é o momento de reavaliar e, se for seguro, converter para curativo compressivo ou hemostático.</li>\n<li><b>Profilaxia antitetânica</b> conforme o ferimento e a história vacinal.</li>\n</ul>\n<div class=\"pega\">Pegadinha clássica: paciente com otorreia e equimose retroauricular precisa de descompressão gástrica. A resposta é sonda <b>orogástrica</b>.</div>"
    }
   ],
   "recall": [
@@ -293,6 +321,16 @@ window.ATLS = (window.ATLS||[]).concat([
     "q": "Quais achados sugerem síndrome compartimental e qual é o tratamento?",
     "a": "Dor desproporcional e ao estiramento passivo, compartimento tenso; pulso pode estar presente. Fasciotomia.",
     "s": "c14-e"
+   },
+   {
+    "q": "Por que a sonda gástrica deve ser passada por via oral no paciente com sinal de Battle e rinorreia?",
+    "a": "Porque há suspeita de fratura de base de crânio, e a sonda nasal pode entrar na caixa craniana pela fratura.",
+    "s": "c14-prova"
+   },
+   {
+    "q": "Pulso distal presente exclui síndrome compartimental?",
+    "a": "Não. Os sinais precoces são dor desproporcional e dor ao estiramento passivo; o pulso some só tardiamente.",
+    "s": "c14-prova"
    }
   ],
   "cards": [
@@ -335,6 +373,14 @@ window.ATLS = (window.ATLS||[]).concat([
    [
     "Pulso presente exclui síndrome compartimental?",
     "Não. Ausência de pulso é tardia."
+   ],
+   [
+    "Sangue no meato uretral: o que não fazer e qual exame pedir?",
+    "Não passar sonda vesical; fazer uretrocistografia retrógrada."
+   ],
+   [
+    "Paciente instável no exame secundário: o que fazer?",
+    "Interromper o secundário e voltar ao exame primário (xABCDE)."
    ]
   ],
   "battle": [
@@ -458,6 +504,11 @@ window.ATLS = (window.ATLS||[]).concat([
     "id": "c15-d",
     "t": "Durante o transporte",
     "b": "<p>A ambulância ou aeronave tem espaço, equipe e equipamento limitados. Procedimentos que são simples no hospital ficam difíceis ou impossíveis no trajeto. Por isso a regra é <b>antecipar</b>:</p>\n<ul><li><b>Intubar antes</b> se houver risco de perder a via aérea no caminho (ex.: GCS ≤ 8, queimadura de via aérea, edema progressivo).</li>\n<li><b>Drenar o tórax antes</b> de transporte aéreo se houver pneumotórax: a altitude expande o ar e pode transformá-lo em hipertensivo.</li>\n<li>Monitorizar sinais vitais, SatO2 e ETCO2 se intubado; manter sangue, analgesia e sedação disponíveis; <b>prevenir hipotermia</b>.</li>\n<li>Equipe e equipamento compatíveis com a gravidade do paciente.</li></ul>\n<p>Na passagem do pré-hospitalar para o hospital, usa-se o <b>MIST</b>: Mecanismo, Injúrias (lesões), Sinais vitais e Tratamento realizado.</p>\n<div class=\"caso\">Caso: TCE com GCS 7 e 2 horas de transporte. Intube antes de sair: tentar intubar dentro da ambulância em movimento é bem mais arriscado.</div>"
+   },
+   {
+    "id": "c15-prova",
+    "t": "O que mais cai em prova",
+    "b": "<p>Em transferência, a prova quase sempre testa se você <b>não atrasa</b> o paciente e se sabe <b>o que estabilizar antes</b> de mandá-lo:</p>\n<ul>\n<li><b>Não atrase a transferência</b> com exames que não mudam a conduta local. Exemplo: hospital sem neurocirurgia não deve fazer TC de crânio antes de transferir um TCE grave que já vai sair.</li>\n<li><b>Contato médico a médico:</b> o médico que transfere conversa diretamente com o que recebe. A responsabilidade é de quem transfere até a chegada ao destino.</li>\n<li><b>Estabilize o possível antes:</b> via aérea definitiva se houver risco de perdê-la no caminho (Glasgow ≤ 8, queimadura de via aérea, combativo), drenagem de pneumotórax, acesso calibroso, sonda gástrica, hemoderivados e imobilização.</li>\n<li><b>Paciente que precisa de cirurgia que o hospital não oferece:</b> o controle definitivo está no destino. Faça o controle de danos possível e transfira; não espere uma “estabilidade” impossível no local.</li>\n<li><b>Documentação:</b> envie resumo, exames feitos (imagens), medicações e hemoderivados administrados.</li>\n<li><b>Passagem estruturada S-xABCDE-BAR:</b> Situação; x (torniquete, cinta pélvica, transfusão maciça); A; B; C; D; E; Background; Assessment; Recommendations.</li>\n<li><b>Transporte aéreo:</b> a altitude expande gases. Pneumotórax deve ser drenado antes; sondas gástrica e vesical diminuem o risco de distensão.</li>\n<li><b>Monitorização no transporte:</b> equipe capacitada para o nível de gravidade e reavaliação contínua com o xABCDE.</li>\n</ul>\n<div class=\"mais\">Antes vs. agora: provas mais antigas cobravam o modelo ABC-SBAR. O ATLS 11 usa <b>S-xABCDE-BAR</b>, que acrescenta o x de hemorragia exsanguinante.</div>\n<div class=\"pega\">Pegadinha clássica: hospital pequeno, paciente com FAST positivo e instável, sem cirurgião disponível. A resposta é iniciar a ressuscitação e transferir imediatamente, não fazer TC.</div>"
    }
   ],
   "recall": [
@@ -500,6 +551,16 @@ window.ATLS = (window.ATLS||[]).concat([
     "q": "O que significa MIST?",
     "a": "Mecanismo, Injúrias, Sinais vitais, Tratamento realizado.",
     "s": "c15-d"
+   },
+   {
+    "q": "Hospital sem neurocirurgião recebe TCE grave já intubado. Fazer TC antes de transferir?",
+    "a": "Não, se a TC não muda a conduta local: atrasa o tratamento definitivo. Transferir logo, com contato médico a médico.",
+    "s": "c15-prova"
+   },
+   {
+    "q": "Quem é responsável pelo paciente durante o transporte inter-hospitalar?",
+    "a": "O médico e a instituição que transferem, até a chegada ao hospital de destino.",
+    "s": "c15-prova"
    }
   ],
   "cards": [
@@ -542,6 +603,14 @@ window.ATLS = (window.ATLS||[]).concat([
    [
     "Risco de perder via aérea no trajeto",
     "Intubar antes de transferir."
+   ],
+   [
+    "Pneumotórax e transporte aéreo",
+    "Drenar antes do voo: a altitude expande o gás e pode transformá-lo em hipertensivo."
+   ],
+   [
+    "S-xABCDE-BAR substitui…",
+    "O ABC-SBAR das edições anteriores; acrescenta o x de hemorragia exsanguinante."
    ]
   ],
   "battle": [
@@ -670,6 +739,11 @@ window.ATLS = (window.ATLS||[]).concat([
     "id": "c16-e",
     "t": "Adaptação aos recursos e melhoria de qualidade",
     "b": "<p>O ATLS 11 enfatiza a <b>aplicabilidade global</b>. Os princípios (xABCDE, controle precoce do sangramento, transferência precoce) são os mesmos em qualquer lugar, mas a implementação se adapta aos recursos locais. É a <b>flexibilidade padronizada</b>: um hospital do interior e um centro nível I tratam pela mesma lógica, com ferramentas diferentes.</p>\n<p>A <b>melhoria de qualidade</b> fecha o ciclo do sistema:</p>\n<ul><li><b>Registros de trauma</b> coletam dados de cada atendimento;</li>\n<li>a <b>revisão de mortes evitáveis</b> procura falhas no caminho (atraso, subtriagem, erro técnico);</li>\n<li>os achados viram mudanças de protocolo, treinamento e prevenção.</li></ul>"
+   },
+   {
+    "id": "c16-prova",
+    "t": "O que mais cai em prova",
+    "b": "<p>As questões sobre sistemas de trauma giram em torno da <b>distribuição das mortes</b>, da <b>triagem de campo</b> e da organização em rede:</p>\n<ul>\n<li><b>Distribuição trimodal das mortes</b> (clássica): <b>imediatas</b> (segundos a minutos; lesões cerebrais ou de grandes vasos; só a prevenção reduz), <b>precoces</b> (minutos a horas; hemorragia, hematomas intracranianos, pneumotórax; é aqui que o ATLS atua) e <b>tardias</b> (dias a semanas; sepse e falência de múltiplos órgãos).</li>\n<li>Em sistemas de trauma maduros, a distribuição tende a ficar <b>bimodal</b>, porque o atendimento eficiente reduz o pico tardio.</li>\n<li><b>Hora de ouro:</b> o período em que o diagnóstico e o tratamento rápidos mais reduzem mortes evitáveis.</li>\n<li><b>Sistema inclusivo</b> (todos os hospitais participam, cada um no seu nível) é melhor que o <b>exclusivo</b> (só centros de trauma).</li>\n<li><b>Níveis de centro de trauma</b> (I a IV nos EUA): o nível I tem todas as especialidades 24 h, ensino e pesquisa; os níveis menores estabilizam e transferem.</li>\n<li><b>Triagem de campo:</b> o objetivo é levar o paciente certo ao hospital certo no tempo certo. Subtriagem (mandar grave para hospital sem recursos) é o erro mais grave; supertriagem moderada é aceitável.</li>\n<li><b>Elementos do sistema:</b> prevenção e vigilância, atendimento pré-hospitalar e transporte, hospital de agudos, reabilitação, pesquisa e melhoria de qualidade.</li>\n</ul>\n<div class=\"mais\">Antes vs. agora: provas mais antigas cobravam a triagem de campo em <b>quatro passos sequenciais</b> (fisiológico, anatômico, mecanismo, considerações especiais). A diretriz de 2021, adotada pelo ATLS 11, usa critérios <b>Vermelhos</b> (alto risco: ir para o centro de trauma de maior nível) e <b>Amarelos</b> (risco moderado: centro de trauma, que pode ser de nível menor).</div>\n<div class=\"pega\">Pegadinha clássica: “qual pico de mortes o atendimento do ATLS mais reduz?” A resposta é o <b>precoce</b> (minutos a horas), não o imediato.</div>"
    }
   ],
   "recall": [
@@ -712,6 +786,16 @@ window.ATLS = (window.ATLS||[]).concat([
     "q": "O que é \"flexibilidade padronizada\"?",
     "a": "Manter os princípios do ATLS adaptando a implementação aos recursos locais.",
     "s": "c16-e"
+   },
+   {
+    "q": "Quais são os três picos da distribuição trimodal das mortes por trauma e qual o ATLS mais influencia?",
+    "a": "Imediato (segundos a minutos), precoce (minutos a horas) e tardio (dias a semanas). O ATLS atua sobretudo no precoce.",
+    "s": "c16-prova"
+   },
+   {
+    "q": "Qual erro de triagem de campo é mais grave: subtriagem ou supertriagem?",
+    "a": "Subtriagem, porque leva paciente grave a um hospital sem recursos para tratá-lo.",
+    "s": "c16-prova"
    }
   ],
   "cards": [
@@ -754,6 +838,14 @@ window.ATLS = (window.ATLS||[]).concat([
    [
     "Centro nível I",
     "Recursos completos 24 h, ensino e pesquisa."
+   ],
+   [
+    "Mortes imediatas por trauma são reduzidas principalmente por…",
+    "Prevenção: as lesões costumam ser incompatíveis com a vida."
+   ],
+   [
+    "Triagem de campo de 2021 (ATLS 11)",
+    "Critérios Vermelhos e Amarelos, não mais quatro passos sequenciais."
    ]
   ],
   "battle": [
@@ -882,6 +974,11 @@ window.ATLS = (window.ATLS||[]).concat([
     "id": "c17-e",
     "t": "Triagem é dinâmica: retriagem e chegada em ondas",
     "b": "<p>A primeira classificação é uma foto de um momento. Pacientes amarelos podem piorar e virar vermelhos; vermelhos estabilizados podem esperar. Por isso a <b>retriagem</b> deve ser repetida na chegada ao hospital e a intervalos regulares.</p>\n<p>Também é comum que os <b>feridos leves cheguem primeiro</b>, por conta própria, ocupando leitos e equipe antes da chegada dos graves trazidos pelo pré-hospitalar. Um oficial de triagem na porta e áreas separadas por cor evitam que o hospital seja tomado pelos verdes.</p>\n<div class=\"caso\">Caso: explosão no centro da cidade. Nos primeiros 20 minutos chegam 15 vítimas andando, com cortes leves. Elas vão para a área verde, fora da sala vermelha, que fica reservada para os graves que ainda estão a caminho.</div>"
+   },
+   {
+    "id": "c17-prova",
+    "t": "O que mais cai em prova",
+    "b": "<p>Triagem de múltiplas vítimas é um dos temas mais previsíveis: quase sempre aparece um paciente para você <b>classificar pela cor</b>. Decore a lógica, não só as cores:</p>\n<ul>\n<li><b>START (adulto), na ordem:</b> anda? → <b>verde</b>. Não respira? → abra a via aérea: voltou a respirar → <b>vermelho</b>; continua sem respirar → <b>preto</b>. Respira com FR acima de 30 → <b>vermelho</b>. Perfusão: enchimento capilar acima de 2 s ou pulso radial ausente → <b>vermelho</b>. Não obedece comandos simples → <b>vermelho</b>. Passou em tudo → <b>amarelo</b>. Memorize “<b>30 – 2 – pode fazer</b>”.</li>\n<li><b>Intervenções permitidas no START:</b> só abrir a via aérea e controlar hemorragia com pressão direta. Não se faz RCP na triagem.</li>\n<li><b>JumpSTART (criança):</b> se não respira e tem pulso, faça 5 ventilações de resgate; FR abaixo de 15 ou acima de 45 → vermelho; avaliação neurológica pelo AVDI.</li>\n<li><b>SALT:</b> Sort (avaliação global: quem anda, quem acena), Assess (individual), Lifesaving interventions (controle de hemorragia, abrir via aérea, descompressão de tórax, antídotos), Treatment/Transport. Tem a categoria <b>expectante</b>.</li>\n<li><b>Múltiplas vítimas × desastre:</b> se os recursos dão conta, trate primeiro os mais graves. Se os recursos se esgotam (desastre), priorize quem tem <b>mais chance de sobreviver</b>: o maior bem para o maior número.</li>\n<li><b>Comando de incidentes:</b> cadeia de comando única e clara, comunicação padronizada e amplitude de controle de 3 a 7 subordinados por líder.</li>\n<li><b>Fases do manejo:</b> mitigação, preparação, resposta e recuperação.</li>\n<li><b>Ondas de chegada:</b> os feridos leves chegam primeiro, por conta própria, e lotam o hospital mais próximo. Os graves chegam depois. Retriagem constante.</li>\n<li><b>Agentes químicos:</b> descontaminação <b>antes</b> de entrar no hospital, para não contaminar a equipe.</li>\n<li><b>Lesões por explosão:</b> primárias (onda de pressão: tímpano, pulmão, intestino), secundárias (fragmentos), terciárias (arremesso do corpo) e quaternárias (queimaduras, inalação, esmagamento).</li>\n</ul>\n<div class=\"pega\">Pegadinha clássica: vítima que não anda, FR 24, enchimento capilar de 1 s, obedece comandos. É <b>amarelo</b>, não vermelho. E quem anda é verde mesmo com fratura de antebraço.</div>"
    }
   ],
   "recall": [
@@ -924,6 +1021,16 @@ window.ATLS = (window.ATLS||[]).concat([
     "q": "Qual o padrão de lesão predominante em tiroteios em massa e a prioridade?",
     "a": "Hemorragia, principalmente de extremidades; controle com torniquete e pressão.",
     "s": "c17-d"
+   },
+   {
+    "q": "No START, vítima que não respira e volta a respirar após abertura da via aérea recebe qual cor?",
+    "a": "Vermelho (imediato).",
+    "s": "c17-prova"
+   },
+   {
+    "q": "Em um desastre com recursos esgotados, quem tem prioridade?",
+    "a": "Quem tem maior chance de sobreviver com os recursos disponíveis: o maior bem para o maior número.",
+    "s": "c17-prova"
    }
   ],
   "cards": [
@@ -966,6 +1073,14 @@ window.ATLS = (window.ATLS||[]).concat([
    [
     "Incidente químico",
     "Descontaminar antes de entrar no hospital."
+   ],
+   [
+    "START: “30 – 2 – pode fazer”",
+    "FR acima de 30, enchimento capilar acima de 2 s (ou sem pulso radial) ou não obedece comandos → vermelho."
+   ],
+   [
+    "JumpSTART: criança apneica com pulso",
+    "Fazer 5 ventilações de resgate; se voltar a respirar → vermelho; se não → preto."
    ]
   ],
   "battle": [
@@ -1094,6 +1209,11 @@ window.ATLS = (window.ATLS||[]).concat([
     "id": "c18-e",
     "t": "Determinantes sociais e o momento de oportunidade",
     "b": "<p>As estratégias de prevenção variam conforme os <b>determinantes sociais</b> de cada lugar: pobreza, moradia, violência, educação e acesso a serviços. Um programa que funciona numa cidade pode falhar em outra se não for adaptado.</p>\n<p>O atendimento do trauma é um <b>momento de oportunidade</b>: o paciente e a família estão mais abertos a mudanças depois de uma lesão. Durante a internação, vale:</p>\n<ul><li><b>rastrear riscos</b>: uso de álcool e drogas, violência interpessoal, risco de quedas no idoso, armas em casa;</li>\n<li>fazer <b>intervenção breve</b> e encaminhar.</li></ul>\n<p><b>Programas hospitalares de interrupção da violência</b> reduzem a reincidência de lesões em vítimas de violência.</p>\n<div class=\"caso\">Caso: jovem internado pela segunda vez por ferimento de arma de fogo. Além de tratar a lesão, rastreie o risco e encaminhe a um programa de interrupção da violência: sem isso, a chance de voltar ferido é alta.</div>"
+   },
+   {
+    "id": "c18-prova",
+    "t": "O que mais cai em prova",
+    "b": "<p>Prevenção cai em questões conceituais. As bancas gostam de pedir a <b>classificação</b> de uma medida:</p>\n<ul>\n<li><b>Trauma não é acidente:</b> é previsível e evitável. Por isso se fala em “lesão” e não em “acidente”.</li>\n<li><b>Prevenção primária:</b> impede que o evento ocorra (lei seca, iluminação de vias, cercar piscinas, semáforos).</li>\n<li><b>Prevenção secundária:</b> reduz a gravidade da lesão quando o evento ocorre (cinto de segurança, airbag, capacete, cadeirinha infantil).</li>\n<li><b>Prevenção terciária:</b> reduz as consequências depois da lesão (atendimento pré-hospitalar rápido, sistema de trauma, reabilitação).</li>\n<li><b>Matriz de Haddon:</b> cruza as fases (<b>pré-evento, evento, pós-evento</b>) com os fatores (<b>hospedeiro</b>, <b>agente ou veículo</b>, <b>ambiente físico</b> e <b>ambiente social</b>). Exemplo: motorista alcoolizado = hospedeiro, pré-evento.</li>\n<li><b>3 Es:</b> Educação, Engenharia (ambiente) e Enforcement (fiscalização e legislação). A educação isolada é a menos eficaz; a engenharia costuma ser a mais eficaz.</li>\n<li><b>Medidas passivas</b> (que não dependem do comportamento, como airbag e barreiras) funcionam melhor que as <b>ativas</b> (que dependem da pessoa, como colocar o cinto).</li>\n<li><b>Momento de oportunidade:</b> a internação por trauma é ideal para intervenção breve sobre álcool e outros fatores de risco.</li>\n</ul>\n<div class=\"pega\">Pegadinha clássica: “o uso do cinto de segurança é prevenção de que nível?” Resposta: <b>secundária</b>. Ele não impede a colisão; reduz a lesão.</div>"
    }
   ],
   "recall": [
@@ -1136,6 +1256,16 @@ window.ATLS = (window.ATLS||[]).concat([
     "q": "Que rastreios podem ser feitos durante o atendimento do trauma?",
     "a": "Álcool e drogas, violência interpessoal, risco de quedas, armas em casa; com intervenção breve e encaminhamento.",
     "s": "c18-e"
+   },
+   {
+    "q": "Uso de capacete por motociclista é prevenção primária, secundária ou terciária?",
+    "a": "Secundária: não impede a queda, mas reduz a gravidade da lesão.",
+    "s": "c18-prova"
+   },
+   {
+    "q": "Quais são os eixos da matriz de Haddon?",
+    "a": "Fases (pré-evento, evento, pós-evento) cruzadas com fatores (hospedeiro, agente ou veículo, ambiente físico, ambiente social).",
+    "s": "c18-prova"
    }
   ],
   "cards": [
@@ -1178,6 +1308,14 @@ window.ATLS = (window.ATLS||[]).concat([
    [
     "Momento oportuno para prevenção",
     "O próprio atendimento do trauma (rastreio + intervenção breve)."
+   ],
+   [
+    "Lei seca é prevenção…",
+    "Primária: reduz a ocorrência do evento."
+   ],
+   [
+    "Medidas passivas × ativas",
+    "Passivas (airbag, barreiras) funcionam melhor porque não dependem do comportamento da pessoa."
    ]
   ],
   "battle": [

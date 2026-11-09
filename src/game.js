@@ -50,7 +50,7 @@ function drawAt(ctx, im, cx, by, h, opt={}){ if(!im||!im.width) return; const s=
 
 /* ---------- Salvamento ---------- */
 const KEY='horadeouro_v3';
-const DEF={hero:null, seenIntro:false, ch:{}, set:{music:false,sfx:true,vol:.5,speed:2,lock:false,fx:true}, best:{sim:0}, last:1,
+const DEF={hero:null, seenIntro:false, ch:{}, set:{music:false,sfx:true,vol:.5,speed:2,lock:false,fx:true,bossTime:60}, best:{sim:0}, last:1,
   inv:{item:'kit', skin:{elida:'padrao',humberto:'padrao'}}, seen:{}, stats:{maxCombo:0, flawless:false}};
 let S = load();
 function load(){ try{ const r=JSON.parse(localStorage.getItem(KEY)||'null'); if(r){ const d=JSON.parse(JSON.stringify(DEF)); return Object.assign(d,r,{set:Object.assign(d.set,r.set||{}),inv:Object.assign(d.inv,r.inv||{}),stats:Object.assign(d.stats,r.stats||{})}); } }catch(e){} return JSON.parse(JSON.stringify(DEF)); }
@@ -140,7 +140,7 @@ function musicOff(){ if(musicTimer){clearInterval(musicTimer); musicTimer=null;}
 
 /* ---------- Telas e laço de animação ---------- */
 let curScreen='s-title', rafs={};
-function show(id){ document.querySelectorAll('.screen').forEach(s=>s.hidden=s.id!==id); curScreen=id; window.scrollTo({top:0}); for(const k in rafs) if(!id.includes(k)) stop(k); }
+function show(id){ stopTimer(); document.querySelectorAll('.screen').forEach(s=>s.hidden=s.id!==id); curScreen=id; window.scrollTo({top:0}); for(const k in rafs) if(!id.includes(k)) stop(k); }
 function toast(msg,ms=1800){ const t=$('#toast'); t.textContent=msg; t.hidden=false; clearTimeout(toast._t); toast._t=setTimeout(()=>t.hidden=true,ms); }
 function loop(name, fn){ cancelAnimationFrame(rafs[name]); const t0=performance.now(); let last=t0; const f=t=>{ const dt=Math.min(.05,(t-last)/1000); last=t; fn((t-t0)/1000,dt); rafs[name]=requestAnimationFrame(f); }; rafs[name]=requestAnimationFrame(f); }
 function stop(name){ cancelAnimationFrame(rafs[name]); delete rafs[name]; }
@@ -309,6 +309,22 @@ $('#fc-flip').onclick=flipCard; $('#fc-right').onclick=()=>gradeCard(true); $('#
 $('#fc-back').onclick=()=>{ SFX.blip(); goMap(); };
 $('#fc-reset').onclick=()=>{ P(FC.c.n).fc={}; save(); refillCards(); nextCard(); toast('Baralho reiniciado'); };
 
+/* ---------- Cronômetro de questão ---------- */
+const SIM_SECONDS = 180;
+let TIMER = null;
+const formatClock = sec => `${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`;
+function startTimer(seconds, container, onExpire){ stopTimer(); if(!seconds) return;
+  const box=el('div',{class:'timer',role:'timer','aria-label':'Tempo restante'},`<span class="clock">${formatClock(seconds)}</span><div class="bar"><i style="width:100%"></i></div>`);
+  container.prepend(box);
+  const endAt=performance.now()+seconds*1000; let lastBeep=null;
+  const tick=()=>{ const left=Math.max(0,(endAt-performance.now())/1000), whole=Math.ceil(left);
+    box.querySelector('.clock').textContent=formatClock(whole); box.querySelector('i').style.width=(left/seconds*100)+'%';
+    box.classList.toggle('low', left<=Math.min(10,seconds*.2));
+    if(whole<=5 && whole>0 && whole!==lastBeep){ lastBeep=whole; SFX.beep(); }
+    if(left<=0){ stopTimer(); onExpire(); } };
+  TIMER={id:setInterval(tick,200), box}; tick(); }
+function stopTimer(){ if(TIMER){ clearInterval(TIMER.id); TIMER.box.classList.add('stopped'); TIMER=null; } }
+
 /* ---------- Fase 3: Chefão ---------- */
 let BT=null;
 const HERO_X=250, BOSS_X=700, FLOOR=500;
@@ -333,11 +349,14 @@ function askBattle(){ if(BT.over||BT.fx) return; if(BT.idx>=BT.pool.length){
     else { BT.hp=0; return finishBoss(); } }
   BT.answered=false; renderProg(); const Q=BT.pool[BT.idx]; const q=$('#qbox'); q.innerHTML='';
   q.append(el('span',{class:'eyebrow'},`Questão ${BT.idx+1} de ${BT.pool.length}${BT.n===99?' · Capítulo '+Q.src:''}`), el('p',{class:'q'},Q.q), optionList(Q,(oi,btn,opts)=>answerBattle(oi,btn,opts)));
-  q.querySelector('.opts button').focus({preventScroll:true}); }
+  q.querySelector('.opts button').focus({preventScroll:true});
+  startTimer(+S.set.bossTime||0, q, ()=>answerBattle(null,null,q.querySelector('.opts'))); }
 function optionList(Q,onPick){ const opts=el('div',{class:'opts'}); shuffle([0,1,2,3]).forEach((oi,k)=>{ const b=el('button',{},`<b>${LETTERS[k]}</b><span>${Q.o[oi]}</span>`); b.dataset.oi=oi; b.onclick=()=>onPick(oi,b,opts); opts.append(b); }); return opts; }
-function revealAnswer(Q,btn,opts,ok){ opts.querySelectorAll('button').forEach(b=>{ b.disabled=true; if(+b.dataset.oi===Q.c) b.classList.add('right'); }); if(!ok) btn.classList.add('wrong');
-  return el('div',{class:'explain '+(ok?'ok':'no')},`<span class="verdict">${ok?'Acertou!':'Errou'}</span>${Q.e}`); }
-function answerBattle(oi,btn,opts){ if(BT.answered) return; BT.answered=true; const Q=BT.pool[BT.idx]; const ok=oi===Q.c;
+/* btn nulo = tempo esgotado */
+function revealAnswer(Q,btn,opts,ok){ opts.querySelectorAll('button').forEach(b=>{ b.disabled=true; if(+b.dataset.oi===Q.c) b.classList.add('right'); }); if(!ok&&btn) btn.classList.add('wrong');
+  const verdict=ok?'Acertou!':btn?'Errou':'Tempo esgotado';
+  return el('div',{class:'explain '+(ok?'ok':'no')},`<span class="verdict">${verdict}</span>${Q.e}`); }
+function answerBattle(oi,btn,opts){ if(BT.answered) return; BT.answered=true; stopTimer(); const Q=BT.pool[BT.idx]; const ok=oi!=null&&oi===Q.c;
   const q=$('#qbox'); q.append(revealAnswer(Q,btn,opts,ok));
   if(ok) heroStrikes(); else bossStrikes(Q);
   renderProg();
@@ -353,7 +372,7 @@ function bossStrikes(Q){ BT.combo=0; BT.res[BT.idx]=0; BT.missed.push(Q); BT.bos
 function float(txt,color,xPct,yPct){ const f=el('span',{class:'dmg',style:`left:${xPct}%;top:${yPct}%;color:${color}`},txt); $('#floats').append(f); setTimeout(()=>f.remove(),1000); }
 
 /* vitória: fatality do herói conforme o item equipado */
-function finishBoss(){ if(BT.over) return; BT.over=true; $('#qbox').innerHTML=`<p class="muted">⚔ Finalizando com <b>${BT.st.item.name}</b>…</p>`; hud();
+function finishBoss(){ if(BT.over) return; BT.over=true; stopTimer(); $('#qbox').innerHTML=`<p class="muted">⚔ Finalizando com <b>${BT.st.item.name}</b>…</p>`; hud();
   if(!S.set.fx){ BT.state='win'; return endBattle(true); }
   startFx('hero', BT.st.item.fx, ()=>{ BT.state='win'; endBattle(true); }); }
 /* derrota: fatality do chefão, que o desfibrilador pode interromper */
@@ -488,17 +507,27 @@ $('#bt-back').onclick=()=>{ SFX.blip(); goMap(); };
 
 /* ---------- Simulado ---------- */
 let QZ=null;
-function startQuiz(){ const pool=[]; for(const c of CH){ shuffle(c.battle).slice(0,2).forEach(b=>pool.push(Object.assign({src:c.n},b))); }
-  QZ={pool:shuffle(pool).slice(0,40), idx:0, res:[], answered:false}; show('s-quiz'); $('#qz-h').textContent=`Simulado ATLS · ${QZ.pool.length} questões`; askQuiz(); }
+const SIM_SIZE = 40;
+/* banco de casos clínicos (window.ATLS_SIM); sem banco, usa as questões dos chefões */
+function simBank(){ const bank=(window.ATLS_SIM||[]).map(q=>Object.assign({src:q.n},q)); return bank.length?bank:CH.flatMap(c=>c.battle.map(b=>Object.assign({src:c.n},b))); }
+/* sorteio em rodízio por capítulo, para cobrir o manual inteiro antes de repetir capítulo */
+function drawSimPool(bank,size){ const byCh={}; for(const q of shuffle(bank)) (byCh[q.src]=byCh[q.src]||[]).push(q);
+  const pool=[]; let lists=shuffle(Object.values(byCh)); while(pool.length<size && lists.some(l=>l.length)){ for(const l of lists){ if(l.length&&pool.length<size) pool.push(l.pop()); } lists=lists.filter(l=>l.length); }
+  return shuffle(pool); }
+function startQuiz(){ QZ={pool:drawSimPool(simBank(),SIM_SIZE), idx:0, res:[], answered:false, started:Date.now()}; show('s-quiz');
+  $('#qz-h').textContent=`Simulado · ${QZ.pool.length} casos clínicos · 3 min por questão`; askQuiz(); }
 function askQuiz(){ const q=$('#qz-box'); q.innerHTML=''; $('#qz-prog').innerHTML=QZ.pool.map((_,i)=>`<i class="${QZ.res[i]===1?'r':QZ.res[i]===0?'w':(i===QZ.idx?'c':'')}"></i>`).join('');
   if(QZ.idx>=QZ.pool.length) return endQuiz(); const Q=QZ.pool[QZ.idx]; QZ.answered=false;
-  q.append(el('span',{class:'eyebrow'},`Questão ${QZ.idx+1} de ${QZ.pool.length} · Capítulo ${Q.src}`), el('p',{class:'q'},Q.q), optionList(Q,(oi,b,opts)=>{ if(QZ.answered) return; QZ.answered=true; const ok=oi===Q.c; QZ.res[QZ.idx]=ok?1:0; ok?SFX.ok():SFX.bad();
-    q.append(revealAnswer(Q,b,opts,ok)); const nb=el('button',{class:'btn-primary next-btn'},'Próxima (Enter)'); nb.onclick=()=>{ QZ.idx++; askQuiz(); }; q.append(nb); nb.focus({preventScroll:true}); })); }
+  const opts=optionList(Q,(oi,b)=>answerQuiz(Q,oi,b,opts));
+  q.append(el('span',{class:'eyebrow'},`Questão ${QZ.idx+1} de ${QZ.pool.length} · Capítulo ${Q.src}`), el('p',{class:'q'},Q.q), opts);
+  startTimer(SIM_SECONDS, q, ()=>answerQuiz(Q,null,null,opts)); }
+function answerQuiz(Q,oi,btn,opts){ if(QZ.answered) return; QZ.answered=true; stopTimer(); const ok=oi!=null&&oi===Q.c; QZ.res[QZ.idx]=ok?1:0; ok?SFX.ok():SFX.bad();
+  const q=$('#qz-box'); q.append(revealAnswer(Q,btn,opts,ok)); const nb=el('button',{class:'btn-primary next-btn'},'Próxima (Enter)'); nb.onclick=()=>{ QZ.idx++; askQuiz(); }; q.append(nb); nb.focus({preventScroll:true}); }
 function endQuiz(){ const ok=QZ.res.filter(v=>v===1).length, pct=Math.round(ok/QZ.pool.length*100); if(pct>(S.best.sim||0)){ S.best.sim=pct; save(); }
   pct>=80?SFX.win():SFX.lose();
   const by={}; QZ.pool.forEach((Q,i)=>{ by[Q.src]=by[Q.src]||[0,0]; by[Q.src][1]++; if(QZ.res[i]===1) by[Q.src][0]++; });
   const q=$('#qz-box'); q.innerHTML='';
-  q.append(el('h3',{style:`color:${pct>=80?'var(--green)':'var(--red)'}`},`${pct}% · ${ok} de ${QZ.pool.length}`), el('p',{class:'muted'},'Meta de referência: 80% de acertos, a nota de aprovação da prova escrita do ATLS. Capítulos com erro aparecem com borda vermelha:'));
+  q.append(el('h3',{style:`color:${pct>=80?'var(--green)':'var(--red)'}`},`${pct}% · ${ok} de ${QZ.pool.length}`), el('p',{class:'muted'},`Tempo total: ${formatClock(Math.round((Date.now()-QZ.started)/1000))}. Meta de referência: 80% de acertos. Capítulos com erro aparecem com borda vermelha:`));
   q.append(el('div',{class:'result-grid'}, Object.keys(by).sort((a,b)=>a-b).map(n=>{ const [a,t]=by[n]; return `<div style="${a<t?'border-color:var(--red)':''}"><span>Cap. ${n} · ${chap(+n).t}</span><b>${a}/${t}</b></div>`; }).join('')));
   const row=el('div',{class:'row'}); const a=el('button',{class:'btn-primary'},'Novo simulado'); a.onclick=startQuiz; const b=el('button',{class:'next-btn'},'Voltar ao quadro'); b.onclick=goMap; row.append(a,b); q.append(row); checkRewards(); }
 $('#qz-back').onclick=()=>{ SFX.blip(); goMap(); };
@@ -515,13 +544,14 @@ document.addEventListener('keydown',e=>{
 });
 
 /* ---------- Configurações ---------- */
-function openSettings(){ SFX.blip(); $('#modal').hidden=false; $('#set-music').checked=S.set.music; $('#set-sfx').checked=S.set.sfx; $('#set-vol').value=S.set.vol; $('#set-speed').value=S.set.speed; $('#set-lock').checked=S.set.lock; $('#set-fx').checked=S.set.fx; $('#set-close').focus(); }
+function openSettings(){ SFX.blip(); $('#modal').hidden=false; $('#set-music').checked=S.set.music; $('#set-sfx').checked=S.set.sfx; $('#set-vol').value=S.set.vol; $('#set-speed').value=S.set.speed; $('#set-lock').checked=S.set.lock; $('#set-fx').checked=S.set.fx; $('#set-boss-time').value=String(S.set.bossTime); $('#set-close').focus(); }
 $('#set-music').onchange=e=>{ S.set.music=e.target.checked; save(); audio(); S.set.music?musicOn():musicOff(); };
 $('#set-sfx').onchange=e=>{ S.set.sfx=e.target.checked; save(); SFX.blip(); };
 $('#set-vol').oninput=e=>{ S.set.vol=+e.target.value; save(); if(master) master.gain.value=S.set.vol; };
 $('#set-speed').onchange=e=>{ S.set.speed=+e.target.value; save(); };
 $('#set-lock').onchange=e=>{ S.set.lock=e.target.checked; save(); if(curScreen==='s-map') goMap(); };
 $('#set-fx').onchange=e=>{ S.set.fx=e.target.checked; save(); };
+$('#set-boss-time').onchange=e=>{ S.set.bossTime=+e.target.value; save(); };
 let resetArmed=false;
 $('#set-reset').onclick=()=>{ if(!resetArmed){ resetArmed=true; $('#set-reset').textContent='Toque de novo para confirmar'; setTimeout(()=>{resetArmed=false; $('#set-reset').textContent='Apagar progresso';},3000); return; }
   const set=S.set; S=JSON.parse(JSON.stringify(DEF)); S.set=set; save(); resetArmed=false; $('#set-reset').textContent='Apagar progresso'; toast('Progresso apagado'); $('#modal').hidden=true; goTitle(); };

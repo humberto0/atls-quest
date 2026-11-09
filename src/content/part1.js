@@ -35,6 +35,11 @@ window.ATLS = (window.ATLS||[]).concat(
     "id": "c01-e",
     "t": "Reavaliação, transferência e prevenção",
     "b": "<p>O paciente de trauma muda rápido. Por isso a <b>reavaliação</b> é contínua: qualquer piora manda você de volta ao <b>x</b> e refaz a sequência inteira.</p>\n<ul>\n<li><b>Exame secundário</b> (cabeça aos pés, história AMPLE) só começa depois que o primário está completo, a ressuscitação está em andamento e os sinais vitais tendem a normalizar. <i>Por quê:</i> examinar o dedo do pé de alguém que está sangrando no tórax é perder tempo.</li>\n<li><b>Transferência precoce</b>: se o hospital não tem o recurso definitivo (cirurgião, neurocirurgia, angiografia), decida cedo. Não atrase para fazer exames que não vão mudar a conduta aqui.</li>\n<li><b>Documentação</b> e comunicação com a equipe que vai receber.</li>\n</ul>\n<div class=\"caso\">Caso: no meio do exame secundário a PA cai para 80/50. Você interrompe tudo, revisa x (curativos e torniquetes), A, B (pneumotórax?), C (eFAST, pelve) e só depois retoma.</div>\n<div class=\"mais\">Novo no ATLS 11: mnemônico de transferência <b>S-xABCDE-BAR</b>, os <b>3 Es</b> da prevenção (Educação, Engenharia/Ambiente, Enforcement) já na avaliação inicial e uma tabela-resumo do exame primário.</div>"
+   },
+   {
+    "id": "c01-prova",
+    "t": "O que mais cai em prova",
+    "b": "<p>Questões de avaliação inicial quase sempre perguntam <b>\"qual a conduta imediata?\"</b>. A resposta certa é a que trata a <b>primeira ameaça à vida na ordem xABCDE</b>, sem pular etapas e sem atrasar o tratamento com exames.</p><ul><li><b>Ordem de prioridade:</b> x (hemorragia externa exsanguinante) → A → B → C → D → E. Se o enunciado traz sangramento arterial ativo de membro e via aérea pérvia, comprimir/torniquete vem primeiro. <i>Antes vs agora:</i> provas mais antigas cobravam ABCDE puro; o ATLS 11 colocou o x na frente.</li><li><b>Paciente que conversa normalmente</b> tem, naquele momento, via aérea pérvia, ventilação e perfusão cerebral razoáveis. Isso não dispensa reavaliar.</li><li><b>Instável não vai para a tomografia.</b> Alternativa com \"TC de corpo inteiro\" num paciente hipotenso que não respondeu é o distrator clássico.</li><li><b>Adjuntos do primário:</b> monitorização, ECG, oximetria, capnografia, gasometria/lactato, <b>FAST/eFAST</b>, RX de tórax e de pelve AP. Eles orientam a ressuscitação, não a substituem.</li><li><b>Sonda vesical:</b> sangue no meato, hematoma perineal ou próstata alta → uretrocistografia retrógrada antes. <b>Sonda gástrica:</b> com sinais de fratura de base de crânio (Battle, olhos de guaxinim, rinoliquorreia), use a via <b>oral</b>, nunca nasal.</li><li><b>Toque retal</b> não é mais rotina no exame do trauma (ATLS 11); faça quando a suspeita clínica pedir.</li><li><b>Piora a qualquer momento</b> → volte ao início do xABCDE. O exame secundário só começa depois que o primário está completo e o paciente responde à ressuscitação.</li><li><b>Transferência:</b> se o hospital não tem recurso para tratar a lesão, a decisão de transferir é precoce e não espera exames que não mudam a conduta.</li></ul><div class=\"pega\">Pegadinha: alternativas com conduta \"certa, mas fora de hora\" (ex.: TC de crânio antes de garantir a via aérea de quem tem GCS 7). A ordem também é cobrada.</div>"
    }
   ],
   "recall": [
@@ -77,6 +82,16 @@ window.ATLS = (window.ATLS||[]).concat(
     "q": "Quando iniciar o exame secundário?",
     "a": "Após completar o exame primário, com ressuscitação em andamento e sinais vitais tendendo à normalização.",
     "s": "c01-e"
+   },
+   {
+    "q": "Em questões de conduta imediata no trauma, qual é a regra de ouro para escolher a alternativa?",
+    "a": "Tratar a primeira ameaça à vida na ordem xABCDE, sem atrasar com exames; instável não vai para a TC.",
+    "s": "c01-prova"
+   },
+   {
+    "q": "Por que a sonda gástrica deve ser orogástrica no paciente com sinais de fratura de base de crânio?",
+    "a": "Porque a sonda nasal pode entrar na cavidade craniana pela fratura; a via oral evita esse risco.",
+    "s": "c01-prova"
    }
   ],
   "cards": [
@@ -119,6 +134,14 @@ window.ATLS = (window.ATLS||[]).concat(
    [
     "Paciente piorou durante o atendimento",
     "Reavaliar a partir do x do exame primário."
+   ],
+   [
+    "Paciente hipotenso que não respondeu à ressuscitação: TC de corpo inteiro?",
+    "Não. Instável não vai para a tomografia; use FAST/RX na sala e trate a causa (centro cirúrgico, angiografia, pelve)."
+   ],
+   [
+    "Toque retal no exame primário do trauma (ATLS 11)",
+    "Não é mais rotina; só quando a suspeita clínica indicar."
    ]
   ],
   "battle": [
@@ -247,6 +270,11 @@ window.ATLS = (window.ATLS||[]).concat(
     "id": "c02-e",
     "t": "Debriefing: TAKE STOCK",
     "b": "<p>Depois do atendimento, a equipe faz um <b>debriefing</b>: conversa curta, logo após o caso, <b>sem busca de culpados</b>.</p>\n<ul>\n<li><b>Aprender</b>: o que funcionou, o que atrasou, o que mudar no próximo caso (material, protocolo, comunicação).</li>\n<li><b>Cuidar das pessoas</b>: casos graves, mortes e pacientes jovens afetam a equipe. O debriefing reconhece isso e abre espaço para pedir apoio.</li>\n<li><b>Melhorar o sistema</b>: problemas recorrentes viram ações de qualidade.</li>\n</ul>\n<p>O ATLS 11 usa a ferramenta <b>TAKE STOCK</b> para estruturar o debriefing, garantindo que nenhum desses pontos fique de fora.</p>\n<div class=\"mais\">Novo no ATLS 11: debriefing estruturado com TAKE STOCK como fase formal do cuidado da equipe.</div>"
+   },
+   {
+    "id": "c02-prova",
+    "t": "O que mais cai em prova",
+    "b": "<p>Função da equipe aparece menos que tórax e choque, mas surge em questões sobre <b>liderança, comunicação e passagem de caso</b>, principalmente em provas de formato mais atual.</p><ul><li><b>Líder da equipe:</b> coordena, distribui tarefas e mantém a visão global; idealmente não executa procedimentos para não perder a consciência situacional.</li><li><b>Comunicação em alça fechada:</b> ordem com nome de quem executa → confirmação (\"TXA 1 g, vou fazer\") → aviso de conclusão. Ordem \"para a sala\" sem destinatário é erro típico.</li><li><b>Pré-chegada:</b> o huddle antes do paciente chegar define funções, materiais e plano. Questão que pergunta \"o que fazer ao receber o aviso\" quase sempre quer <b>preparar a equipe e o material</b>.</li><li><b>Passagem do pré-hospitalar:</b> momento de \"time out / all quiet\": todos param e escutam a passagem estruturada (MIST: Mecanismo, Injúrias/lesões, Sinais, Tratamento) antes de mexer no paciente, salvo ameaça imediata.</li><li><b>Ferramenta CUS</b> (Concerned, Uncomfortable, Safety issue): qualquer membro pode escalar uma preocupação de segurança, independente da hierarquia.</li><li><b>Debriefing</b> após o atendimento serve para aprendizado e segurança, não para achar culpados.</li></ul><div class=\"pega\">Pegadinha: o líder que \"intuba porque é o mais experiente\" e larga a coordenação. Na prova, a melhor resposta mantém o líder coordenando e delega o procedimento.</div>"
    }
   ],
   "recall": [
@@ -289,6 +317,16 @@ window.ATLS = (window.ATLS||[]).concat(
     "q": "Por que o líder deve evitar fazer procedimentos?",
     "a": "Para manter as mãos livres e a consciência situacional do todo.",
     "s": "c02-a"
+   },
+   {
+    "q": "Qual o papel ideal do líder da equipe de trauma em relação aos procedimentos?",
+    "a": "Coordenar e manter a visão global, delegando procedimentos para não perder a consciência situacional.",
+    "s": "c02-prova"
+   },
+   {
+    "q": "O que significa MIST na passagem do pré-hospitalar?",
+    "a": "Mecanismo, Injúrias (lesões), Sinais vitais e Tratamento realizado.",
+    "s": "c02-prova"
    }
   ],
   "cards": [
@@ -331,6 +369,14 @@ window.ATLS = (window.ATLS||[]).concat(
    [
     "Consciência situacional",
     "Perceber, entender e antecipar o que vai acontecer."
+   ],
+   [
+    "Comunicação em alça fechada: 3 passos",
+    "Ordem dirigida a uma pessoa pelo nome → confirmação em voz alta → aviso de que foi feito."
+   ],
+   [
+    "Ferramenta CUS",
+    "Concerned, Uncomfortable, Safety issue: escala de preocupação que qualquer membro pode usar."
    ]
   ],
   "battle": [
@@ -459,6 +505,11 @@ window.ATLS = (window.ATLS||[]).concat(
     "id": "c03-e",
     "t": "Depois do x",
     "b": "<p>Parar o sangramento externo não resolve o choque: o paciente já perdeu sangue e pode estar sangrando por dentro. Siga o <b>ABCDE</b> e trate a causa de base.</p>\n<ul>\n<li><b>Sangue e hemoderivados cedo</b>; ative o <b>protocolo de transfusão maciça</b> se o paciente precisar de muito sangue. <i>Por quê:</i> repor só hemácias, sem plasma e plaquetas, perpetua a coagulopatia.</li>\n<li><b>Ácido tranexâmico</b> (antifibrinolítico) na hemorragia grave, <b>até 3 h</b> do trauma: 1 g em 10 min + 1 g em 8 h. O benefício é maior quanto mais cedo; depois de 3 h pode fazer mal.</li>\n<li>Procure <b>sangramentos ocultos</b>: tórax, abdome, pelve/retroperitônio, ossos longos.</li>\n<li>Previna a <b>tríade letal</b>: hipotermia, acidose e coagulopatia se alimentam umas das outras.</li>\n</ul>\n<div class=\"caso\">Caso: torniquete controlou a perna, mas a PA segue 80/50. eFAST mostra líquido no abdome: o choque agora é de sangramento interno, que precisa de cirurgia.</div>"
+   },
+   {
+    "id": "c03-prova",
+    "t": "O que mais cai em prova",
+    "b": "<p>O controle da hemorragia externa ganhou destaque com o x do ATLS 11. Em prova, ele aparece como <b>\"primeira conduta\"</b> em casos de ferimento de extremidade com sangramento pulsátil, inclusive quando o paciente também tem problema de via aérea leve.</p><ul><li><b>Sequência:</b> pressão direta firme → empacotamento da ferida (com ou sem gaze hemostática) → <b>torniquete</b> se a pressão não controla sangramento de extremidade com risco de vida.</li><li><b>Torniquete:</b> proximal à ferida, apertado até parar o sangramento e o pulso distal; anote o horário. Se não parar, aplique um <b>segundo torniquete</b> logo acima. Torniquete frouxo é pior que nenhum: bloqueia só o retorno venoso e aumenta o sangramento.</li><li><b>Não afrouxe</b> o torniquete \"para ver se parou\" nem de forma intermitente; a reavaliação e a eventual conversão são planejadas, depois de controlar o choque.</li><li><b>Sangramento juncional</b> (axila, virilha, pescoço) não aceita torniquete comum: pressão direta e empacotamento.</li><li><b>Pinçar às cegas</b> dentro da ferida é erro: lesa nervos e vasos e raramente controla.</li><li>Depois do x: <b>acesso, sangue e TXA</b> (até 3 h do trauma) fazem parte do mesmo raciocínio de hemorragia.</li><li><b>Antes vs agora:</b> provas mais antigas abriam a sequência pela via aérea com restrição cervical; hoje, sangramento exsanguinante visível é tratado primeiro.</li></ul><div class=\"pega\">Pegadinha: elevação do membro e compressão de \"pontos de pressão\" como conduta principal. Não substituem pressão direta, empacotamento e torniquete.</div>"
    }
   ],
   "recall": [
@@ -501,6 +552,16 @@ window.ATLS = (window.ATLS||[]).concat(
     "q": "Qual a dose do ácido tranexâmico e a janela de tempo?",
     "a": "1 g em 10 min + 1 g em 8 h, até 3 h do trauma.",
     "s": "c03-e"
+   },
+   {
+    "q": "O que fazer se o primeiro torniquete não controla o sangramento de um membro?",
+    "a": "Apertar mais e/ou aplicar um segundo torniquete logo acima (proximal) do primeiro.",
+    "s": "c03-prova"
+   },
+   {
+    "q": "Por que o torniquete frouxo é perigoso?",
+    "a": "Porque bloqueia só o retorno venoso e mantém o fluxo arterial, aumentando o sangramento.",
+    "s": "c03-prova"
    }
   ],
   "cards": [
@@ -543,6 +604,14 @@ window.ATLS = (window.ATLS||[]).concat(
    [
     "TXA no trauma",
     "1 g em 10 min + 1 g em 8 h, até 3 h."
+   ],
+   [
+    "Sangramento juncional (virilha, axila): torniquete?",
+    "Não o comum. Pressão direta e empacotamento, com ou sem agente hemostático."
+   ],
+   [
+    "Afrouxar o torniquete para checar o sangramento?",
+    "Não. Conversão só planejada, com o choque controlado e possibilidade de monitorar o membro."
    ]
   ],
   "battle": [
@@ -671,6 +740,11 @@ window.ATLS = (window.ATLS||[]).concat(
     "id": "c04-e",
     "t": "Via aérea cirúrgica (incisional)",
     "b": "<p>Quando nada mais funciona, a vida depende de uma via aérea pelo pescoço.</p>\n<ul>\n<li>Indicação: <b>\"não intuba, não oxigena\"</b> ou <b>\"não intuba, não ventila\"</b>, apesar de manobras básicas, BVM e supraglótico.</li>\n<li>Uma vez indicada, <b>complete o procedimento</b>. Voltar a tentar intubar enquanto o paciente dessatura é a armadilha que mata.</li>\n<li><b>Adulto</b>: cricotireoidostomia <b>cirúrgica</b> (incisional) pela membrana cricotireóidea, com tubo com balonete: via aérea definitiva.</li>\n<li><b>Cricotireoidostomia por agulha</b>: recomendada só para <b>lactentes e crianças pequenas</b>, em que a membrana é minúscula e a cirúrgica é desencorajada. Fornece <b>oxigenação de curta duração</b>: a expiração é ruim e o CO2 acumula, então é ponte para via aérea definitiva.</li>\n</ul>\n<div class=\"mais\">Novo no ATLS 11: \"via aérea cirúrgica\" também chamada de \"incisional\", com novas ilustrações.</div>"
+   },
+   {
+    "id": "c04-prova",
+    "t": "O que mais cai em prova",
+    "b": "<p>Via aérea é das áreas mais cobradas de trauma. As questões giram em torno de <b>quando indicar via aérea definitiva, qual manobra usar e o que fazer quando a intubação falha</b>.</p><ul><li><b>Indicações de via aérea definitiva:</b> GCS ≤ 8, incapacidade de manter ou proteger a via aérea, risco de aspiração, hipóxia ou apneia refratárias, trauma maxilofacial grave, hematoma cervical expansivo e lesão inalatória com sinais de ameaça (estridor, rouquidão, queimadura facial profunda, fuligem na orofaringe).</li><li><b>Manobra básica:</b> anteriorização da mandíbula (jaw thrust) com restrição de movimento da coluna. <i>Antes vs agora:</i> provas antigas aceitavam elevação do mento (chin lift); o ATLS 11 a retirou.</li><li><b>Cânulas:</b> orofaríngea só no inconsciente sem reflexo de vômito; <b>nasofaríngea contraindicada</b> se houver suspeita de fratura de base de crânio ou de face média.</li><li><b>Via aérea definitiva preferida:</b> intubação orotraqueal por sequência rápida, idealmente com videolaringoscópio, ressuscitando o choque antes da indução.</li><li><b>Confirmação:</b> capnografia com CO2 expirado sustentado (≥ 7 ventilações), além da clínica e do RX.</li><li><b>Falhou:</b> após 3 tentativas, troque técnica ou operador; ventile com bolsa-valva-máscara entre tentativas. <b>\"Não intubo, não oxigeno\"</b> → via aérea cirúrgica (cricotireoidostomia).</li><li><b>Criança pequena:</b> cricotireoidostomia cirúrgica desencorajada; a por agulha é ponte de oxigenação de curta duração (retém CO2).</li><li><b>Fratura de laringe:</b> rouquidão, enfisema subcutâneo e crepitação/fratura palpável. Se a intubação for impossível, traqueostomia (a crico não resolve abaixo da lesão).</li></ul><div class=\"pega\">Pegadinha: \"intubação nasotraqueal às cegas\" em paciente com rinoliquorreia ou olhos de guaxinim. Contraindicada.</div>"
    }
   ],
   "recall": [
@@ -713,6 +787,16 @@ window.ATLS = (window.ATLS||[]).concat(
     "q": "Para quem é a cricotireoidostomia por agulha?",
     "a": "Só lactentes e crianças pequenas; oxigenação de curto prazo.",
     "s": "c04-e"
+   },
+   {
+    "q": "Cite quatro indicações de via aérea definitiva no trauma.",
+    "a": "GCS ≤ 8, incapacidade de proteger a via aérea/risco de aspiração, hipóxia ou apneia, trauma maxilofacial grave, hematoma cervical expansivo, lesão inalatória com sinais de ameaça.",
+    "s": "c04-prova"
+   },
+   {
+    "q": "Qual a conduta quando não se consegue intubar nem oxigenar o adulto?",
+    "a": "Via aérea cirúrgica (cricotireoidostomia) imediata.",
+    "s": "c04-prova"
    }
   ],
   "cards": [
@@ -755,6 +839,14 @@ window.ATLS = (window.ATLS||[]).concat(
    [
     "Crico por agulha",
     "Só lactentes/crianças pequenas."
+   ],
+   [
+    "Elevação do mento (chin lift) no ATLS 11?",
+    "Removida. Use anteriorização da mandíbula (jaw thrust) com restrição da coluna."
+   ],
+   [
+    "Cânula nasofaríngea: contraindicação clássica",
+    "Suspeita de fratura de base de crânio ou de face média."
    ]
   ],
   "battle": [
@@ -883,6 +975,11 @@ window.ATLS = (window.ATLS||[]).concat(
     "id": "c05-e",
     "t": "Toracostomia digital e com tubo",
     "b": "<p>Os procedimentos do B resolvem ar e sangue na pleura.</p>\n<ul>\n<li><b>Toracostomia digital</b> (finger thoracostomy): incisão e dissecção romba até a pleura, com o dedo entrando na cavidade. Descomprime e <b>confirma</b> que você está no espaço pleural; especialmente útil no paciente em ventilação com pressão positiva.</li>\n<li><b>Toracostomia com tubo</b>: tratamento definitivo inicial de pneumo e hemotórax. Drena continuamente e permite medir o volume de sangue (critério de toracotomia).</li>\n<li>Local: <b>4º/5º espaço intercostal</b>, anterior à linha axilar média (na altura do mamilo no homem), entrando sobre a <b>borda superior da costela inferior</b>. <i>Por quê:</i> veia, artéria e nervo intercostais correm na borda inferior de cada costela.</li>\n<li>Acima do 4º/5º espaço: evita o diafragma e o abdome, que sobem na expiração.</li>\n</ul>\n<div class=\"mais\">Novo no ATLS 11: toracostomia digital e com tubo treinadas na estação de respiração, junto com via aérea cirúrgica e cricotireoidostomia por agulha pediátrica.</div>"
+   },
+   {
+    "id": "c05-prova",
+    "t": "O que mais cai em prova",
+    "b": "<p>Trauma de tórax é <b>o assunto de trauma mais cobrado</b>. Quase toda prova traz pelo menos um caso de pneumotórax hipertensivo, hemotórax ou tamponamento, além de questões sobre drenagem e indicação de toracotomia.</p><ul><li><b>Pneumotórax hipertensivo é diagnóstico clínico:</b> dispneia, hipotensão, turgência jugular, MV abolido, hipertimpanismo e desvio de traqueia <b>contralateral</b>. Conduta: descompressão imediata (agulha ou toracostomia digital), depois dreno. Pedir RX antes é a alternativa errada.</li><li><b>Local da descompressão no adulto:</b> 4º–5º EIC entre linha axilar anterior e média. <i>Antes vs agora:</i> provas antigas cobravam 2º EIC na hemiclavicular; hoje o sítio axilar é o preferido no adulto.</li><li><b>Pneumotórax aberto:</b> curativo fechado em 3 lados (efeito valvular) e dreno torácico em outro local, longe da ferida.</li><li><b>Hemotórax maciço:</b> ≥ 1.500 mL na drenagem inicial (ou cerca de 1/3 da volemia) ou débito contínuo (cerca de 200 mL/h por 2–4 h), ou necessidade persistente de transfusão → <b>toracotomia</b>. Jugulares costumam estar <b>vazias</b> (hipovolemia).</li><li><b>Tamponamento:</b> tríade de Beck (hipotensão, turgência jugular, bulhas abafadas), FAST com líquido pericárdico; conduta definitiva é cirúrgica (toracotomia/esternotomia); pericardiocentese é ponte quando o cirurgião não está disponível.</li><li><b>Diferencial:</b> MV abolido e hipertimpanismo = pneumotórax hipertensivo; MV presente bilateral com Beck = tamponamento.</li><li><b>Tórax instável:</b> o que mata é a <b>contusão pulmonar</b> subjacente. Analgesia eficaz e suporte ventilatório; evitar hiper-hidratação.</li><li><b>Dreno:</b> 5º EIC, anterior à linha axilar média, borda superior da costela de baixo. <b>Escape aéreo persistente</b> e pulmão que não expande após drenagem → pensar em lesão traqueobrônquica (broncoscopia).</li><li><b>Hemotórax retido</b> após drenagem → videotoracoscopia precoce.</li></ul><div class=\"pega\">Pegadinha: desvio de traqueia \"para o lado da lesão\" no pneumotórax hipertensivo. O desvio é para o lado oposto.</div>"
    }
   ],
   "recall": [
@@ -925,6 +1022,16 @@ window.ATLS = (window.ATLS||[]).concat(
     "q": "Onde inserir o dreno de tórax e por que na borda superior da costela?",
     "a": "4º/5º EIC anterior à linha axilar média; borda superior evita o feixe neurovascular.",
     "s": "c05-e"
+   },
+   {
+    "q": "Quais critérios indicam toracotomia no hemotórax?",
+    "a": "Drenagem inicial ≥ 1.500 mL, débito contínuo (cerca de 200 mL/h por 2–4 h) ou necessidade persistente de transfusão.",
+    "s": "c05-prova"
+   },
+   {
+    "q": "O que sugere escape aéreo persistente com pulmão que não expande após drenagem adequada?",
+    "a": "Lesão traqueobrônquica; indicar broncoscopia.",
+    "s": "c05-prova"
    }
   ],
   "cards": [
@@ -967,6 +1074,14 @@ window.ATLS = (window.ATLS||[]).concat(
    [
     "Dreno de tórax: borda da costela",
     "Superior da costela inferior."
+   ],
+   [
+    "Pneumotórax hipertensivo: RX antes de descomprimir?",
+    "Não. Diagnóstico clínico; descompressão imediata e depois dreno."
+   ],
+   [
+    "Hemotórax retido após drenagem",
+    "Videotoracoscopia precoce para limpar a cavidade."
    ]
   ],
   "battle": [
@@ -1095,6 +1210,11 @@ window.ATLS = (window.ATLS||[]).concat(
     "id": "c06-e",
     "t": "Pelve, resposta e parada traumática",
     "b": "<p><b>Fratura de pelve</b> instável pode esconder litros de sangue no retroperitônio: plexos venosos e osso esponjoso sangram muito, e a pelve aberta aumenta o volume disponível para acumular sangue.</p>\n<ul>\n<li><b>Cinta pélvica</b> centrada nos <b>trocânteres maiores</b>: fecha o anel pélvico, reduz o volume e aproxima as fraturas, ajudando a tamponar. Na crista ilíaca ela não fecha a pelve.</li>\n<li>Não mobilize a pelve repetidamente para \"testar estabilidade\": cada manobra solta coágulos.</li>\n</ul>\n<p><b>Resposta à ressuscitação</b> orienta o próximo passo:</p>\n<ul>\n<li><b>Rápida</b>: estabiliza e se mantém.</li>\n<li><b>Transitória</b>: melhora e volta a piorar = <b>sangramento ativo</b>. Precisa de controle cirúrgico ou angiográfico.</li>\n<li><b>Mínima ou nenhuma</b>: sangramento maciço ou choque não hemorrágico; vá para o controle definitivo já.</li>\n</ul>\n<p><b>Parada cardíaca traumática</b>: compressões sozinhas não enchem um coração vazio. Trate as causas reversíveis: hipovolemia (sangue), hipóxia (via aérea), pneumotórax hipertensivo (descompressão bilateral) e tamponamento. O ATLS 11 discute também critérios de <b>término da reanimação</b>.</p>\n<div class=\"mais\">Novo no ATLS 11: tabela de fatores clínicos associados a fratura de pelve e figuras de volume pélvico e compressão.</div>"
+   },
+   {
+    "id": "c06-prova",
+    "t": "O que mais cai em prova",
+    "b": "<p>Choque hemorrágico é o eixo das questões de circulação: reconhecer cedo, achar a fonte e escolher o fluido certo. É também onde o ATLS 11 mais mudou o que se responde.</p><ul><li><b>Choque no trauma é hemorrágico até prova em contrário.</b> Procure a fonte em \"four and the floor\": tórax, abdome, pelve/retroperitônio, ossos longos e o chão (sangramento externo).</li><li><b>Sinais podem enganar:</b> idoso, betabloqueado, atleta, gestante e portador de marca-passo podem não ter taquicardia. Queda de PA é sinal tardio; lactato e déficit de base ajudam.</li><li><b>Antes vs agora:</b> provas antigas pediam \"classe III de choque, perda de 30–40%\". O ATLS 11 trocou as classes I–IV por uma tabela de gravidade sem percentuais fixos. Responda pela gravidade clínica e pela necessidade de sangue.</li><li><b>Fluido:</b> cristaloide no máximo cerca de 1 L como ponte; <b>sangue e hemocomponentes cedo</b> (1:1:1 ou sangue total). Provas antigas aceitavam 2 L de cristaloide; hoje é erro.</li><li><b>Hipotensão permissiva</b> até o controle do sangramento, <b>contraindicada no TCE e no TRM</b>.</li><li><b>Ácido tranexâmico:</b> até 3 h do trauma, 1 g em 10 min + 1 g em 8 h. Depois de 3 h, não iniciar.</li><li><b>Acesso:</b> dois periféricos curtos e calibrosos (Poiseuille); intraósseo se não conseguir.</li><li><b>Resposta à ressuscitação:</b> rápida, transitória ou mínima/ausente. Transitória e ausente indicam sangramento ativo e controle definitivo (cirurgia ou angiografia).</li><li><b>Instável + FAST positivo</b> → laparotomia. <b>Instável + FAST negativo</b> → procurar tórax, pelve e ossos longos. Pelve instável → cinta pélvica no nível dos trocânteres maiores.</li></ul><div class=\"pega\">Pegadinha: noradrenalina como primeira linha no choque hemorrágico. O tratamento é parar o sangramento e repor sangue; vasopressor não substitui volume.</div>"
    }
   ],
   "recall": [
@@ -1137,6 +1257,16 @@ window.ATLS = (window.ATLS||[]).concat(
     "q": "Onde centrar a cinta pélvica?",
     "a": "Nos trocânteres maiores.",
     "s": "c06-e"
+   },
+   {
+    "q": "Qual o limite de cristaloide e o que dar depois no choque hemorrágico (ATLS 11)?",
+    "a": "Cerca de 1 L como ponte; depois sangue e hemocomponentes (1:1:1 ou sangue total).",
+    "s": "c06-prova"
+   },
+   {
+    "q": "Paciente instável com FAST negativo: o que procurar?",
+    "a": "Outras fontes: tórax (RX/eFAST), pelve (RX/cinta), ossos longos e sangramento externo.",
+    "s": "c06-prova"
    }
   ],
   "cards": [
@@ -1179,6 +1309,14 @@ window.ATLS = (window.ATLS||[]).concat(
    [
     "Autotransfusão no ATLS 11",
     "Não é mais discutida."
+   ],
+   [
+    "Classes I–IV de choque no ATLS 11?",
+    "Substituídas por tabela de gravidade da hemorragia, sem percentuais fixos de perda."
+   ],
+   [
+    "Hipotensão permissiva: contraindicação",
+    "TCE e trauma raquimedular."
    ]
   ],
   "battle": [
