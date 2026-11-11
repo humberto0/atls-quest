@@ -54,7 +54,7 @@
 <section id="s-map" class="screen" hidden>
   <div class="topbar">
     <h2>Quadro de Leitos</h2>
-    <div class="row"><button id="map-locker" class="btn-gold">Armário</button><button id="map-sim">Simulado</button><button id="map-title" class="btn-ghost">Menu</button><button id="map-set" class="btn-ghost">Configurações</button></div>
+    <div class="row"><button id="map-locker" class="btn-gold">Armário</button><button id="map-skills">Sala de Habilidades</button><button id="map-sim">Simulado</button><button id="map-title" class="btn-ghost">Menu</button><button id="map-set" class="btn-ghost">Configurações</button></div>
   </div>
   <div class="panel hud-top" id="map-hud"></div>
   <div class="map-ui">
@@ -79,6 +79,25 @@
   </div>
 </section>
 
+<!-- SALA DE HABILIDADES -->
+<section id="s-skills" class="screen" hidden>
+  <div class="topbar">
+    <div><span class="eyebrow">Seção extra</span><h2>Sala de Habilidades</h2></div>
+    <button id="sk-back" class="btn-ghost">Voltar ao quadro</button>
+  </div>
+  <p class="muted">Interpretação de exames de imagem, exames laboratoriais e passo a passo dos procedimentos do trauma. Cada item termina com um quiz.</p>
+  <div class="tabs" role="tablist" id="sk-tabs"></div>
+  <div class="skill-grid" id="sk-grid"></div>
+</section>
+
+<section id="s-skill" class="screen" hidden>
+  <div class="topbar">
+    <div><span class="eyebrow" id="ski-tag"></span><h2 id="ski-h"></h2></div>
+    <button id="ski-back" class="btn-ghost">Voltar à sala</button>
+  </div>
+  <div class="skill-detail" id="ski-main"></div>
+</section>
+
 <!-- ACTIVE RECALL -->
 <section id="s-recall" class="screen" hidden>
   <div class="topbar">
@@ -93,6 +112,16 @@
     <div class="chart" id="chart" tabindex="0" aria-label="Texto de estudo do capítulo"></div>
     <div class="qlist" id="qlist"></div>
   </div>
+</section>
+
+<!-- FASE 1 GUIADA -->
+<section id="s-study" class="screen" hidden>
+  <div class="topbar">
+    <div><span class="eyebrow" id="sd-tag">Fase 1 · Prontuário guiado</span><h2 id="sd-h"></h2></div>
+    <div class="row"><button id="sd-chart" class="btn-sm">Ver prontuário</button><button id="sd-back" class="btn-ghost btn-sm">Voltar ao quadro</button></div>
+  </div>
+  <nav class="stepper" id="sd-steps" aria-label="Etapas da Fase 1"></nav>
+  <div class="study-main" id="sd-main"></div>
 </section>
 
 <!-- FLASHCARDS -->
@@ -147,7 +176,7 @@
   <div class="panel qbox" id="qz-box"></div>
 </section>
 
-<p class="foot">Material de estudo baseado no ATLS® 11ª ed. (American College of Surgeons, 2025) e em resumos públicos das mudanças. Não substitui o manual oficial. ATLS® é marca registrada do American College of Surgeons. Arte gerada com IA.</p>
+<p class="foot">Material de estudo baseado no ATLS® 11ª ed. (American College of Surgeons, 2025) e em resumos públicos das mudanças. Não substitui o manual oficial. ATLS® é marca registrada do American College of Surgeons.</p>
 </div>
 
 <div class="modal" id="modal" hidden>
@@ -174,5 +203,14 @@
     <p id="rw-desc"></p>
     <div class="row" style="justify-content:center"><button id="rw-equip" class="btn-gold">Equipar agora</button><button id="rw-close" class="btn-primary">Continuar</button></div>
   </div>
+</div>
+<div class="modal drawer" id="drawer" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="dr-h">
+    <div class="row" style="justify-content:space-between"><h3 id="dr-h">Prontuário</h3><button id="dr-close" class="btn-sm">Fechar</button></div>
+    <div class="chart" id="dr-chart" tabindex="0"></div>
+  </div>
+</div>
+<div class="modal zoom" id="zoom" hidden>
+  <figure role="dialog" aria-modal="true" aria-label="Imagem ampliada"><img id="zoom-img" alt=""><figcaption id="zoom-cap"></figcaption><button id="zoom-close" class="btn-primary btn-sm">Fechar</button></figure>
 </div>
 <div class="toast" id="toast" hidden></div>

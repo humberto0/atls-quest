@@ -57,7 +57,7 @@ function load(){ try{ const r=JSON.parse(localStorage.getItem(KEY)||'null'); if(
 function save(){ try{ localStorage.setItem(KEY,JSON.stringify(S)); }catch(e){} }
 function P(n){ if(!S.ch[n]) S.ch[n]={rc:{}, fc:{}, boss:false, bossBest:0}; return S.ch[n]; }
 function chap(n){ return n===99?FINAL:CH.find(c=>c.n===n); }
-function recallPct(c){ const p=P(c.n); const k=Object.values(p.rc).filter(v=>v===1).length; return c.recall.length?k/c.recall.length:0; }
+function recallPct(c){ if(hasGuidedStudy(c.n)) return studyScore(c.n); const p=P(c.n); const k=Object.values(p.rc).filter(v=>v===1).length; return c.recall.length?k/c.recall.length:0; }
 function cardsDone(c){ const p=P(c.n); return c.cards.filter((_,i)=>(p.fc[i]||0)>=3).length; }
 function stars(c){ let s=0; if(recallPct(c)>=.75) s++; if(cardsDone(c)===c.cards.length) s++; if(P(c.n).boss) s++; return s; }
 function unlocked(n){ if(!S.set.lock) return true; if(n===99) return CH.every(c=>P(c.n).boss); const i=CH.findIndex(c=>c.n===n); return i<=0 || P(CH[i-1].n).boss; }
@@ -99,6 +99,7 @@ const MEDALS = [
   {id:'sec3', icon:'🔵', name:'Seção III completa', desc:'Vença os 4 chefões da Seção III', ok:()=>sectionDone(2)},
   {id:'stars48', icon:'⭐', name:'Constelação', desc:'Junte 48 estrelas', ok:()=>totalStars()>=48},
   {id:'golden', icon:'🏆', name:'Hora de Ouro', desc:'Derrote o chefão final', ok:()=>P(99).boss},
+  {id:'skills', icon:'🩻', name:'Mãos de cirurgião', desc:'Conclua os quizzes de todos os itens da Sala de Habilidades', ok:()=>(window.ATLS_SKILLS||[]).length>0&&(window.ATLS_SKILLS||[]).every(it=>it.quiz.every((_,i)=>S.skills&&S.skills[it.id]&&S.skills[it.id].answers[i]!=null))},
 ];
 const equippedItem = () => ITEMS.find(i=>i.id===S.inv.item&&i.ok()) || ITEMS[0];
 const skinOf = id => { const s=SKINS.find(k=>k.id===(S.inv.skin[id]||'padrao')); return s&&s.ok()?s.id:'padrao'; };
@@ -237,7 +238,7 @@ function renderDock(){ const c=chap(sel), d=$('#dock'); d.innerHTML=''; if(!c) r
     const b=el('button',{class:'btn-red phase'},'<span>Enfrentar a Hora de Ouro</span><span>⚔</span>'); b.onclick=()=>startBattle(99); d.append(b); return; }
   const p=P(c.n), rp=Math.round(recallPct(c)*100), cd=cardsDone(c);
   const ph=(label,sub,done,fn,cls='')=>{ const b=el('button',{class:'phase '+cls},`<span>${label}<small>${sub}</small></span><span class="chip ${done?'ok':''}">${done?'✓':'·'}</span>`); b.onclick=fn; d.append(b); };
-  ph('Fase 1 · Active Recall', `${c.text.length} seções · ${rp}% de acertos`, rp>=75, ()=>startRecall(c.n));
+  ph(hasGuidedStudy(c.n)?'Fase 1 · Prontuário guiado':'Fase 1 · Active Recall', hasGuidedStudy(c.n)?`${c.text.length} seções + caso + passagem · ${rp}%`:`${c.text.length} seções · ${rp}% de acertos`, rp>=75, ()=>startRecall(c.n));
   ph('Fase 2 · Flashcards', `${cd} de ${c.cards.length} cartões dominados`, cd===c.cards.length, ()=>startCards(c.n));
   ph('Fase 3 · Chefão', p.boss?`Derrotado · melhor resultado: ${p.bossBest} ♥ restantes`:`${c.battle.length} questões · ${c.boss.name}`, p.boss, ()=>startBattle(c.n), 'btn-red'); }
 $('#map-title').onclick=()=>{ SFX.blip(); goTitle(); };
@@ -265,7 +266,7 @@ $('#lk-back').onclick=()=>{ SFX.blip(); goMap(); };
 
 /* ---------- Fase 1: Active Recall ---------- */
 let RC=null;
-function startRecall(n){ const c=chap(n); RC={c}; show('s-recall'); $('#rc-h').textContent=c.t; $('#rc-tag').textContent=`Capítulo ${c.n} · Fase 1 · Active Recall`;
+function startRecall(n){ if(hasGuidedStudy(n)) return startStudy(n); const c=chap(n); RC={c}; show('s-recall'); $('#rc-h').textContent=c.t; $('#rc-tag').textContent=`Capítulo ${c.n} · Fase 1 · Active Recall`;
   const ch=$('#chart'); ch.classList.remove('hidden-text'); ch.scrollTop=0; $('#rc-hide').textContent='Esconder texto';
   ch.innerHTML=c.text.map(s=>`<section id="sec-${s.id}"><h4>${s.t}</h4>${s.b}</section>`).join('');
   const ql=$('#qlist'); ql.innerHTML=''; const p=P(n);
@@ -287,6 +288,159 @@ function rcScore(){ const c=RC.c, p=P(c.n); const ans=Object.keys(p.rc).length, 
   if(ans===c.recall.length && ok/c.recall.length>=.75 && !RC.toasted){ RC.toasted=true; toast('★ Fase 1 concluída!'); } }
 $('#rc-hide').onclick=()=>{ const b=$('#chart'); b.classList.toggle('hidden-text'); $('#rc-hide').textContent=b.classList.contains('hidden-text')?'Mostrar texto':'Esconder texto'; };
 $('#rc-back').onclick=()=>{ SFX.blip(); goMap(); };
+
+
+/* ---------- Fase 1 guiada: prontuário completo → com suas palavras → caso → passagem de plantão ---------- */
+const STUDY = window.ATLS_STUDY || {};
+const hasGuidedStudy = n => !!STUDY[n];
+let SD=null;
+
+function studyProgress(n){ const p=P(n); if(!p.study||p.study.v!==2) p.study={v:2,read:false,keys:{},casePicks:[],handoff:null,finished:false}; return p.study; }
+function recallTopics(n){ const c=chap(n), checks=STUDY[n].checks; return c.text.filter(s=>checks[s.id]); }
+function studyScore(n){ const st=studyProgress(n), data=STUDY[n]; let ok=0,tot=0;
+  for(const id in data.checks){ tot+=data.checks[id].keys.length; ok+=(st.keys[id]||[]).filter(Boolean).length; }
+  const steps=data.case.steps; tot+=steps.length; ok+=st.casePicks.filter((pick,i)=>pick!=null&&steps[i].options[pick].ok).length;
+  tot+=data.handoff.keys.length; ok+=(st.handoff||[]).filter(Boolean).length;
+  return tot?ok/tot:0; }
+const STUDY_STEPS = [
+  {kind:'chart', label:'1. Prontuário'},
+  {kind:'recall', label:'2. Com suas palavras'},
+  {kind:'case', label:'3. Caso à beira do leito'},
+  {kind:'handoff', label:'4. Passagem de plantão'}
+];
+function stepDone(step){ const st=studyProgress(SD.n);
+  if(step.kind==='chart') return st.read;
+  if(step.kind==='recall') return recallTopics(SD.n).every(s=>st.keys[s.id]);
+  if(step.kind==='case') return st.casePicks.length>=STUDY[SD.n].case.steps.length;
+  return !!st.handoff; }
+function startStudy(n){ const c=chap(n); show('s-study'); $('#sd-h').textContent=c.t; $('#sd-tag').textContent=`Capítulo ${c.n} · Fase 1 · Prontuário guiado`;
+  SD={n,c,idx:0,topic:0,caseStep:0}; const open=STUDY_STEPS.findIndex(s=>!stepDone(s)); SD.idx=open<0?0:open;
+  if(STUDY_STEPS[SD.idx].kind==='recall'){ const st=studyProgress(n); const t=recallTopics(n).findIndex(s=>!st.keys[s.id]); SD.topic=t<0?0:t; }
+  renderStudy(); }
+function renderStepper(){ const nav=$('#sd-steps'); nav.innerHTML='';
+  STUDY_STEPS.forEach((step,i)=>{ const b=el('button',{class:(i===SD.idx?'cur ':'')+(stepDone(step)?'done':'')},`${stepDone(step)?'✓ ':''}${step.label}`);
+    b.onclick=()=>{ SD.idx=i; SD.topic=0; SD.caseStep=0; renderStudy(); }; nav.append(b); });
+  nav.children[SD.idx]?.scrollIntoView({block:'nearest',inline:'center'}); }
+function setChartButtonEnabled(enabled){ const b=$('#sd-chart'); b.disabled=!enabled; b.title=enabled?'':'Disponível depois de comparar com os pontos-chave'; }
+function renderStudy(){ renderStepper(); setChartButtonEnabled(true); const kind=STUDY_STEPS[SD.idx].kind, main=$('#sd-main'); main.innerHTML=''; window.scrollTo({top:0});
+  if(kind==='chart') renderFullChart(main); else if(kind==='recall') renderRecallTopic(main); else if(kind==='case') renderCaseStep(main); else renderHandoffStep(main); }
+function goNextStep(){ if(SD.idx<STUDY_STEPS.length-1){ SD.idx++; SD.topic=0; SD.caseStep=0; renderStudy(); } else finishStudy(); }
+
+/* 1. prontuário completo, numa leitura só, com índice */
+function renderFullChart(main){ const c=SD.c;
+  const index=el('div',{class:'study-card'}); index.append(el('h3',{},'📋 Prontuário do capítulo'), el('p',{class:'hint'},'Leia o capítulo inteiro com calma. Na próxima etapa o texto fica fechado e você explica cada tópico com suas palavras.'));
+  const chips=el('div',{class:'row'}); c.text.forEach(s=>{ const b=el('button',{class:'btn-sm btn-ghost'},s.t); b.onclick=()=>document.getElementById('full-'+s.id)?.scrollIntoView({behavior:'smooth',block:'start'}); chips.append(b); }); index.append(chips);
+  const chart=el('div',{class:'chart'},c.text.map(s=>`<section id="full-${s.id}"><h4>${s.t}</h4>${s.b}</section>`).join(''));
+  const done=el('button',{class:'btn-primary'},'Terminei a leitura: fechar o prontuário'); done.onclick=()=>{ studyProgress(SD.n).read=true; save(); SFX.ok(); goNextStep(); };
+  main.append(index, chart, done); }
+
+/* 2. com suas palavras: um tópico por vez, texto fechado, comparação com pontos-chave */
+function renderRecallTopic(main){ const topics=recallTopics(SD.n), sec=topics[SD.topic], keys=STUDY[SD.n].checks[sec.id].keys, st=studyProgress(SD.n);
+  setChartButtonEnabled(false);
+  const card=el('div',{class:'study-card'});
+  card.append(el('span',{class:'eyebrow'},`Tópico ${SD.topic+1} de ${topics.length} · prontuário fechado`), el('h3',{},`🧠 ${sec.t}`),
+    el('p',{class:'hint'},'Escreva tudo o que você lembra sobre este tópico, como se explicasse a um colega: o que fazer, quando e por quê.'));
+  const memo=el('textarea',{class:'memo',placeholder:'Escreva aqui…','aria-label':`O que você lembra sobre ${sec.t}`}); card.append(memo);
+  const btn=el('button',{class:'btn-primary'},'Comparar com os pontos-chave'); card.append(btn); main.append(card); memo.focus();
+  btn.onclick=()=>{ btn.remove(); memo.readOnly=true; setChartButtonEnabled(true);
+    card.append(el('p',{class:'hint'},`Marque os ${keys.length} pontos que o seu texto cobriu. Os que ficarem desmarcados têm o atalho para o trecho no prontuário.`));
+    const list=keyChecklist(keys.map(k=>({t:k,s:sec.id}))); card.append(list.el);
+    const last=SD.topic>=topics.length-1; const next=el('button',{class:'btn-primary'},last?'Concluir e ir para o caso':'Próximo tópico');
+    next.onclick=()=>{ st.keys[sec.id]=list.values(); save(); SFX.ok(); if(last) goNextStep(); else { SD.topic++; renderStudy(); } }; card.append(next); }; }
+function keyChecklist(keys){ const wrap=el('div',{class:'keylist'}); const boxes=keys.map(k=>{ const item=el('label',{class:'keyitem miss'}); const cb=el('input',{type:'checkbox'}); item.append(cb, el('span',{},k.t));
+    const see=seeInChartButton(k.s); see.classList.add('see'); item.append(see); cb.onchange=()=>{ item.classList.toggle('miss',!cb.checked); see.hidden=cb.checked; }; wrap.append(item); return cb; });
+  return {el:wrap, values:()=>boxes.map(b=>b.checked)}; }
+function seeInChartButton(sectionId){ const b=el('button',{class:'btn-sm btn-ghost',type:'button'},'📋 Ver no prontuário'); b.onclick=e=>{ e.preventDefault(); e.stopPropagation(); openChartDrawer(SD.c,sectionId); }; return b; }
+
+/* caso à beira do leito */
+function monitorView(v){ const alarm=k=>(k==='PA'&&parseInt(v[k])<90)||(k==='FC'&&parseInt(v[k])>=120)||(k==='SatO2'&&parseInt(v[k])<92);
+  return el('div',{class:'monitor','aria-label':'Sinais vitais'}, Object.keys(v).map(k=>`<span><small>${k}</small><b class="${alarm(k)?'alarm':''}">${v[k]}</b></span>`).join('')); }
+function renderCaseStep(main){ const data=STUDY[SD.n].case, st=studyProgress(SD.n); const i=SD.caseStep, step=data.steps[i];
+  const vitals=Object.assign({},data.vitals,...data.steps.slice(0,i+1).map(s=>s.vitals||{}));
+  const card=el('div',{class:'study-card'}); card.append(el('h3',{},`🚑 ${data.title}`), monitorView(vitals));
+  if(i===0) card.append(el('p',{},data.intro));
+  card.append(el('span',{class:'eyebrow'},`Decisão ${i+1} de ${data.steps.length}`), el('p',{class:'case-q'},step.prompt));
+  const opts=el('div',{class:'opts'}); card.append(opts); main.append(card);
+  shuffle(step.options.map((_,k)=>k)).forEach((k,pos)=>{ const b=el('button',{},`<b>${LETTERS[pos]}</b><span>${step.options[k].t}</span>`); b.dataset.oi=k; b.onclick=()=>pickCaseOption(card,opts,step,k); opts.append(b); });
+  opts.querySelector('button').focus({preventScroll:true}); }
+function pickCaseOption(card,opts,step,k){ const st=studyProgress(SD.n), o=step.options[k]; st.casePicks[SD.caseStep]=k; save(); o.ok?SFX.ok():SFX.bad();
+  [...opts.children].forEach(b=>{ b.disabled=true; const j=+b.dataset.oi; if(step.options[j].ok) b.classList.add('right'); if(j===k&&!o.ok) b.classList.add('wrong'); });
+  const right=step.options.find(x=>x.ok); const fb=el('div',{class:'fb '+(o.ok?'ok':'no')},`<span class="verdict">${o.ok?'Boa conduta':'Não é a melhor conduta'}</span>${o.fb}${o.ok?'':`<br><b>Melhor conduta:</b> ${right.t}. ${right.fb}`}`);
+  fb.append(el('br'), seeInChartButton(o.ok?o.s:(right.s||o.s))); card.append(fb);
+  const last=SD.caseStep>=STUDY[SD.n].case.steps.length-1; const next=el('button',{class:'btn-primary'},last?'Ir para a passagem de plantão':'Próxima decisão');
+  next.onclick=()=>{ if(last) goNextStep(); else { SD.caseStep++; renderStudy(); } }; card.append(next); next.focus({preventScroll:true}); }
+
+/* passagem de plantão */
+function renderHandoffStep(main){ const data=STUDY[SD.n].handoff; const card=el('div',{class:'study-card'});
+  card.append(el('h3',{},'🔁 Passagem de plantão'), el('p',{},data.prompt), el('p',{class:'hint'},'S: situação · x: hemorragia · A · B · C · D · E · Background · Assessment · Recommendations'));
+  const memo=el('textarea',{class:'memo',placeholder:'Escreva a passagem do caso…','aria-label':'Sua passagem de plantão'}); card.append(memo);
+  const btn=el('button',{class:'btn-primary'},'Comparar com o checklist'); card.append(btn); main.append(card); memo.focus();
+  btn.onclick=()=>{ btn.remove(); memo.readOnly=true; const list=keyChecklist(data.keys); card.append(el('p',{class:'hint'},'Marque o que a sua passagem incluiu:'), list.el);
+    const done=el('button',{class:'btn-primary'},'Concluir a Fase 1'); done.onclick=()=>{ studyProgress(SD.n).handoff=list.values(); save(); finishStudy(); }; card.append(done); }; }
+function finishStudy(){ const st=studyProgress(SD.n); st.finished=true; save(); const pct=Math.round(studyScore(SD.n)*100); pct>=75?SFX.win():SFX.ok();
+  const main=$('#sd-main'); main.innerHTML=''; renderStepper();
+  const card=el('div',{class:'study-card',style:'text-align:center;justify-items:center'});
+  card.append(el('span',{class:'eyebrow'},'Fase 1 concluída'), el('span',{class:'score-ring'},`${pct}%`), el('p',{},pct>=75?'★ Estrela da Fase 1 conquistada! Pontos-chave lembrados, condutas no caso e passagem de plantão somados.':'Faltou pouco para a estrela (75%). Revise as etapas com erro pelo menu acima e refaça.'));
+  const row=el('div',{class:'row',style:'justify-content:center'}); const a=el('button',{class:'btn-primary'},'Ir para os flashcards'); a.onclick=()=>startCards(SD.n); const b=el('button',{},'Voltar ao quadro'); b.onclick=goMap; row.append(a,b); card.append(row); main.append(card); checkRewards(); }
+
+/* painel "Ver no prontuário" */
+function openChartDrawer(c,sectionId){ const ch=$('#dr-chart'); $('#dr-h').textContent=`Prontuário · Capítulo ${c.n}`;
+  ch.innerHTML=c.text.map(s=>`<section id="dr-${s.id}"><h4>${s.t}</h4>${s.b}</section>`).join(''); $('#drawer').hidden=false;
+  const target=document.getElementById('dr-'+sectionId); requestAnimationFrame(()=>{ if(target){ ch.scrollTop=target.offsetTop-12; target.classList.add('flash'); setTimeout(()=>target.classList.remove('flash'),1600); } $('#dr-close').focus(); }); }
+$('#dr-close').onclick=()=>{ $('#drawer').hidden=true; };
+$('#drawer').onclick=e=>{ if(e.target.id==='drawer') $('#drawer').hidden=true; };
+$('#sd-chart').onclick=()=>{ const topics=recallTopics(SD.n); const id=STUDY_STEPS[SD.idx].kind==='recall'?topics[SD.topic].id:SD.c.text[0].id; openChartDrawer(SD.c,id); };
+$('#sd-back').onclick=()=>{ SFX.blip(); goMap(); };
+
+
+/* ---------- Sala de Habilidades: imagem, laboratório e procedimentos ---------- */
+const SKILLS = window.ATLS_SKILLS || [];
+const SKILL_TABS = [
+  {cat:'imagem', label:'🩻 Exames de imagem'},
+  {cat:'lab', label:'🧪 Laboratório'},
+  {cat:'proc', label:'🩺 Procedimentos'}
+];
+let skillTab='imagem';
+function skillProgress(id){ if(!S.skills) S.skills={}; if(!S.skills[id]) S.skills[id]={answers:{}}; return S.skills[id]; }
+function skillDone(it){ const pr=skillProgress(it.id); return it.quiz.every((_,i)=>pr.answers[i]!=null); }
+const skillsDoneCount = () => SKILLS.filter(skillDone).length;
+function goSkills(){ show('s-skills'); renderSkillTabs(); renderSkillGrid(); }
+function renderSkillTabs(){ const tabs=$('#sk-tabs'); tabs.innerHTML='';
+  for(const t of SKILL_TABS){ const n=SKILLS.filter(s=>s.cat===t.cat), done=n.filter(skillDone).length;
+    const b=el('button',{role:'tab','aria-selected':String(t.cat===skillTab)},`${t.label} <small>${done}/${n.length}</small>`);
+    b.onclick=()=>{ skillTab=t.cat; SFX.blip(); renderSkillTabs(); renderSkillGrid(); }; tabs.append(b); } }
+function renderSkillGrid(){ const grid=$('#sk-grid'); grid.innerHTML='';
+  const items=SKILLS.filter(s=>s.cat===skillTab);
+  if(!items.length){ grid.append(el('p',{class:'muted'},'Em preparação.')); return; }
+  for(const it of items){ const card=el('button',{class:'skill-card'}); const first=it.img&&it.img[0];
+    const thumb=el('span',{class:'thumb'}); if(first&&window.ART[first.key]) thumb.style.backgroundImage=`url(${window.ART[first.key]})`;
+    else { thumb.classList.add('noimg',it.cat); thumb.append(el('span',{class:'ico','aria-hidden':'true'},({imagem:'🩻',lab:'🧪',proc:'🩺'})[it.cat]||'📋')); }
+    if(skillDone(it)) thumb.append(el('span',{class:'chip ok'},'✓ quiz feito'));
+    card.append(thumb, el('span',{class:'info'},`<b>${it.t}</b><small>${it.sub||''}</small>`));
+    card.onclick=()=>{ SFX.blip(); openSkill(it.id); }; grid.append(card); } }
+function figureView(im){ const fig=el('figure'); const img=el('img',{alt:im.alt||'',loading:'lazy'}); img.src=window.ART[im.key]||'';
+  img.onclick=()=>openZoom(img.src,im); fig.append(img);
+  const credit=im.url?`<a href="${im.url}" target="_blank" rel="noopener">${im.credit}</a>`:im.credit;
+  fig.append(el('figcaption',{},`${im.cap||''}<span class="credit">${credit||''}</span>`)); return fig; }
+function openZoom(src,im){ $('#zoom-img').src=src; $('#zoom-img').alt=im.alt||''; $('#zoom-cap').textContent=im.cap||''; $('#zoom').hidden=false; $('#zoom-close').focus(); }
+$('#zoom-close').onclick=()=>{ $('#zoom').hidden=true; };
+$('#zoom').onclick=e=>{ if(e.target.id==='zoom') $('#zoom').hidden=true; };
+function openSkill(id){ const it=SKILLS.find(s=>s.id===id); if(!it) return; show('s-skill');
+  const tab=SKILL_TABS.find(t=>t.cat===it.cat); $('#ski-tag').textContent=`Sala de Habilidades · ${tab?tab.label.replace(/^\S+\s/,''):''}`; $('#ski-h').textContent=it.t;
+  const main=$('#ski-main'); main.className='skill-detail '+it.cat; main.innerHTML='';
+  if(it.img&&it.img.length){ const figs=el('div',{class:'figs'}); it.img.forEach(im=>figs.append(figureView(im))); main.append(figs); }
+  main.append(el('div',{class:'chart'},it.b));
+  if(it.quiz&&it.quiz.length){ const card=el('div',{class:'study-card'}); card.append(el('h3',{},'📝 Quiz'));
+    it.quiz.forEach((Q,i)=>card.append(skillQuizItem(it,Q,i))); main.append(card); }
+  const back=el('button',{class:'btn-ghost'},'Voltar à sala'); back.onclick=goSkills; main.append(back); }
+function skillQuizItem(it,Q,i){ const wrap=el('div',{class:'quiz-item'}), pr=skillProgress(it.id);
+  wrap.append(el('span',{class:'eyebrow'},`Questão ${i+1} de ${it.quiz.length}`), el('p',{class:'q'},Q.q));
+  const opts=optionList(Q,(oi,btn)=>{ if(opts.dataset.done) return; opts.dataset.done='1'; const ok=oi===Q.c; pr.answers[i]=ok?1:0; save(); ok?SFX.ok():SFX.bad();
+    wrap.append(revealAnswer(Q,btn,opts,ok)); if(skillDone(it)){ toast('✓ Quiz concluído'); checkRewards(); } });
+  wrap.append(opts); return wrap; }
+$('#sk-back').onclick=()=>{ SFX.blip(); goMap(); };
+$('#ski-back').onclick=()=>{ SFX.blip(); goSkills(); };
+$('#map-skills').onclick=()=>{ SFX.blip(); goSkills(); };
 
 /* ---------- Fase 2: Flashcards ---------- */
 let FC=null;
@@ -537,6 +691,8 @@ document.addEventListener('keydown',e=>{
   if(e.target.matches('textarea,input,select')) return;
   if(!$('#reward').hidden){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); $('#rw-close').click(); } return; }
   if(e.key==='Escape' && !$('#modal').hidden){ $('#set-close').click(); return; }
+  if(e.key==='Escape' && !$('#drawer').hidden){ $('#drawer').hidden=true; return; }
+  if(e.key==='Escape' && !$('#zoom').hidden){ $('#zoom').hidden=true; return; }
   if(curScreen==='s-cards'){ if(e.code==='Space'){ e.preventDefault(); flipCard(); } else if(e.key==='ArrowRight') gradeCard(true); else if(e.key==='ArrowLeft') gradeCard(false); }
   else if(curScreen==='s-cut' && (e.code==='Space'||e.key==='Enter')){ e.preventDefault(); advance(); }
   else if((curScreen==='s-battle'||curScreen==='s-quiz') && /^[1-4a-dA-D]$/.test(e.key)){ const i='1234'.includes(e.key)?+e.key-1:'abcd'.indexOf(e.key.toLowerCase()); const btn=document.querySelectorAll(curScreen==='s-battle'?'#qbox .opts button':'#qz-box .opts button')[i]; if(btn&&!btn.disabled) btn.click(); }
