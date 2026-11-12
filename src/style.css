@@ -348,3 +348,10 @@ select{font:inherit;background:var(--surface-2);color:var(--text);border:1px sol
 }
 @media (max-width:480px){.opts{grid-template-columns:1fr}.stat{grid-template-columns:86px 1fr}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Fase 1 · pergunta-guia */
+.guide{background:#0b2226;border:1px solid var(--line);border-left:4px solid var(--gold,#f5c542);border-radius:10px;padding:12px 14px;margin:6px 0 10px}
+.guide-q{font-weight:700;font-size:1.05em;margin:0 0 8px;color:var(--text)}
+.guide-label{display:block;font-size:.8em;text-transform:uppercase;letter-spacing:.06em;opacity:.75;margin-bottom:4px}
+.guide-list{margin:0;padding-left:1.2em}
+.guide-list li{margin:3px 0}

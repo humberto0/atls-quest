@@ -358,6 +358,13 @@ select{font:inherit;background:var(--surface-2);color:var(--text);border:1px sol
 }
 @media (max-width:480px){.opts{grid-template-columns:1fr}.stat{grid-template-columns:86px 1fr}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Fase 1 · pergunta-guia */
+.guide{background:#0b2226;border:1px solid var(--line);border-left:4px solid var(--gold,#f5c542);border-radius:10px;padding:12px 14px;margin:6px 0 10px}
+.guide-q{font-weight:700;font-size:1.05em;margin:0 0 8px;color:var(--text)}
+.guide-label{display:block;font-size:.8em;text-transform:uppercase;letter-spacing:.06em;opacity:.75;margin-bottom:4px}
+.guide-list{margin:0;padding-left:1.2em}
+.guide-list li{margin:3px 0}
 </style>
 </head>
 <body>
@@ -12397,6 +12404,331 @@ window.ATLS_STUDY = Object.assign(window.ATLS_STUDY || {}, {
   }
 });
 
+/* Fase 1 · "Com suas palavras": pergunta-guia e roteiro do que abordar (caps. 1–4) */
+window.ATLS_GUIDE = Object.assign(window.ATLS_GUIDE || {}, {
+  "c01-a": { q: "Como a equipe se prepara antes de o paciente chegar, e como recebe a informação do pré-hospitalar?",
+    h: ["O que o SME deve avisar ao hospital", "Como a sala e a equipe ficam prontas (temperatura, proteção, sangue)", "O que significa cada letra do MIST", "O que é triagem e o que mudou nela no ATLS 11"] },
+  "c01-b": { q: "Qual é a sequência do exame primário hoje, e por que ela segue essa ordem?",
+    h: ["O que significa cada letra do xABCDE", "Por que o x passou a vir antes da via aérea", "Avaliar e tratar ao mesmo tempo: o que isso quer dizer", "Como a sequência funciona com a equipe completa"] },
+  "c01-c": { q: "Como ressuscitar o paciente em choque durante o exame primário?",
+    h: ["Qual tipo de choque presumir no trauma", "Qual fluido preferir e qual o limite de cristaloide", "Os danos do cristaloide em grande volume", "Como saber se a ressuscitação está funcionando", "Por que ressuscitar antes de intubar"] },
+  "c01-d": { q: "Quais adjuntos complementam o exame primário, e o que cada um procura?",
+    h: ["A regra para usar um adjunto", "Monitorização e capnografia", "Sondas urinária e gástrica: para que servem e quando evitar", "Exames de imagem do primário", "Onde procurar o sangue perdido"] },
+  "c01-e": { q: "O que acontece depois do primário: reavaliação, exame secundário e transferência?",
+    h: ["O que fazer se o paciente piora", "Quando começar o exame secundário", "Quando decidir pela transferência, e o que não deve atrasá-la", "Como estruturar a passagem na transferência", "Os 3 Es da prevenção"] },
+  "c01-prova": { q: "Numa questão de conduta imediata no trauma, como você chega à resposta certa?",
+    h: ["Qual ameaça tratar primeiro", "O que fazer com o paciente instável e a tomografia", "Uretra, base de crânio e toque retal: o que cai", "As pegadinhas de conduta certa na hora errada"] },
+
+  "c02-a": { q: "O que faz uma equipe de trauma funcionar bem?",
+    h: ["Por que as equipes falham", "Os cinco pilares do trabalho em equipe", "O papel do líder e o dos membros", "Por que o líder deve ficar de mãos livres"] },
+  "c02-b": { q: "Quais são as seis fases do cuidado da equipe, do antes ao depois do paciente?",
+    h: ["O que é feito antes de qualquer paciente", "O huddle antes da ambulância chegar", "As duas passagens, na chegada e na saída", "Como o caso se encerra"] },
+  "c02-c": { q: "Como deve acontecer a passagem do pré-hospitalar na chegada do paciente?",
+    h: ["Por que esse é o momento mais crítico", "O que é o \"time out / all quiet\"", "Quando é permitido mexer no paciente durante o relato", "O que significam IMIST e AMBO"] },
+  "c02-d": { q: "Como a equipe se comunica para que nenhuma ordem se perca e qualquer pessoa possa alertar um risco?",
+    h: ["Como dar uma ordem bem dada", "O que completa a comunicação em alça fechada", "O que significa CUS e para que serve", "O problema da hierarquia rígida"] },
+  "c02-e": { q: "Para que serve o debriefing e como ele é feito?",
+    h: ["Quando e em que tom ele acontece", "Os três objetivos do debriefing", "A ferramenta que o ATLS 11 usa"] },
+  "c02-prova": { q: "O que as provas cobram sobre liderança e comunicação da equipe?",
+    h: ["O que o líder faz e o que deve evitar", "Como é uma ordem em alça fechada", "A resposta típica ao aviso do pré-hospitalar", "Para que servem o CUS e o debriefing"] },
+
+  "c03-a": { q: "Por que o controle da hemorragia externa passou a ser o primeiro passo do exame primário?",
+    h: ["A principal causa de morte evitável no trauma", "Quanto sangue um adulto tem e quão rápido pode perder", "Por que o sangramento mata antes da via aérea", "De onde veio essa mudança"] },
+  "c03-b": { q: "Como controlar um sangramento externo com pressão direta e empacotamento?",
+    h: ["Onde e como pressionar", "O que fazer com a gaze encharcada", "Quando e como empacotar uma ferida, e por quanto tempo comprimir", "O que fazer nas áreas juncionais"] },
+  "c03-c": { q: "Quando e como aplicar um torniquete?",
+    h: ["Quando ele está indicado", "Onde colocar e até quando apertar", "O que fazer se o paciente sente dor ou o sangramento continua", "O que registrar", "Por que o torniquete frouxo é perigoso"] },
+  "c03-d": { q: "Quando dá para converter o torniquete em outro método, e quando não dá?",
+    h: ["O custo de manter o torniquete", "Por que reavaliar cedo", "As situações em que não se converte", "Quem retira o torniquete mantido por muito tempo"] },
+  "c03-e": { q: "Depois de parar o sangramento externo, o que ainda precisa ser feito?",
+    h: ["Por que o choque continua", "Que hemoderivados repor, e por que não só hemácias", "Dose e janela do ácido tranexâmico", "Onde procurar sangramento oculto", "A tríade letal"] },
+  "c03-prova": { q: "O que as provas cobram sobre hemorragia externa e torniquete?",
+    h: ["A sequência de controle do sangramento", "Erros comuns com o torniquete", "Sangramento juncional e pinçamento às cegas", "O que mudou em relação às provas antigas"] },
+
+  "c04-a": { q: "Como avaliar a via aérea do traumatizado, e por que ela é tratada como difícil?",
+    h: ["Por que a hipóxia é tão perigosa", "O que agitação e sonolência sugerem", "O que cada ruído respiratório indica", "O paciente que fala normalmente", "Por que os escores tradicionais falham no trauma"] },
+  "c04-b": { q: "Quais manobras e dispositivos básicos abrem e mantêm a via aérea?",
+    h: ["A manobra preferida, e qual foi removida no ATLS 11", "Aspiração", "Quando usar cada cânula, e suas contraindicações", "BVM com duas pessoas", "O papel dos supraglóticos"] },
+  "c04-c": { q: "O que é uma via aérea definitiva, quando indicar e como fazer a intubação?",
+    h: ["A definição de via aérea definitiva", "As indicações, incluindo o risco de obstrução iminente", "Por que preferir a SRI, e com qual laringoscópio", "Como ganhar tempo de apneia", "Cuidados no hipotenso e com a coluna"] },
+  "c04-d": { q: "Como confirmar o tubo, e o que fazer quando a intubação falha?",
+    h: ["O dano de cada tentativa", "Quantas tentativas, e o que mudar depois", "Como oxigenar entre tentativas", "Como confirmar o tubo de verdade, e o que não confirma", "Para que serve o RX depois"] },
+  "c04-e": { q: "Quando indicar a via aérea cirúrgica, e qual técnica usar em cada idade?",
+    h: ["A situação que indica", "Por que completar o procedimento depois de indicado", "A técnica no adulto", "A técnica na criança pequena e suas limitações"] },
+  "c04-prova": { q: "O que as provas cobram sobre via aérea no trauma?",
+    h: ["As indicações de via aérea definitiva, incluindo a lesão inalatória", "Manobras e cânulas: o que mudou e o que é contraindicado", "Confirmação do tubo e conduta na falha", "Criança pequena, fratura de laringe e intubação nasotraqueal"] }
+});
+
+/* Fase 1 · "Com suas palavras": pergunta-guia e roteiro do que abordar (caps. 5–9) */
+window.ATLS_GUIDE = Object.assign(window.ATLS_GUIDE || {}, {
+  "c05-a": { q: "Como avaliar a respiração e a ventilação no B?",
+    h: ["Por que via aérea pérvia não basta", "O que procurar na inspeção e na palpação", "O que a percussão e a ausculta revelam", "Os sinais de obstrução ao retorno venoso", "Os adjuntos do B"] },
+  "c05-b": { q: "Como reconhecer e tratar o pneumotórax hipertensivo?",
+    h: ["O mecanismo de válvula e por que derruba a PA", "Os sinais clínicos, e qual é tardio", "Por que não esperar o RX", "O tratamento imediato e o local no adulto", "O paciente em ventilação mecânica que piora de repente"] },
+  "c05-c": { q: "Como manejar o pneumotórax aberto e o tórax instável?",
+    h: ["Quando a ferida torácica \"aspira\" ar", "O curativo inicial e o tratamento depois", "A definição de tórax instável", "O que realmente causa a hipóxia no tórax instável", "Tratamento: ventilação, fluidos e analgesia"] },
+  "c05-d": { q: "Como reconhecer e tratar o hemotórax maciço e o tamponamento cardíaco?",
+    h: ["O quadro clínico do hemotórax maciço", "O tratamento inicial e os volumes que indicam toracotomia", "Como o tamponamento compromete o coração", "A tríade de Beck e o diagnóstico pelo FAST", "Tratamento definitivo e o papel da pericardiocentese"] },
+  "c05-e": { q: "Como e onde fazer a toracostomia digital e a drenagem com tubo?",
+    h: ["Para que serve a toracostomia digital", "Por que o dreno é o tratamento definitivo inicial", "O local de inserção", "Por que entrar pela borda superior da costela", "Por que não descer abaixo do 5º espaço"] },
+  "c05-prova": { q: "O que as provas cobram sobre trauma de tórax?",
+    h: ["Pneumotórax hipertensivo: diagnóstico, conduta e local", "Pneumotórax aberto e hemotórax maciço", "Tamponamento e o diferencial com o pneumotórax", "Tórax instável e lesão traqueobrônquica", "A pegadinha do desvio da traqueia"] },
+
+  "c06-a": { q: "Quais são os tipos de choque no trauma, e como diferenciá-los?",
+    h: ["A definição de choque", "Qual tipo presumir primeiro", "Obstrutivo: causas e por que volume não resolve", "Cardiogênico e distributivo", "O choque neurogênico"] },
+  "c06-b": { q: "Como reconhecer a hemorragia antes de a pressão cair?",
+    h: ["Como o corpo compensa a perda", "Os sinais precoces e o que acontece com a pressão de pulso", "Os sinais tardios", "O índice de choque e o ETCO2", "Quem pode não ficar taquicárdico"] },
+  "c06-c": { q: "Como obter acesso e o que infundir no choque hemorrágico?",
+    h: ["O que a lei de Poiseuille ensina sobre o cateter", "Qual acesso usar e a alternativa", "O fluido ideal e o limite de cristaloide", "Ressuscitação de controle de danos, hipotensão permissiva e proporção 1:1:1", "Quando a hipotensão permissiva é contraindicada"] },
+  "c06-d": { q: "Como usar o ácido tranexâmico, repor cálcio e lidar com anticoagulantes?",
+    h: ["Por que a fibrinólise atrapalha", "Dose, janela e o caso do TCE", "Por que o cálcio cai na transfusão maciça", "O que perguntar cedo e a quem"] },
+  "c06-e": { q: "Como manejar a pelve instável, interpretar a resposta à reposição e conduzir a parada traumática?",
+    h: ["Por que a pelve sangra tanto, e onde colocar a cinta", "O que não fazer com a pelve", "Os três padrões de resposta à reposição", "Por que a parada traumática é diferente e suas causas reversíveis"] },
+  "c06-prova": { q: "O que as provas cobram sobre choque e reposição volêmica?",
+    h: ["Quem esconde o choque e o que medir além da PA", "O que mudou em relação às classes de choque", "Fluidos, hipotensão permissiva, TXA e acesso", "A conduta pelo FAST no instável", "A pegadinha do vasopressor"] },
+
+  "c07-a": { q: "Como a fisiologia do crânio explica a hipertensão intracraniana?",
+    h: ["A doutrina de Monro-Kellie", "O que é deslocado primeiro e o limite da compensação", "O paciente que conversa e piora", "A fórmula da perfusão cerebral", "A autorregulação no cérebro saudável e no lesado"] },
+  "c07-b": { q: "O que é a lesão secundária, e como evitá-la?",
+    h: ["A diferença entre lesão primária e secundária", "Por que hipóxia e hipotensão são tão graves", "As metas de PA no TCE e no TRM", "Oxigênio e CO2", "Hipotensão permissiva no TCE"] },
+  "c07-c": { q: "Como fazer a avaliação neurológica e reconhecer a piora crítica?",
+    h: ["A classificação do TCE pelo Glasgow", "O componente mais importante do Glasgow", "O que as pupilas e a lateralização indicam", "O que conta como piora neurológica crítica", "A tríade de Cushing"] },
+  "c07-d": { q: "Qual é o manejo escalonado da piora neurológica crítica?",
+    h: ["O objetivo e quem chamar", "Via aérea, posição da cabeça e o colar", "Hiperventilação: quando, quanto e o risco", "Sedação, hiperosmolares e temperatura", "Anticonvulsivante e TXA"] },
+  "c07-e": { q: "Como funciona a restrição de movimento da coluna e o manejo do trauma raquimedular?",
+    h: ["Os danos da imobilização desnecessária", "As regras para dispensar a imagem", "O colar no trauma penetrante", "Choque neurogênico versus choque medular", "Descompressão precoce e rastreio vascular"] },
+  "c07-prova": { q: "O que as provas cobram sobre TCE e trauma raquimedular?",
+    h: ["Como pontuar o Glasgow", "Hematoma epidural versus subdural", "Herniação uncal e Cushing", "Metas de lesão secundária e hiperventilação", "Síndromes medulares e o que mudou na imobilização"] },
+
+  "c08-a": { q: "Quais são os dois objetivos do E no exame primário?",
+    h: ["O que é a exposição completa", "Como examinar o dorso", "As regiões onde ferimentos se escondem", "Quais ameaças ambientais procurar"] },
+  "c08-b": { q: "Por que a hipotermia é perigosa no trauma, e como preveni-la?",
+    h: ["Por que o traumatizado esfria", "O efeito sobre a coagulação e a tríade letal", "Como manter o paciente aquecido", "Como aquecer fluidos e medir a temperatura", "O erro clássico na exposição"] },
+  "c08-c": { q: "Como iniciar a reposição do grande queimado já no exame primário?",
+    h: ["Por que não esperar o cálculo da SCQ", "Quando começar e com qual fluido", "As taxas iniciais por idade", "Como interromper a queimadura", "O cuidado com a queimadura química por pó"] },
+  "c08-d": { q: "Quais ameaças enganam porque o paciente parece bem, e como tratá-las?",
+    h: ["Os sinais da lesão inalatória e a evolução do edema", "Monóxido de carbono e o problema do oxímetro", "Quando suspeitar de cianeto", "A lesão elétrica", "Contaminação química ou radiológica"] },
+  "c08-prova": { q: "O que as provas cobram sobre exposição e ameaças ambientais?",
+    h: ["A exposição obrigatória", "Prevenção da hipotermia no trauma", "Hipotermia acidental grave e parada", "Como medir a temperatura", "Congelamento e intermação"] },
+
+  "c09-a": { q: "Como avaliar a profundidade e a extensão de uma queimadura?",
+    h: ["As duas perguntas da avaliação", "As características de cada profundidade", "O que não entra no cálculo da SCQ", "A regra dos 9 no adulto e a diferença na criança", "Como estimar áreas irregulares"] },
+  "c09-b": { q: "Como calcular e ajustar a reposição volêmica do queimado?",
+    h: ["Por que o queimado perde volume", "A fórmula por idade e na lesão elétrica", "Em quanto tempo distribuir o volume", "As metas de diurese e como ajustar", "O que mudou em relação a Parkland"] },
+  "c09-c": { q: "Quando intubar precocemente o paciente queimado?",
+    h: ["Por que a via aérea piora com o tempo", "Os sinais que indicam intubação precoce", "O tamanho do tubo", "O que lembrar no incêndio em ambiente fechado"] },
+  "c09-d": { q: "Quais cuidados vêm depois da reanimação do queimado, e quando transferir?",
+    h: ["Quando a escara exige escarotomia", "Como cobrir a queimadura", "Profilaxia e analgesia", "Os critérios de transferência e o que não atrasar"] },
+  "c09-e": { q: "Como tratar o congelamento?",
+    h: ["O que acontece no tecido congelado", "Como e quando reaquecer", "O risco de recongelar", "Analgesia e trombolítico", "Por que esperar antes de amputar"] },
+  "c09-prova": { q: "O que as provas cobram sobre queimaduras?",
+    h: ["Cálculo da SCQ no adulto e na criança", "Fórmula por idade e metas de diurese", "Indicações de intubação precoce e CO", "Escarotomia, lesão elétrica e química", "O que mudou em relação a Parkland"] }
+});
+
+/* Fase 1 · "Com suas palavras": pergunta-guia e roteiro do que abordar (caps. 10–14) */
+window.ATLS_GUIDE = Object.assign(window.ATLS_GUIDE || {}, {
+  "c10-a": { q: "Quais lesões musculoesqueléticas ameaçam a vida, e como tratá-las?",
+    h: ["Hemorragia arterial de extremidade", "Por que a pelve instável sangra, e onde colocar o binder", "As consequências do esmagamento", "Fraturas bilaterais de fêmur"] },
+  "c10-b": { q: "Quais lesões ameaçam o membro, e como preservá-lo?",
+    h: ["Fratura exposta: o que mais reduz a infecção, e o que se soma", "Sinais de lesão vascular", "Como conservar a parte amputada", "Luxação com déficit neurovascular", "O índice de lesão de extremidade"] },
+  "c10-c": { q: "Como a classificação de Gustilo-Anderson orienta o antibiótico na fratura exposta?",
+    h: ["O que a classificação avalia", "Os critérios de cada tipo", "O antibiótico para todas e o acréscimo no tipo III", "Quando iniciar"] },
+  "c10-d": { q: "Como surge, como reconhecer e como tratar a síndrome compartimental?",
+    h: ["O mecanismo dentro do compartimento", "Locais e causas comuns", "O sinal mais precoce e os outros sinais", "Por que o pulso presente não exclui", "A conduta"] },
+  "c10-e": { q: "Como radiografar e imobilizar uma fratura de extremidade?",
+    h: ["O que incluir no RX", "O que incluir na imobilização", "O que checar antes e depois da tala", "Para que serve a tração no fêmur"] },
+  "c10-prova": { q: "O que as provas cobram sobre trauma musculoesquelético?",
+    h: ["Síndrome compartimental: sinais e conduta", "Pelve instável e fratura exposta", "Sinais duros de lesão vascular e índice tornozelo-braquial", "Luxação de joelho, fêmur e esmagamento"] },
+
+  "c11-a": { q: "Quais diferenças anatômicas e fisiológicas da criança mudam o atendimento?",
+    h: ["Cabeça, occipício e via aérea", "O esqueleto complacente e suas consequências", "Perda de calor", "Reserva fisiológica e o significado da hipotensão", "Os sinais a observar"] },
+  "c11-b": { q: "Quais são as particularidades da via aérea pediátrica?",
+    h: ["Como escolher o tamanho do material", "Atropina na SRI do lactente", "Por que evitar a crico cirúrgica na criança pequena", "A alternativa e suas limitações"] },
+  "c11-c": { q: "Como ressuscitar a criança em choque hemorrágico?",
+    h: ["O volume sanguíneo da criança", "A sequência de acesso", "O que infundir e em que alíquota", "Como reavaliar entre as alíquotas", "As metas de diurese"] },
+  "c11-d": { q: "Como conduzir o TCE pediátrico, a imagem e as lesões de órgãos sólidos na criança?",
+    h: ["A principal causa de morte", "O risco da radiação e as regras de decisão", "O lactente com sangramento intracraniano", "Manejo não operatório de baço e fígado, e o que ele exige", "Hiperventilação"] },
+  "c11-e": { q: "Como reconhecer e conduzir os maus-tratos na criança?",
+    h: ["Sinais na história", "Padrões de lesão suspeitos", "O lactente com subdural e hemorragia retiniana", "O que o médico deve fazer"] },
+  "c11-prova": { q: "O que as provas cobram sobre trauma pediátrico?",
+    h: ["Hipotensão tardia e a PAS mínima aceitável", "Ressuscitação e acesso", "Via aérea, Broselow e crico", "Tórax complacente e manejo não operatório", "Maus-tratos e metas de diurese"] },
+
+  "c12-a": { q: "Como o envelhecimento muda a resposta ao trauma?",
+    h: ["Reserva fisiológica", "O que mascara a taquicardia e a hipotensão", "Por que o idoso tem subdural com trauma mínimo", "Osteoporose", "Comorbidades, polifarmácia e marcadores de hipoperfusão"] },
+  "c12-b": { q: "O que é fragilidade, e por que ela importa mais que a idade?",
+    h: ["A definição de fragilidade", "Por que dois idosos da mesma idade diferem", "Para que serve o índice de fragilidade", "O que mudou no nome do capítulo"] },
+  "c12-c": { q: "Como conduzir o idoso em uso de anticoagulante ou antiagregante?",
+    h: ["O risco da piora tardia", "A reversão de cada anticoagulante", "O limiar para TC de crânio", "O que fazer quando há sangramento"] },
+  "c12-d": { q: "Quais mecanismos e lesões são típicos no idoso?",
+    h: ["O mecanismo mais comum e o que investigar", "Por que a fratura de costela é perigosa, e como tratar", "Fraturas comuns depois de uma queda simples", "Como detectar hipoperfusão oculta"] },
+  "c12-e": { q: "Como reconhecer maus-tratos ao idoso e evitar o etarismo?",
+    h: ["Os tipos de maus-tratos e seus sinais", "O comportamento suspeito do cuidador", "O que fazer diante da suspeita", "Em que basear as decisões de tratamento"] },
+  "c12-prova": { q: "O que as provas cobram sobre trauma no idoso?",
+    h: ["Sinais vitais enganosos", "Queda da própria altura e TC no anticoagulado", "Reversão dos anticoagulantes", "Subdural, costelas e síndrome medular central", "Fragilidade e maus-tratos"] },
+
+  "c13-a": { q: "Quais princípios e mudanças fisiológicas guiam o atendimento da gestante traumatizada?",
+    h: ["Quem tratar primeiro, e por quê", "Volume plasmático e perda de sangue", "Por que o feto sofre antes de a mãe parecer chocada", "Sinais vitais e PaCO2 normais na gestação", "Risco de aspiração"] },
+  "c13-f": { q: "Como o xABCDE se adapta à gestante?",
+    h: ["x e via aérea", "Oxigênio e o local do dreno torácico", "Circulação: posição, reposição e vasopressores", "D e E, e a eclâmpsia que imita TCE"] },
+  "c13-b": { q: "Por que a posição da gestante importa, e como corrigi-la?",
+    h: ["A partir de quantas semanas o útero comprime a cava", "O efeito sobre o débito cardíaco", "As duas formas de aliviar a compressão", "O que fazer antes de qualquer droga"] },
+  "c13-c": { q: "Como colher a história obstétrica e estimar a idade gestacional?",
+    h: ["O que significa cada letra do CODE", "Como a altura uterina estima a idade gestacional", "A posição correta do cinto"] },
+  "c13-d": { q: "Como reconhecer o descolamento de placenta e monitorizar o feto?",
+    h: ["O mecanismo do descolamento", "Quando surge e quais são os sinais", "Por que o sangramento pode estar oculto", "Cardiotocografia: desde quando e por quanto tempo", "Os limites do ultrassom e os exames de imagem da mãe"] },
+  "c13-e": { q: "Como conduzir a isoimunização, a cesárea de ressuscitação e a suspeita de violência?",
+    h: ["Quem recebe anti-D, e em quanto tempo", "Para que serve o Kleihauer-Betke", "Por que e quando fazer a cesárea de ressuscitação", "Violência por parceiro íntimo"] },
+  "c13-prova": { q: "O que as provas cobram sobre trauma na gestante?",
+    h: ["A primeira conduta na gestante hipotensa", "Choque mascarado e fisiologia de prova", "Descolamento versus ruptura uterina", "CTG, anti-D e exames de imagem", "O que mudou na cesárea perimortem"] },
+
+  "c14-a": { q: "Quando fazer o exame secundário, e quando interrompê-lo?",
+    h: ["O que é e qual o objetivo", "As condições para começar", "O que fazer se o paciente piora", "Quando adiar o secundário"] },
+  "c14-b": { q: "Como colher a história AMPLE, e o que o mecanismo do trauma sugere?",
+    h: ["O que significa cada letra do AMPLE e por que importa", "Os medicamentos que mais mudam a conduta", "As lesões do impacto frontal e lateral", "Cinto abdominal, ejeção e atropelamento"] },
+  "c14-c": { q: "Como fazer o exame da cabeça aos pés?",
+    h: ["Por que manter sempre a mesma ordem", "Cabeça, face e sinais de base de crânio", "Pescoço e tórax", "Abdome, pelve e períneo", "Extremidades, exame neurológico e dorso"] },
+  "c14-d": { q: "Como reavaliar e converter o torniquete no exame secundário?",
+    h: ["Por que reavaliar o torniquete", "A pergunta-chave", "Os passos da conversão", "Quando não converter", "O que registrar"] },
+  "c14-e": { q: "Como identificar a síndrome compartimental, e quais adjuntos usar no secundário?",
+    h: ["O mecanismo da síndrome compartimental", "Os sinais precoces e o papel do pulso", "O tratamento", "Os adjuntos do secundário", "Reavaliação e analgesia"] },
+  "c14-prova": { q: "O que as provas cobram sobre o exame secundário?",
+    h: ["Quando começar e o AMPLE", "Base de crânio e uretra", "O toque retal e a síndrome compartimental", "Padrões de lesão por mecanismo", "TC, torniquete e antitetânica"] }
+});
+
+/* Fase 1 · "Com suas palavras": pergunta-guia e roteiro do que abordar (caps. 15–19) */
+window.ATLS_GUIDE = Object.assign(window.ATLS_GUIDE || {}, {
+  "c15-a": { q: "Quando transferir o paciente, e o que fazer antes de ele sair?",
+    h: ["O critério para transferir e exemplos de recursos que faltam", "Por que decidir cedo", "Quais exames não devem atrasar a transferência", "O que fazer antes da saída"] },
+  "c15-b": { q: "Quem é responsável pelo quê na transferência, e como deve ser a comunicação?",
+    h: ["O papel do médico de origem", "O papel do médico que recebe", "Como deve ser a comunicação entre eles", "O que acompanha o paciente"] },
+  "c15-c": { q: "Como fazer a passagem estruturada S-xABCDE-BAR?",
+    h: ["O que informar na Situação", "O que relatar em cada letra do xABCDE", "Background e Assessment", "As Recomendações para quem recebe"] },
+  "c15-d": { q: "Como preparar e conduzir o paciente durante o transporte?",
+    h: ["As limitações do transporte", "O que resolver antes de sair: via aérea e tórax", "O que monitorizar e o que levar", "A passagem do pré-hospitalar ao hospital"] },
+  "c15-prova": { q: "O que as provas cobram sobre transferência?",
+    h: ["Exames que não devem atrasar e o contato médico a médico", "O que estabilizar antes de transferir", "Controle de danos e documentação", "Transporte aéreo", "O que mudou em relação ao ABC-SBAR"] },
+
+  "c16-a": { q: "O que é um sistema de trauma, e por que ele salva vidas?",
+    h: ["A definição", "Por que o trauma é uma doença tempo-dependente", "O objetivo do sistema", "Sistema inclusivo"] },
+  "c16-b": { q: "Quais são os elementos de um sistema de trauma?",
+    h: ["A ideia da corrente", "Da prevenção ao pré-hospitalar", "Cuidado hospitalar e reabilitação", "Pesquisa"] },
+  "c16-c": { q: "Como funcionam a triagem regional e os níveis de centro de trauma?",
+    h: ["Subtriagem: o que é e por que é o erro mais grave", "Supertriagem e por que é tolerada", "Os níveis de centro e o que define o nível I"] },
+  "c16-d": { q: "Como funciona a triagem de campo no ATLS 11?",
+    h: ["O que é decidido na cena", "Critérios Vermelhos e seu destino", "Critérios Amarelos e seu destino", "O que mudou em relação ao esquema antigo"] },
+  "c16-e": { q: "Como o sistema se adapta aos recursos locais e melhora com o tempo?",
+    h: ["Princípios fixos e implementação flexível", "Registros de trauma", "Revisão de mortes evitáveis", "Como os achados viram melhorias"] },
+  "c16-prova": { q: "O que as provas cobram sobre sistemas de trauma?",
+    h: ["A distribuição trimodal das mortes e o que muda nos sistemas maduros", "A hora de ouro", "Sistema inclusivo e nível I", "Subtriagem e supertriagem", "Qual pico de mortes o ATLS mais reduz"] },
+
+  "c17-a": { q: "Como a lógica da triagem muda entre o incidente com múltiplas vítimas e o desastre?",
+    h: ["O que é triagem", "Múltiplas vítimas versus vítimas em massa", "Quem priorizar no desastre, e por quê", "O princípio ético"] },
+  "c17-b": { q: "Como funcionam as triagens START e SALT?",
+    h: ["As etapas do START, em ordem", "As quatro etapas do SALT", "O significado de cada cor", "O que não se faz na triagem em massa"] },
+  "c17-c": { q: "Como funciona o comando de incidentes num desastre?",
+    h: ["A principal causa do caos", "Cadeia de comando e papéis", "Comunicação", "A organização dentro do hospital", "Por que o plano precisa ser treinado"] },
+  "c17-d": { q: "Quais são as fases de um desastre, e quais cenários exigem cuidados especiais?",
+    h: ["As quatro fases", "As lesões predominantes em tiroteios e explosões", "Incidentes químicos e radiológicos", "Pacientes que chegam por conta própria"] },
+  "c17-e": { q: "Por que a triagem é dinâmica, e como o hospital recebe as ondas de vítimas?",
+    h: ["Por que retriar e quando", "Quem chega primeiro e quem chega depois", "Como evitar que a sala vermelha seja ocupada"] },
+  "c17-prova": { q: "O que as provas cobram sobre triagem e desastres?",
+    h: ["O START em ordem e as intervenções permitidas", "JumpSTART e SALT", "Múltiplas vítimas versus desastre", "Comando de incidentes, fases e ondas", "Tipos de lesão por explosão"] },
+
+  "c18-a": { q: "Por que trauma não é acidente, e como estudá-lo como doença?",
+    h: ["O problema da palavra \"acidente\"", "Por que as lesões são previsíveis", "Hospedeiro, agente e ambiente"] },
+  "c18-b": { q: "Quais são os três níveis de prevenção, com exemplos?",
+    h: ["Prevenção primária", "Prevenção secundária", "Prevenção terciária e onde o ATLS se encaixa"] },
+  "c18-c": { q: "Quais são os 3 Es da prevenção, e qual funciona melhor?",
+    h: ["O que é cada E", "A limitação da educação isolada", "Por que a engenharia costuma ser a mais eficaz", "Medidas ativas versus passivas"] },
+  "c18-d": { q: "Como usar a matriz de Haddon para achar pontos de prevenção?",
+    h: ["As fases do evento", "Os fatores envolvidos", "Exemplos numa colisão de carro"] },
+  "c18-e": { q: "Como os determinantes sociais influenciam a prevenção, e o que é o momento de oportunidade?",
+    h: ["Por que um programa pode falhar em outro lugar", "O que rastrear durante a internação", "Intervenção breve e programas de interrupção da violência"] },
+  "c18-prova": { q: "O que as provas cobram sobre prevenção de lesões?",
+    h: ["Exemplos de cada nível de prevenção", "A matriz de Haddon na prática", "Os 3 Es e as medidas passivas", "O momento de oportunidade", "A pegadinha do cinto de segurança"] },
+
+  "c19-a": { q: "O que é o cuidado informado pelo trauma, e por que ele importa?",
+    h: ["A mensagem central do capítulo", "Quem sofre a lesão psicológica", "Como ela muda o desfecho", "O que o cuidado informado pelo trauma é, e o que não é"] },
+  "c19-b": { q: "Quais são os 4 Rs do cuidado informado pelo trauma?",
+    h: ["O que significa cada R", "Exemplo de retraumatização", "A pegadinha do 4º R"] },
+  "c19-c": { q: "Como aplicar o cuidado informado pelo trauma na sala de trauma sem atrasar o atendimento?",
+    h: ["Apresentar-se e explicar antes de tocar", "Privacidade e escolhas", "Linguagem", "Como interpretar e conduzir a agitação"] },
+  "c19-d": { q: "Como os determinantes sociais influenciam quem se machuca e como evolui?",
+    h: ["A definição de determinantes sociais", "Influência sobre quem se machuca e sobre o desfecho", "Trauma recorrente", "O que fazer com essa informação"] },
+  "c19-e": { q: "Como cuidar da própria equipe exposta ao trauma?",
+    h: ["A que a equipe é exposta, e o risco", "O papel do debriefing", "Apoio psicológico e sinais de sofrimento"] },
+  "c19-prova": { q: "O que as provas cobram sobre cuidado informado pelo trauma e determinantes sociais?",
+    h: ["O tipo de resposta certa", "Violência doméstica e sexual", "Notificação compulsória e boletim de ocorrência", "O paciente agitado e o uso de rótulos"] }
+});
+
+/* Fase 1 · "Com suas palavras": pergunta-guia e roteiro do que abordar (caps. 20–24) */
+window.ATLS_GUIDE = Object.assign(window.ATLS_GUIDE || {}, {
+  "c20-a": { q: "Por que comunicar notícias graves no trauma precisa de treino?",
+    h: ["O que torna a notícia no trauma diferente", "O impacto da forma como a notícia é dada", "Por que ter um roteiro"] },
+  "c20-b": { q: "Como se preparar antes de dar uma notícia grave?",
+    h: ["Quem fala e quem acompanha", "O que confirmar antes", "Como deve ser o local", "Como entrar na sala", "Onde e como nunca dar a notícia"] },
+  "c20-c": { q: "Como dar o aviso e a manchete?",
+    h: ["Para que serve o aviso, com um exemplo", "O que a manchete deve conter", "Quais palavras usar e quais evitar"] },
+  "c20-d": { q: "Qual é o ABCDE para comunicar uma notícia grave?",
+    h: ["O que significa cada letra", "Como lidar com o silêncio e a emoção", "Como encerrar a conversa"] },
+  "c20-e": { q: "O que fazer depois da conversa com a família?",
+    h: ["Os próximos passos a explicar", "Doação de órgãos, funerária e IML", "Apoio à família", "Cuidado com a equipe"] },
+  "c20-prova": { q: "O que as provas cobram sobre comunicação de notícias graves?",
+    h: ["O protocolo SPIKES", "Como começar e como dar a notícia", "Silêncio, local e honestidade", "Família na reanimação e a pegadinha da fisiopatologia"] },
+
+  "c21-a": { q: "Quais lesões este capítulo cobre, e por que elas são perigosas?",
+    h: ["O que já foi tratado no xABCDE", "Por que essas lesões passam despercebidas", "O raciocínio para suspeitar delas"] },
+  "c21-b": { q: "Quais lesões torácicas ocultas podem matar, e como reconhecê-las?",
+    h: ["Contusão pulmonar e o cuidado com fluidos", "Lesão contusa de aorta: mecanismo, RX e controle da PA", "Ruptura diafragmática", "Lesão esofágica e lesão cardíaca contusa", "Fraturas de costelas"] },
+  "c21-c": { q: "Como avaliar o abdome no trauma, e qual exame escolher?",
+    h: ["Quando o exame físico engana", "FAST, TC e LPD: para quem é cada um", "A conduta no instável com FAST positivo", "O sinal do cinto de segurança"] },
+  "c21-d": { q: "Como se comportam as lesões de cada órgão abdominal e da pelve?",
+    h: ["Baço e fígado no estável e no instável", "Víscera oca e a TC inicial", "Pâncreas e duodeno: sinais e mecanismo", "Pelve instável: sequência de controle"] },
+  "c21-e": { q: "Como investigar o trauma geniturinário sem piorar a lesão?",
+    h: ["Sinais de lesão de uretra", "O exame antes da sonda, e por quê", "Bexiga e rim", "O toque retal"] },
+  "c21-prova": { q: "O que as provas cobram sobre trauma torácico, abdominal e geniturinário?",
+    h: ["Instável com FAST positivo e os limites do FAST", "Órgão mais lesado por mecanismo e manejo não operatório", "Sinal do cinto, diafragma e aorta", "Uretra e bexiga", "O que mudou no toque retal e na LPD"] },
+
+  "c22-a": { q: "O que diferencia o trauma penetrante do contuso?",
+    h: ["Por que a trajetória importa", "O perigo das feridas pequenas", "A prioridade que não muda"] },
+  "c22-b": { q: "Como examinar e documentar as feridas penetrantes?",
+    h: ["Onde procurar feridas escondidas", "Como descrever as feridas e o que não afirmar", "Como estimar a trajetória", "O que um número ímpar de orifícios sugere"] },
+  "c22-c": { q: "O que fazer com um objeto empalado?",
+    h: ["Por que não retirar na emergência", "Como estabilizar o objeto", "O que não fazer com a ferida", "Onde e como retirar"] },
+  "c22-d": { q: "Como conduzir o ferimento penetrante cervical?",
+    h: ["As zonas do pescoço e o que mudou no uso delas", "Os sinais duros e a conduta", "O paciente estável sem sinais duros", "Quando a ferida é considerada penetrante, e o que não fazer"] },
+  "c22-e": { q: "Como decidir sobre transfusão, hipotensão permissiva e cirurgia no penetrante?",
+    h: ["O escore ABC e quando ativar a transfusão maciça", "Hipotensão permissiva e o fluido certo", "Arma branca no abdome do paciente estável", "Quando operar e quando transferir", "Restrição da coluna no penetrante"] },
+  "c22-prova": { q: "O que as provas cobram sobre trauma penetrante?",
+    h: ["Quando operar e o manejo da arma branca", "Arma de fogo e evisceração", "Transição toracoabdominal e ferimento cardíaco", "Pescoço: antes e agora", "Escore ABC e a pegadinha da faca"] },
+
+  "c23-a": { q: "Como avaliar o olho no paciente traumatizado?",
+    h: ["Por que a acuidade visual é essencial", "Pupilas e movimentos oculares", "Pálpebras, câmara anterior e proptose", "Quando medir a pressão intraocular, e quando não"] },
+  "c23-b": { q: "Como reconhecer e tratar o hematoma retrobulbar?",
+    h: ["Por que a órbita se comporta como um compartimento", "Os sinais clínicos", "O tratamento e como ele funciona", "Por que não esperar a TC"] },
+  "c23-c": { q: "Como tratar a queimadura química ocular?",
+    h: ["Quando irrigar", "Com o quê, e até quando", "O papel do anestésico tópico", "Partículas nos fórnices", "Ácido versus álcali"] },
+  "c23-d": { q: "Como reconhecer e proteger o globo ocular aberto?",
+    h: ["A definição e os sinais de suspeita", "Como proteger o olho", "O que não fazer", "Medidas sistêmicas"] },
+  "c23-e": { q: "Como reconhecer e tratar hifema, fratura blow-out e abrasão de córnea?",
+    h: ["Hifema: riscos e cuidados", "Blow-out: mecanismo e sinais", "Abrasão de córnea: diagnóstico e o que não prescrever"] },
+  "c23-prova": { q: "O que as provas cobram sobre trauma ocular?",
+    h: ["A prioridade na queimadura química", "Globo aberto: sinais e o que evitar", "Hematoma retrobulbar e corpo estranho", "Hifema e blow-out"] },
+
+  "c24-a": { q: "O que é o ambiente austero, e qual a ligação dele com o xABCDE?",
+    h: ["A definição de ambiente austero", "De onde veio o x", "O que o MARCH/TCCC prioriza"] },
+  "c24-b": { q: "Quais são as fases do cuidado tático, e o que fazer em cada uma?",
+    h: ["Cuidado sob fogo e o que não fazer", "Cuidado tático em campo", "Cuidado na evacuação", "O que significa MARCH, e o paralelo com o xABCDE"] },
+  "c24-c": { q: "Como usar o torniquete em ambiente austero, e como evitar suas armadilhas?",
+    h: ["Onde e como aplicar na urgência", "O torniquete frouxo e o segundo torniquete", "Registro do horário", "Quando reavaliar e converter"] },
+  "c24-d": { q: "Como manter o paciente quando a evacuação demora?",
+    h: ["Prevenção da hipotermia", "Sangue total e TXA", "Triagem com recursos limitados", "Controle de danos"] },
+  "c24-e": { q: "Quais são as lesões típicas do combate?",
+    h: ["As quatro categorias de lesão por explosão", "Amputações traumáticas", "Feridas contaminadas"] },
+  "c24-prova": { q: "O que as provas cobram sobre combate e ambientes austeros?",
+    h: ["MARCH e o xABCDE", "Indicação e erros do torniquete", "Fases do TCCC", "Hemorragia juncional e hipotermia"] }
+});
+
 /* Sala de Habilidades — Exames de imagem no trauma (imagens reais, licenças livres, Wikimedia Commons) */
 window.ATLS_SKILLS = (window.ATLS_SKILLS || []).concat([
   {
@@ -14029,6 +14361,7 @@ $('#rc-back').onclick=()=>{ SFX.blip(); goMap(); };
 
 /* ---------- Fase 1 guiada: prontuário completo → com suas palavras → caso → passagem de plantão ---------- */
 const STUDY = window.ATLS_STUDY || {};
+const GUIDE = window.ATLS_GUIDE || {};
 const hasGuidedStudy = n => !!STUDY[n];
 let SD=null;
 
@@ -14075,15 +14408,19 @@ function renderFullChart(main){ const c=SD.c;
 function renderRecallTopic(main){ const topics=recallTopics(SD.n), sec=topics[SD.topic], keys=STUDY[SD.n].checks[sec.id].keys, st=studyProgress(SD.n);
   setChartButtonEnabled(false);
   const card=el('div',{class:'study-card'});
-  card.append(el('span',{class:'eyebrow'},`Tópico ${SD.topic+1} de ${topics.length} · prontuário fechado`), el('h3',{},`🧠 ${sec.t}`),
-    el('p',{class:'hint'},'Escreva tudo o que você lembra sobre este tópico, como se explicasse a um colega: o que fazer, quando e por quê.'));
-  const memo=el('textarea',{class:'memo',placeholder:'Escreva aqui…','aria-label':`O que você lembra sobre ${sec.t}`}); card.append(memo);
+  card.append(el('span',{class:'eyebrow'},`Tópico ${SD.topic+1} de ${topics.length} · prontuário fechado`), el('h3',{},`🧠 ${sec.t}`));
+  const guide=GUIDE[sec.id]; if(guide) card.append(guidingQuestionView(guide)); else card.append(el('p',{class:'hint'},'Escreva tudo o que você lembra sobre este tópico, como se explicasse a um colega: o que fazer, quando e por quê.'));
+  const memo=el('textarea',{class:'memo',placeholder:'Responda com suas palavras…','aria-label':guide?guide.q:`O que você lembra sobre ${sec.t}`}); card.append(memo);
   const btn=el('button',{class:'btn-primary'},'Comparar com os pontos-chave'); card.append(btn); main.append(card); memo.focus();
   btn.onclick=()=>{ btn.remove(); memo.readOnly=true; setChartButtonEnabled(true);
     card.append(el('p',{class:'hint'},`Marque os ${keys.length} pontos que o seu texto cobriu. Os que ficarem desmarcados têm o atalho para o trecho no prontuário.`));
     const list=keyChecklist(keys.map(k=>({t:k,s:sec.id}))); card.append(list.el);
     const last=SD.topic>=topics.length-1; const next=el('button',{class:'btn-primary'},last?'Concluir e ir para o caso':'Próximo tópico');
     next.onclick=()=>{ st.keys[sec.id]=list.values(); save(); SFX.ok(); if(last) goNextStep(); else { SD.topic++; renderStudy(); } }; card.append(next); }; }
+/* pergunta norteadora + roteiro do que abordar, sem entregar a resposta */
+function guidingQuestionView(guide){ const box=el('div',{class:'guide'});
+  box.append(el('p',{class:'guide-q'},guide.q), el('span',{class:'guide-label'},'Na sua resposta, tente abordar:'), el('ul',{class:'guide-list'},guide.h.map(h=>`<li>${h}</li>`).join('')));
+  return box; }
 function keyChecklist(keys){ const wrap=el('div',{class:'keylist'}); const boxes=keys.map(k=>{ const item=el('label',{class:'keyitem miss'}); const cb=el('input',{type:'checkbox'}); item.append(cb, el('span',{},k.t));
     const see=seeInChartButton(k.s); see.classList.add('see'); item.append(see); cb.onchange=()=>{ item.classList.toggle('miss',!cb.checked); see.hidden=cb.checked; }; wrap.append(item); return cb; });
   return {el:wrap, values:()=>boxes.map(b=>b.checked)}; }

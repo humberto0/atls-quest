@@ -14,6 +14,7 @@ CONTENT_PARTS = [SRC / "content" / f"part{i}.js" for i in range(1, 5)]
 SIM_PARTS = [SRC / "content" / f"sim{i}.js" for i in range(1, 5)]
 STUDY_PARTS = sorted((SRC / "content").glob("study*.js"))
 SKILL_PARTS = sorted((SRC / "content").glob("skills_*.js"))
+GUIDE_PARTS = sorted((SRC / "content").glob("guide_*.js"))
 
 
 def read_text(path: Path) -> str:
@@ -34,7 +35,7 @@ def ensure_no_closing_script(name: str, code: str) -> None:
 
 
 def build() -> Path:
-    content = "\n".join(read_text(part) for part in CONTENT_PARTS + [p for p in SIM_PARTS if p.exists()] + STUDY_PARTS + SKILL_PARTS)
+    content = "\n".join(read_text(part) for part in CONTENT_PARTS + [p for p in SIM_PARTS if p.exists()] + STUDY_PARTS + GUIDE_PARTS + SKILL_PARTS)
     game = read_text(SRC / "game.js")
     ensure_no_closing_script("conteúdo", content)
     ensure_no_closing_script("game.js", game)

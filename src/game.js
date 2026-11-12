@@ -292,6 +292,7 @@ $('#rc-back').onclick=()=>{ SFX.blip(); goMap(); };
 
 /* ---------- Fase 1 guiada: prontuário completo → com suas palavras → caso → passagem de plantão ---------- */
 const STUDY = window.ATLS_STUDY || {};
+const GUIDE = window.ATLS_GUIDE || {};
 const hasGuidedStudy = n => !!STUDY[n];
 let SD=null;
 
@@ -338,15 +339,19 @@ function renderFullChart(main){ const c=SD.c;
 function renderRecallTopic(main){ const topics=recallTopics(SD.n), sec=topics[SD.topic], keys=STUDY[SD.n].checks[sec.id].keys, st=studyProgress(SD.n);
   setChartButtonEnabled(false);
   const card=el('div',{class:'study-card'});
-  card.append(el('span',{class:'eyebrow'},`Tópico ${SD.topic+1} de ${topics.length} · prontuário fechado`), el('h3',{},`🧠 ${sec.t}`),
-    el('p',{class:'hint'},'Escreva tudo o que você lembra sobre este tópico, como se explicasse a um colega: o que fazer, quando e por quê.'));
-  const memo=el('textarea',{class:'memo',placeholder:'Escreva aqui…','aria-label':`O que você lembra sobre ${sec.t}`}); card.append(memo);
+  card.append(el('span',{class:'eyebrow'},`Tópico ${SD.topic+1} de ${topics.length} · prontuário fechado`), el('h3',{},`🧠 ${sec.t}`));
+  const guide=GUIDE[sec.id]; if(guide) card.append(guidingQuestionView(guide)); else card.append(el('p',{class:'hint'},'Escreva tudo o que você lembra sobre este tópico, como se explicasse a um colega: o que fazer, quando e por quê.'));
+  const memo=el('textarea',{class:'memo',placeholder:'Responda com suas palavras…','aria-label':guide?guide.q:`O que você lembra sobre ${sec.t}`}); card.append(memo);
   const btn=el('button',{class:'btn-primary'},'Comparar com os pontos-chave'); card.append(btn); main.append(card); memo.focus();
   btn.onclick=()=>{ btn.remove(); memo.readOnly=true; setChartButtonEnabled(true);
     card.append(el('p',{class:'hint'},`Marque os ${keys.length} pontos que o seu texto cobriu. Os que ficarem desmarcados têm o atalho para o trecho no prontuário.`));
     const list=keyChecklist(keys.map(k=>({t:k,s:sec.id}))); card.append(list.el);
     const last=SD.topic>=topics.length-1; const next=el('button',{class:'btn-primary'},last?'Concluir e ir para o caso':'Próximo tópico');
     next.onclick=()=>{ st.keys[sec.id]=list.values(); save(); SFX.ok(); if(last) goNextStep(); else { SD.topic++; renderStudy(); } }; card.append(next); }; }
+/* pergunta norteadora + roteiro do que abordar, sem entregar a resposta */
+function guidingQuestionView(guide){ const box=el('div',{class:'guide'});
+  box.append(el('p',{class:'guide-q'},guide.q), el('span',{class:'guide-label'},'Na sua resposta, tente abordar:'), el('ul',{class:'guide-list'},guide.h.map(h=>`<li>${h}</li>`).join('')));
+  return box; }
 function keyChecklist(keys){ const wrap=el('div',{class:'keylist'}); const boxes=keys.map(k=>{ const item=el('label',{class:'keyitem miss'}); const cb=el('input',{type:'checkbox'}); item.append(cb, el('span',{},k.t));
     const see=seeInChartButton(k.s); see.classList.add('see'); item.append(see); cb.onchange=()=>{ item.classList.toggle('miss',!cb.checked); see.hidden=cb.checked; }; wrap.append(item); return cb; });
   return {el:wrap, values:()=>boxes.map(b=>b.checked)}; }
